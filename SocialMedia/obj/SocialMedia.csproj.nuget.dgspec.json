@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia\\SocialMedia.csproj": {}
+    "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia\\SocialMedia.csproj": {}
   },
   "projects": {
-    "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia.Application\\SocialMedia.Application.csproj": {
+    "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia.Application\\SocialMedia.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia.Application\\SocialMedia.Application.csproj",
+        "projectUniqueName": "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia.Application\\SocialMedia.Application.csproj",
         "projectName": "SocialMedia.Application",
-        "projectPath": "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia.Application\\SocialMedia.Application.csproj",
-        "packagesPath": "C:\\Users\\anhan\\.nuget\\packages\\",
-        "outputPath": "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia.Application\\obj\\",
+        "projectPath": "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia.Application\\SocialMedia.Application.csproj",
+        "packagesPath": "C:\\Users\\Binh Nguyen\\.nuget\\packages\\",
+        "outputPath": "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\anhan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Binh Nguyen\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,15 +26,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj": {
-                "projectPath": "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj"
+              "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj": {
+                "projectPath": "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj"
               }
             }
           }
@@ -127,24 +126,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.406/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj": {
+    "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj",
+        "projectUniqueName": "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj",
         "projectName": "SocialMedia.Domain",
-        "projectPath": "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj",
-        "packagesPath": "C:\\Users\\anhan\\.nuget\\packages\\",
-        "outputPath": "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia.Domain\\obj\\",
+        "projectPath": "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj",
+        "packagesPath": "C:\\Users\\Binh Nguyen\\.nuget\\packages\\",
+        "outputPath": "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\anhan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Binh Nguyen\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -153,7 +152,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -250,24 +248,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.406/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia.Infrastructure\\SocialMedia.Infrastructure.csproj": {
+    "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia.Infrastructure\\SocialMedia.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia.Infrastructure\\SocialMedia.Infrastructure.csproj",
+        "projectUniqueName": "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia.Infrastructure\\SocialMedia.Infrastructure.csproj",
         "projectName": "SocialMedia.Infrastructure",
-        "projectPath": "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia.Infrastructure\\SocialMedia.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\anhan\\.nuget\\packages\\",
-        "outputPath": "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia.Infrastructure\\obj\\",
+        "projectPath": "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia.Infrastructure\\SocialMedia.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Binh Nguyen\\.nuget\\packages\\",
+        "outputPath": "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\anhan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Binh Nguyen\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -276,18 +274,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia.Application\\SocialMedia.Application.csproj": {
-                "projectPath": "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia.Application\\SocialMedia.Application.csproj"
+              "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia.Application\\SocialMedia.Application.csproj": {
+                "projectPath": "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia.Application\\SocialMedia.Application.csproj"
               },
-              "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj": {
-                "projectPath": "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj"
+              "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj": {
+                "projectPath": "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj"
               }
             }
           }
@@ -380,24 +377,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.406/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia\\SocialMedia.csproj": {
+    "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia\\SocialMedia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia\\SocialMedia.csproj",
+        "projectUniqueName": "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia\\SocialMedia.csproj",
         "projectName": "SocialMedia",
-        "projectPath": "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia\\SocialMedia.csproj",
-        "packagesPath": "C:\\Users\\anhan\\.nuget\\packages\\",
-        "outputPath": "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia\\obj\\",
+        "projectPath": "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia\\SocialMedia.csproj",
+        "packagesPath": "C:\\Users\\Binh Nguyen\\.nuget\\packages\\",
+        "outputPath": "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\anhan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Binh Nguyen\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -406,21 +403,20 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia.Application\\SocialMedia.Application.csproj": {
-                "projectPath": "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia.Application\\SocialMedia.Application.csproj"
+              "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia.Application\\SocialMedia.Application.csproj": {
+                "projectPath": "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia.Application\\SocialMedia.Application.csproj"
               },
-              "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj": {
-                "projectPath": "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj"
+              "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj": {
+                "projectPath": "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj"
               },
-              "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia.Infrastructure\\SocialMedia.Infrastructure.csproj": {
-                "projectPath": "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia.Infrastructure\\SocialMedia.Infrastructure.csproj"
+              "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia.Infrastructure\\SocialMedia.Infrastructure.csproj": {
+                "projectPath": "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia.Infrastructure\\SocialMedia.Infrastructure.csproj"
               }
             }
           }
@@ -520,7 +516,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.406/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

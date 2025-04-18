@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj": {}
+    "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj": {}
   },
   "projects": {
-    "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj": {
+    "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj",
+        "projectUniqueName": "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj",
         "projectName": "SocialMedia.Domain",
-        "projectPath": "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj",
-        "packagesPath": "C:\\Users\\anhan\\.nuget\\packages\\",
-        "outputPath": "E:\\hcmue_03_hk02\\cn_web\\Register\\SocialMedia\\SocialMedia.Domain\\obj\\",
+        "projectPath": "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia.Domain\\SocialMedia.Domain.csproj",
+        "packagesPath": "C:\\Users\\Binh Nguyen\\.nuget\\packages\\",
+        "outputPath": "D:\\DaiHoc\\N3\\HKII\\BMCSDL\\backend_socialMedia\\SocialMedia.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\anhan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Binh Nguyen\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -123,7 +122,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.406/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
