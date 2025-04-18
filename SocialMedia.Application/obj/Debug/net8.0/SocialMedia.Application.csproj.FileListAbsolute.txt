@@ -1,0 +1,17 @@
+E:\hcmue_03_hk02\cn_web\Register\SocialMedia\SocialMedia.Application\bin\Debug\net8.0\SocialMedia.Application.deps.json
+E:\hcmue_03_hk02\cn_web\Register\SocialMedia\SocialMedia.Application\bin\Debug\net8.0\SocialMedia.Application.runtimeconfig.json
+E:\hcmue_03_hk02\cn_web\Register\SocialMedia\SocialMedia.Application\bin\Debug\net8.0\SocialMedia.Application.dll
+E:\hcmue_03_hk02\cn_web\Register\SocialMedia\SocialMedia.Application\bin\Debug\net8.0\SocialMedia.Application.pdb
+E:\hcmue_03_hk02\cn_web\Register\SocialMedia\SocialMedia.Application\bin\Debug\net8.0\SocialMedia.Domain.dll
+E:\hcmue_03_hk02\cn_web\Register\SocialMedia\SocialMedia.Application\bin\Debug\net8.0\SocialMedia.Domain.pdb
+E:\hcmue_03_hk02\cn_web\Register\SocialMedia\SocialMedia.Application\obj\Debug\net8.0\SocialMedia.Application.csproj.AssemblyReference.cache
+E:\hcmue_03_hk02\cn_web\Register\SocialMedia\SocialMedia.Application\obj\Debug\net8.0\SocialMedia.Application.GeneratedMSBuildEditorConfig.editorconfig
+E:\hcmue_03_hk02\cn_web\Register\SocialMedia\SocialMedia.Application\obj\Debug\net8.0\SocialMedia.Application.AssemblyInfoInputs.cache
+E:\hcmue_03_hk02\cn_web\Register\SocialMedia\SocialMedia.Application\obj\Debug\net8.0\SocialMedia.Application.AssemblyInfo.cs
+E:\hcmue_03_hk02\cn_web\Register\SocialMedia\SocialMedia.Application\obj\Debug\net8.0\SocialMedia.Application.csproj.CoreCompileInputs.cache
+E:\hcmue_03_hk02\cn_web\Register\SocialMedia\SocialMedia.Application\obj\Debug\net8.0\SocialMe.92392C20.Up2Date
+E:\hcmue_03_hk02\cn_web\Register\SocialMedia\SocialMedia.Application\obj\Debug\net8.0\SocialMedia.Application.dll
+E:\hcmue_03_hk02\cn_web\Register\SocialMedia\SocialMedia.Application\obj\Debug\net8.0\refint\SocialMedia.Application.dll
+E:\hcmue_03_hk02\cn_web\Register\SocialMedia\SocialMedia.Application\obj\Debug\net8.0\SocialMedia.Application.pdb
+E:\hcmue_03_hk02\cn_web\Register\SocialMedia\SocialMedia.Application\obj\Debug\net8.0\SocialMedia.Application.genruntimeconfig.cache
+E:\hcmue_03_hk02\cn_web\Register\SocialMedia\SocialMedia.Application\obj\Debug\net8.0\ref\SocialMedia.Application.dll
