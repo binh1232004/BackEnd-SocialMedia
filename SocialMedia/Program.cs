@@ -9,13 +9,25 @@ using SocialMedia.Infrastructure.Data;
 using SocialMedia.Infrastructure.Repositories;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Text;
+using DotNetEnv;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Load .env file
+var root = Directory.GetCurrentDirectory();
+var dotenv = Path.Combine(root, ".env");
+DotNetEnv.Env.Load();
+
+// Add debug logging
+
+// Get connection string
+var connectionString = $"Server=tcp:{Environment.GetEnvironmentVariable("DB_SERVER")},1433;Initial Catalog={Environment.GetEnvironmentVariable("DB_NAME")};Persist Security Info=False;User ID={Environment.GetEnvironmentVariable("DB_USER")};Password={Environment.GetEnvironmentVariable("DB_PASSWORD")};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;";
+
 builder.Services.AddMemoryCache();
 
 // ✅ Đăng ký dịch vụ vào DI Container
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(connectionString));
 
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 builder.Services.AddScoped<IUserRepository, UserRepository>();

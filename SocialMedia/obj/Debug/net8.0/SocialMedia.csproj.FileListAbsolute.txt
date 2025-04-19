@@ -325,3 +325,5 @@ D:\DaiHoc\N3\HKII\BMCSDL\backend_socialMedia\SocialMedia\obj\Debug\net8.0\refint
 D:\DaiHoc\N3\HKII\BMCSDL\backend_socialMedia\SocialMedia\obj\Debug\net8.0\SocialMedia.pdb
 D:\DaiHoc\N3\HKII\BMCSDL\backend_socialMedia\SocialMedia\obj\Debug\net8.0\SocialMedia.genruntimeconfig.cache
 D:\DaiHoc\N3\HKII\BMCSDL\backend_socialMedia\SocialMedia\obj\Debug\net8.0\ref\SocialMedia.dll
+D:\DaiHoc\N3\HKII\BMCSDL\backend_socialMedia\SocialMedia\bin\Debug\net8.0\DotNetEnv.dll
+D:\DaiHoc\N3\HKII\BMCSDL\backend_socialMedia\SocialMedia\bin\Debug\net8.0\Sprache.dll
