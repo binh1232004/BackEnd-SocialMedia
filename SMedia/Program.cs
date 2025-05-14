@@ -20,12 +20,16 @@ builder.Services.AddApplicationServices();
 
 builder.Services.AddWebSocketServices();
 
+//Cho phép website khác truy cập vào API
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll", builder =>
-    {
-        builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
-    });
+    options.AddPolicy("AllowFrontend",
+        policy =>
+        {
+            policy.WithOrigins(Env.GetString("FQDN_FRONTEND"))
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
 });
 
 var app = builder.Build();
@@ -36,12 +40,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors("AllowAll"); // Gọi CORS trước để cho phép FE truy cập
-
+app.UseCustomHttpLogging();
 app.UseWebSockets(); // Kích hoạt WebSocket middleware
 app.UseWebSocketHandler(); // Xử lý các yêu cầu WebSocket tại /ws
-
-app.UseSerilogRequestLogging(); // Log các yêu cầu HTTP
 
 app.UseAuthentication();
 app.UseAuthorization();
