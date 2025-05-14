@@ -49,13 +49,4 @@ public class MessageRepository : IMessageRepository
             .Select(b => b.blocked_id)
             .ToListAsync();
     }
-
-    public async Task<List<user>> SearchUsersAsync(string searchTerm, string currentUserId, List<string> blockedUsers)
-    {
-        return await _context.users
-            .Where(u => u.user_id != currentUserId && 
-                        !blockedUsers.Contains(u.user_id) &&
-                        (u.username.Contains(searchTerm) || u.full_name.Contains(searchTerm)))
-            .ToListAsync();
-    }
 }
