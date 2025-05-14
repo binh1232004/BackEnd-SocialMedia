@@ -1,6 +1,7 @@
 using DotNetEnv;
 using SMedia.Configuration;
 using Serilog;
+using SMedia.Extensions;
 
 Env.Load();
 
