@@ -11,10 +11,18 @@ using Application.Services;
 using Application.Interfaces.RepositoryInterfaces;
 using Infrastructure.Repositories;
 using Mapster;
-
+using Microsoft.AspNetCore.Http;
+using SMedia.Extensions;
 Env.Load();
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Add logging services
+builder.Services.AddLogging(logging =>
+{
+    logging.ClearProviders();
+    logging.AddConsole();
+});
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -107,8 +115,24 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddMapster();
 // Gọi cấu hình ánh xạ
 MapsterConfig.RegisterMappings();
+// -------------------------------------------------- Bình -------------------------------------------------- //
+//Cho phép website khác truy cập vào API
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend",
+        policy =>
+        {
+            policy.WithOrigins(Env.GetString("FQDN_FRONTEND"))
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
 
+// Add HTTP request logging middleware
 var app = builder.Build();
+app.UseCustomHttpLogging();
+
+// -------------------------------------------------- Bình -------------------------------------------------- //
 
 if (app.Environment.IsDevelopment())
 {
