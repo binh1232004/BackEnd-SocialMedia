@@ -36,17 +36,4 @@ public class MessageService : IMessageService
 
         return await _messageRepository.GetGroupMemberIdsAsync(group_chat_id);
     }
-    
-    public async Task<List<UserSearchDto>> SearchUsersAsync(string searchTerm, string currentUserId)
-    {
-        if (string.IsNullOrEmpty(searchTerm))
-        {
-            return new List<UserSearchDto>();
-        }
-
-        var blockedUsers = await _messageRepository.GetBlockedUserIdsAsync(currentUserId);
-
-        var users = await _messageRepository.SearchUsersAsync(searchTerm, currentUserId, blockedUsers);
-        return users.Adapt<List<UserSearchDto>>();
-    }
 }
