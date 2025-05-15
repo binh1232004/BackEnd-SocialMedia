@@ -33,4 +33,33 @@ public class UserRepository : IUserRepository
     {
         return await _context.users.FirstOrDefaultAsync(u => u.email == email);
     }
+    
+    public async Task<user?> GetUserById(string userId)
+    {
+        return await _context.users.FirstOrDefaultAsync(u => u.user_id == userId);
+    }
+    public async Task<List<user>> SearchUsers(string query, int skip, int take)
+    {
+        // Convert query to lowercase for case-insensitive comparison
+        var lowerQuery = query.ToLower();
+        
+        return await _context.users
+            .Where(u => u.username.ToLower().Contains(lowerQuery) || 
+                       (u.full_name != null && u.full_name.ToLower().Contains(lowerQuery)) || 
+                       (u.email != null && u.email.ToLower().Contains(lowerQuery)))
+            .OrderBy(u => u.username)
+            .Skip(skip)
+            .Take(take)
+            .ToListAsync();
+    }
+    
+    public async Task<List<user>> GetRandomUsers(string currentUserId, int count)
+    {
+        // Get users except the current user, ordered by a random value
+        return await _context.users
+            .Where(u => u.user_id != currentUserId)
+            .OrderBy(u => Guid.NewGuid()) // This creates a randomized order
+            .Take(count)
+            .ToListAsync();
+    }
 }
