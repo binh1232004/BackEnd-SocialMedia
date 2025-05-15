@@ -1,6 +1,7 @@
 using Application.DTOs;
 using Domain.Entities;
 
+
 namespace Application.Interfaces.ServiceInterfaces;
 
 public interface IMessageService
@@ -11,3 +12,4 @@ public interface IMessageService
     Task<List<MessageDto>> GetUnreadMessages(string userId);
     Task<List<user>> GetChatUsers(string userId, int page = 1, int pageSize = 20);
 }
+

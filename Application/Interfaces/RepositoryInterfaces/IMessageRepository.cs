@@ -11,3 +11,4 @@ public interface IMessageRepository
     Task<List<message>> GetUnreadMessages(string userId);
     Task<List<user>> GetChatUsers(string userId, int skip, int take);
 }
+

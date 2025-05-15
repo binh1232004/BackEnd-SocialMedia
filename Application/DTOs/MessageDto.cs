@@ -1,5 +1,3 @@
-using System;
-
 namespace Application.DTOs;
 
 public class MessageDto
@@ -40,3 +38,4 @@ public class GetMessagesResponseDto
     public List<MessageDto> Messages { get; set; } = new();
     public int TotalCount { get; set; }
 }
+
