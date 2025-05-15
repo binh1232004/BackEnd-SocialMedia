@@ -31,8 +31,15 @@ The current configuration is optimized for development and debugging. Before dep
 ## Debugging
 
 1. **Remove Debug Headers**:
-   - Remove the X-Auth-Debug header in production to avoid leaking sensitive information
+   - Remove all debug headers in production to avoid leaking sensitive information:
+     - X-Auth-Debug
+     - X-Auth-User-ID
+     - X-User-Exists
    - Implement proper logging instead of exposing debugging info in HTTP responses
+   
+2. **Secure Claim Handling**:
+   - Consistently use standard claim types where possible (e.g., ClaimTypes.NameIdentifier)
+   - If using custom claim names, document them thoroughly and use constants to avoid typos
 
 ## General API Security
 

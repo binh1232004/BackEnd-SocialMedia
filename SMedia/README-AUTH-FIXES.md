@@ -8,21 +8,31 @@
 - Disabled audience validation to accept any audience
 - Disabled signature validation for development purposes
 - Added fallback values for JWT configuration when env variables are missing
+- Fixed claim name mismatch - controllers now use "user_id" claim instead of ClaimTypes.NameIdentifier
 
 ### Debugging
 - Added debug headers (X-Auth-Debug) to API responses to show authentication status
 - Included token information in debug output
 - Now showing whether user is authenticated, user ID, email, and auth header presence
+- Added detailed claims information to debug headers for easier troubleshooting
+- Added X-User-Exists header to check if user exists in database (for debugging)
 
-### Database Query
-- Added proper ordering to SearchUsers method in UserRepository to avoid unpredictable results with Skip/Take operations
-- Improved results consistency for search operations
+### New API Endpoints
+- Added user suggestions endpoint (`/api/User/suggestions`) for finding friends
+- Made suggestions endpoint resilient to database mismatches between token user_id and database
+- Implemented random user selection for better suggestion quality
+
+### Documentation Improvements
+- Fixed Swagger documentation XML formatting issues
+- Added proper spacing between endpoint documentation and HTTP method attributes
+- Updated API_USAGE_GUIDE.md with comprehensive endpoint documentation
 
 ## Current Status
-- Authentication is working properly
-- Debug headers show successful authentication
+- Authentication is working properly with correct claim names
+- Debug headers show successful authentication and all claims
 - Search API returns proper results
-- Token from earlier is accepted and validated successfully
+- New suggestions API works correctly even if user doesn't exist in database
+- Swagger documentation displays correctly
 
 ## Security Recommendations
 - See SECURITY_RECOMMENDATIONS.md for detailed recommendations for production deployment

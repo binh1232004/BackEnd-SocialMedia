@@ -2,6 +2,8 @@ using Application.Interfaces.RepositoryInterfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Filters;
+using Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace SMedia.Controllers;
 
@@ -12,11 +14,13 @@ namespace SMedia.Controllers;
 public class UserController : ControllerBase
 {
     private readonly IUserRepository _userRepository;
+    private readonly ApplicationDbContext _context;
 
-    public UserController(IUserRepository userRepository)
+    public UserController(IUserRepository userRepository, ApplicationDbContext context)
     {
         _userRepository = userRepository;
-    }    /// <summary>
+        _context = context;
+    }/// <summary>
     /// Search for users by name or username
     /// </summary>
     /// <param name="query">Search text</param>
@@ -36,10 +40,8 @@ public class UserController : ControllerBase
         if (string.IsNullOrWhiteSpace(query))
         {
             return BadRequest("Search query cannot be empty");
-        }
-
-        // For debugging, check if we have a user identity
-        var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+        }        // For debugging, check if we have a user identity
+        var userId = User.FindFirst("user_id")?.Value; // Use the correct claim name
         var userEmail = User.FindFirst(System.Security.Claims.ClaimTypes.Email)?.Value;
         
         int skip = (page - 1) * pageSize;
@@ -86,9 +88,8 @@ public class UserController : ControllerBase
         {
             return NotFound("User not found");
         }
-        
-        // Add debug info for authentication
-        var authUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+          // Add debug info for authentication
+        var authUserId = User.FindFirst("user_id")?.Value; // Use the correct claim name
         var authEmail = User.FindFirst(System.Security.Claims.ClaimTypes.Email)?.Value;
         
         var debugInfo = new
@@ -102,9 +103,7 @@ public class UserController : ControllerBase
         };
         
         // Add debug info to response headers
-        Response.Headers.Append("X-Auth-Debug", System.Text.Json.JsonSerializer.Serialize(debugInfo));
-
-        return Ok(new
+        Response.Headers.Append("X-Auth-Debug", System.Text.Json.JsonSerializer.Serialize(debugInfo));        return Ok(new
         {
             userId = user.user_id,
             username = user.username,
@@ -116,5 +115,60 @@ public class UserController : ControllerBase
             gender = user.gender,
             joinedAt = user.joined_at
         });
+    }
+      /// <summary>
+    /// Get a list of random users for "Find Friends" feature
+    /// </summary>
+    /// <param name="count">Number of users to return (default: 10)</param>
+    /// <returns>List of potential friends</returns>
+    /// <response code="200">Returns list of users</response>
+    /// <response code="401">Unauthorized</response>
+    [HttpGet("suggestions")]
+    public async Task<ActionResult<List<object>>> GetUserSuggestions([FromQuery] int count = 10)
+    {
+        // Get the current user's ID from claims - using the custom claim name "user_id"
+        var currentUserId = User.FindFirst("user_id")?.Value;
+        if (currentUserId == null)
+        {
+            return Unauthorized();
+        }        // Debug header to track issues
+        Response.Headers.Append("X-Auth-User-ID", currentUserId);
+        
+        // Limit the maximum number of users to 50 to prevent excessive requests
+        count = Math.Min(count, 50);
+        
+        // Just get random users without checking if the current user exists
+        var users = await _context.users
+            .OrderBy(u => Guid.NewGuid()) // Random order
+            .Take(count)
+            .ToListAsync();
+        
+        // Add debug info for authentication
+        var authEmail = User.FindFirst(System.Security.Claims.ClaimTypes.Email)?.Value;
+          var debugInfo = new
+        {
+            authenticated = User.Identity?.IsAuthenticated ?? false,
+            userId = currentUserId,
+            userEmail = authEmail,
+            allClaims = User.Claims.Select(c => new { c.Type, c.Value }).ToDictionary(c => c.Type, c => c.Value),
+            authHeader = Request.Headers.ContainsKey("Authorization") ? 
+                         "Present (first 20 chars): " + Request.Headers["Authorization"].ToString().Substring(0, Math.Min(Request.Headers["Authorization"].ToString().Length, 20)) :
+                         "Not present"
+        };
+        
+        // Add debug info to response headers
+        Response.Headers.Append("X-Auth-Debug", System.Text.Json.JsonSerializer.Serialize(debugInfo));
+        
+        // Map to simplified response
+        var result = users.Select(u => new
+        {
+            userId = u.user_id,
+            username = u.username,
+            fullName = u.full_name,
+            email = u.email,
+            image = u.image
+        }).ToList();
+        
+        return Ok(result);
     }
 }

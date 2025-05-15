@@ -10,4 +10,5 @@ public interface IUserRepository
     Task<user?> GetUserByEmail(string email);
     Task<user?> GetUserById(string userId);
     Task<List<user>> SearchUsers(string query, int skip, int take);
+    Task<List<user>> GetRandomUsers(string currentUserId, int count);
 }
