@@ -48,23 +48,23 @@ public class WebSocketHandler
             }
 
             // Gán sender_id từ WebSocket
-            messageDto.sender_id = sender_id;
+            messageDto.SenderId = sender_id;
 
             // Lưu và gửi tin nhắn
             using var scope = _serviceProvider.CreateScope();
             var messageService = scope.ServiceProvider.GetRequiredService<IMessageService>();
 
-            var savedMessage = await messageService.SaveAndBroadcastMessageAsync(messageDto);
+            // var savedMessage = await messageService.SaveAndBroadcastMessageAsync(messageDto);
 
             // Kiểm tra và gửi tin nhắn đến người nhận hoặc nhóm
-            if (!string.IsNullOrEmpty(messageDto.receiver_id))
-            {
-                await SendToUserAsync(messageDto.receiver_id, savedMessage);
-            }
-            else if (!string.IsNullOrEmpty(messageDto.group_chat_id))
-            {
-                await SendToGroupAsync(messageDto.group_chat_id, savedMessage, sender_id);
-            }
+            // if (!string.IsNullOrEmpty(messageDto.receiver_id))
+            // {
+            //     await SendToUserAsync(messageDto.receiver_id, savedMessage);
+            // }
+            // else if (!string.IsNullOrEmpty(messageDto.group_chat_id))
+            // {
+            //     await SendToGroupAsync(messageDto.group_chat_id, savedMessage, sender_id);
+            // }
         }
         catch (Exception ex)
         {
@@ -88,14 +88,14 @@ public class WebSocketHandler
     {
         using var scope = _serviceProvider.CreateScope();
         var messageService = scope.ServiceProvider.GetRequiredService<IMessageService>();
-        var memberIds = await messageService.GetGroupMemberIdsAsync(group_chat_id);
-
-        foreach (var memberId in memberIds)
-        {
-            if (memberId != sender_id) // Không gửi lại cho người gửi
-            {
-                await SendToUserAsync(memberId, message);
-            }
-        }
+        // var memberIds = await messageService.GetGroupMemberIdsAsync(group_chat_id);
+        //
+        // foreach (var memberId in memberIds)
+        // {
+        //     if (memberId != sender_id) // Không gửi lại cho người gửi
+        //     {
+        //         await SendToUserAsync(memberId, message);
+        //     }
+        // }
     }
 }
