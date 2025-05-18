@@ -1,12 +1,11 @@
-using Application.DTOs;
-using Mapster;
 using Application.Interfaces.RepositoryInterfaces;
+using Mapster;
 using Application.Interfaces.ServiceInterfaces;
 using Application.Services;
 using Infrastructure.Data;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
-using DotNetEnv; 
+using DotNetEnv;
 
 namespace SMedia.Configuration;
 
@@ -41,11 +40,9 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IEmailService, EmailService>();
         services.AddScoped<IUserService, UserService>();
         services.AddScoped<IJwtTokenService, JwtTokenService>();
-        services.AddScoped<IMessageService, MessageService>();
             
         // Đăng ký các kho lưu trữ
         services.AddScoped<IUserRepository, UserRepository>();
-        services.AddScoped<IMessageRepository, MessageRepository>();
 
         // Thêm Mapster
         services.AddMapster();

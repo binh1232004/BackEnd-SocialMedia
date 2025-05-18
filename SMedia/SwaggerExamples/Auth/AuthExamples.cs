@@ -28,12 +28,12 @@ public class RegisterDtoExample : IMultipleExamplesProvider<RegisterDto>
             "Example of complete user registration information",
             new RegisterDto
             {
-                username = "johndoe",
-                email = "john.doe@example.com",
-                password = "StrongPassword123!",
-                full_name = "John Doe",
-                gender = "Male",
-                birthday = new DateOnly(1990, 1, 1)
+                Username = "johndoe",
+                Email = "john.doe@example.com",
+                Password = "StrongPassword123!",
+                FullName = "John Doe",
+                Gender = "Male",
+                Birthday = new DateOnly(1990, 1, 1)
             });
     }
 }

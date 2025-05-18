@@ -31,7 +31,7 @@ public class UserService : IUserService
 
     public async Task<Alert?> Register(RegisterDto registerDto)
     {
-        var newUser = registerDto.Adapt<user>();
+        var newUser = registerDto.Adapt<User>();
         await _userRepository.Create(newUser);
 
         return new Alert()

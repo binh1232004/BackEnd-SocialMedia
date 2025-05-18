@@ -18,7 +18,9 @@ builder.Host.UseSerilog((context, configuration) =>
 
 
 builder.Services.AddApplicationServices();
-builder.Services.AddWebSocketServices();
+// builder.Services.AddWebSocketServices();
+
+
 
 
 //Cho phép website khác truy cập vào API
@@ -51,7 +53,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseCustomHttpLogging();
 app.UseWebSockets(); // Kích hoạt WebSocket middleware
-app.UseWebSocketHandler(); // Xử lý các yêu cầu WebSocket tại /ws
+// app.UseWebSocketHandler(); // Xử lý các yêu cầu WebSocket tại /ws
 
 app.UseAuthentication();
 app.UseAuthorization();

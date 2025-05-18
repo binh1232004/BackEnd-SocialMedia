@@ -69,12 +69,12 @@ public class AuthenticationController : ControllerBase
     [SwaggerResponseExample(200, typeof(SMedia.SwaggerExamples.Auth.AuthResponseExample))]
     [SwaggerResponseExample(400, typeof(SMedia.SwaggerExamples.Auth.AlertExample))]public async Task<ActionResult<AuthResponse>> Register([FromQuery] string otp, [FromForm] RegisterDto registerDto)
     {
-        if (string.IsNullOrEmpty(registerDto.email))
+        if (string.IsNullOrEmpty(registerDto.Email))
         {
             return BadRequest("Email is required.");
         }
         
-        var isOtpValid = await _emailService.VerifyOtpAsync(registerDto.email, otp);
+        var isOtpValid = await _emailService.VerifyOtpAsync(registerDto.Email, otp);
         if (!isOtpValid)
         {
             return BadRequest("Invalid, expired OTP or exceeded attempts.");

@@ -15,49 +15,49 @@ public class UserRepository : IUserRepository
     }
     public async Task<bool> IsEmailExists(string email)
     {
-        return await _context.users.AnyAsync( u => u.email == email);
+        return await _context.Users.AnyAsync( u => u.Email == email);
     }
     public async Task<bool> IsUsernameExists(string username)
     {
-        return await _context.users.AnyAsync( u => u.username == username);
+        return await _context.Users.AnyAsync( u => u.Username == username);
     }
 
-    public async Task<user> Create(user newUser)
+    public async Task<User> Create(User newUser)
     {
-        _context.users.Add(newUser);
+        _context.Users.Add(newUser);
         await _context.SaveChangesAsync();
         return newUser;
     }
     
-    public async Task<user?> GetUserByEmail(string email)
+    public async Task<User?> GetUserByEmail(string email)
     {
-        return await _context.users.FirstOrDefaultAsync(u => u.email == email);
+        return await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
     }
     
-    public async Task<user?> GetUserById(string userId)
+    public async Task<User?> GetUserById(Guid userId)
     {
-        return await _context.users.FirstOrDefaultAsync(u => u.user_id == userId);
+        return await _context.Users.FirstOrDefaultAsync(u => u.UserId == userId);
     }
-    public async Task<List<user>> SearchUsers(string query, int skip, int take)
+    public async Task<List<User>> SearchUsers(string query, int skip, int take)
     {
         // Convert query to lowercase for case-insensitive comparison
         var lowerQuery = query.ToLower();
         
-        return await _context.users
-            .Where(u => u.username.ToLower().Contains(lowerQuery) || 
-                       (u.full_name != null && u.full_name.ToLower().Contains(lowerQuery)) || 
-                       (u.email != null && u.email.ToLower().Contains(lowerQuery)))
-            .OrderBy(u => u.username)
+        return await _context.Users
+            .Where(u => u.Username.ToLower().Contains(lowerQuery) || 
+                       (u.FullName != null && u.FullName.ToLower().Contains(lowerQuery)) || 
+                       (u.Email != null && u.Email.ToLower().Contains(lowerQuery)))
+            .OrderBy(u => u.Username)
             .Skip(skip)
             .Take(take)
             .ToListAsync();
     }
     
-    public async Task<List<user>> GetRandomUsers(string currentUserId, int count)
+    public async Task<List<User>> GetRandomUsers(Guid currentUserId, int count)
     {
         // Get users except the current user, ordered by a random value
-        return await _context.users
-            .Where(u => u.user_id != currentUserId)
+        return await _context.Users
+            .Where(u => u.UserId != currentUserId)
             .OrderBy(u => Guid.NewGuid()) // This creates a randomized order
             .Take(count)
             .ToListAsync();

@@ -7,20 +7,20 @@ public static class MapsterConfig
     public static void RegisterMappings()
     {
         // Đăng ký cấu hình ánh xạ cho RegisterDto -> user
-        TypeAdapterConfig<RegisterDto, user>.NewConfig()
-            .Map(dest => dest.username, src => src.username)
-            .Map(dest => dest.email, src => src.email)
-            .Map(dest => dest.full_name, src => src.full_name)
-            .Map(dest => dest.birthday, src => src.birthday)
-            .Map(dest => dest.gender, src => src.gender)
-            .Map(dest => dest.user_id, src => Guid.NewGuid().ToString())
-            .Map(dest => dest.deleted_user_email, src => (string?)null)
-            .Map(dest => dest.joined_at, src => DateTime.UtcNow)
-            .Map(dest => dest.status, src => "active")
-            .Map(dest => dest.intro, src => (string?)null)
-            .Map(dest => dest.image, src => "https://res.cloudinary.com/dapvvdxw7/image/upload/v1747159636/avatar_l2rwth.jpg")
-            .Ignore(dest => dest.password_hash)
-            .AfterMapping((src, dest) => dest.SetPassword(src.password));
+        TypeAdapterConfig<RegisterDto, User>.NewConfig()
+            .Map(dest => dest.Username, src => src.Username)
+            .Map(dest => dest.Email, src => src.Email)
+            .Map(dest => dest.FullName, src => src.FullName)
+            .Map(dest => dest.Birthday, src => src.Birthday)
+            .Map(dest => dest.Gender, src => src.Gender)
+            .Map(dest => dest.UserId, src => Guid.NewGuid().ToString())
+            .Map(dest => dest.DeletedUserEmail, src => (string?)null)
+            .Map(dest => dest.JoinedAt, src => DateTime.UtcNow)
+            .Map(dest => dest.Status, src => "active")
+            .Map(dest => dest.Intro, src => (string?)null)
+            .Map(dest => dest.Image, src => "https://res.cloudinary.com/dapvvdxw7/image/upload/v1747159636/avatar_l2rwth.jpg")
+            .Ignore(dest => dest.PasswordHash)
+            .AfterMapping((src, dest) => dest.SetPassword(src.Password));
         
         // Ánh xạ cho MessageDto -> message
         // TypeAdapterConfig<MessageDto, message>.NewConfig()
