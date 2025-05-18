@@ -52,8 +52,7 @@ public class UserRepository : IUserRepository
             .Take(take)
             .ToListAsync();
     }
-    
-    public async Task<List<user>> GetRandomUsers(string currentUserId, int count)
+      public async Task<List<user>> GetRandomUsers(string currentUserId, int count)
     {
         // Get users except the current user, ordered by a random value
         return await _context.users
@@ -61,5 +60,26 @@ public class UserRepository : IUserRepository
             .OrderBy(u => Guid.NewGuid()) // This creates a randomized order
             .Take(count)
             .ToListAsync();
+    }
+    
+    public async Task<user?> UpdateUser(string userId, user updatedUser)
+    {
+        var existingUser = await _context.users.FirstOrDefaultAsync(u => u.user_id == userId);
+        if (existingUser == null)
+        {
+            return null;
+        }
+
+        // Update only the fields that are allowed to be modified
+        existingUser.full_name = updatedUser.full_name;
+        existingUser.intro = updatedUser.intro;
+        existingUser.birthday = updatedUser.birthday;
+        existingUser.gender = updatedUser.gender;
+        existingUser.image = updatedUser.image;
+        
+        _context.users.Update(existingUser);
+        await _context.SaveChangesAsync();
+        
+        return existingUser;
     }
 }
