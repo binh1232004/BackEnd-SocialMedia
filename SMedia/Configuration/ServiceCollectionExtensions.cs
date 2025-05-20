@@ -38,13 +38,15 @@ public static class ServiceCollectionExtensions
 
         // Đăng ký các dịch vụ
         services.AddScoped<IEmailService, EmailService>();
-        services.AddScoped<IUserService, UserService>();
+        services.AddScoped<IGroupService, GroupService>();
         services.AddScoped<IJwtTokenService, JwtTokenService>();
         services.AddScoped<IPostService, PostService>();
+        services.AddScoped<IUserService, UserService>();
             
         // Đăng ký các kho lưu trữ
-        services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<IGroupRepository, GroupRepository>();
         services.AddScoped<IPostRepository, PostRepository>();
+        services.AddScoped<IUserRepository, UserRepository>();
 
         // Thêm Mapster
         services.AddMapster();

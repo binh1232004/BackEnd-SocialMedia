@@ -1020,3 +1020,794 @@ Body:
   }
 ]
 [14:15:14 INF] HTTP 200 returned for GET /api/user-posts/f49cbe12-04fe-499a-aa6c-3d6e1a6f6d56
+[14:49:57 INF] HTTP GET /api/user-posts/f49cbe12-04fe-499a-aa6c-3d6e1a6f6d56?page=1&pageSize=10 received from ::1
+[14:49:57 INF] Request: URL: http://localhost:5295/api/user-posts/f49cbe12-04fe-499a-aa6c-3d6e1a6f6d56?page=1&pageSize=10
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZjQ5Y2JlMTItMDRmZS00OTlhLWFhNmMtM2Q2ZTFhNmY2ZDU2IiwidXNlcm5hbWUiOiJhbmgwMSIsImltYWdlIjoiaHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vZGFwdnZkeHc3L2ltYWdlL3VwbG9hZC92MTc0NzE1OTYzNi9hdmF0YXJfbDJyd3RoLmpwZyIsImV4cCI6MTc1MDE3OTU0OSwiaXNzIjoiTXlBcHAiLCJhdWQiOiJNeUNsaWVudEFwcCJ9.VREJ_Vsv0nRg8O-ZVhx7ZAcgi5NNk6A1x2LV-r50bdc
+Path Parameters:
+  action: GetUserPosts
+  controller: UserPosts
+  userId: f49cbe12-04fe-499a-aa6c-3d6e1a6f6d56
+Query Parameters:
+  page: 1
+  pageSize: 10
+[14:50:03 INF] Response (Duration: 6069ms): API: GET /api/user-posts/f49cbe12-04fe-499a-aa6c-3d6e1a6f6d56
+StatusCode: 200
+Body:
+[
+  {
+    "postId": "c460c1ec-de65-4f6c-9833-50813934500d",
+    "userId": "f49cbe12-04fe-499a-aa6c-3d6e1a6f6d56",
+    "content": "This h\u00E2hahaaha.",
+    "postedAt": "2025-05-20T04:42:40.4536479",
+    "groupId": null,
+    "isApproved": true,
+    "isVisible": true,
+    "media": [
+      {
+        "mediaId": "bd19dc8e-a95c-4ea9-bdb5-26fed18c817d",
+        "mediaUrl": "https://images.wallpapersden.com/image/download/tree-alone-dark-evening-4k_bWZpam2UmZqaraWkpJRobWllrWdma2U.jpg",
+        "mediaType": "Image",
+        "uploadedAt": "2025-05-20T04:42:43.8234313",
+        "uploadedBy": "f49cbe12-04fe-499a-aa6c-3d6e1a6f6d56"
+      }
+    ],
+    "voteCount": 0,
+    "isVotedByCurrentUser": false,
+    "commentCount": 0
+  },
+  {
+    "postId": "32793a22-fe6b-4541-9f17-c764997fac73",
+    "userId": "f49cbe12-04fe-499a-aa6c-3d6e1a6f6d56",
+    "content": "This is the first post.",
+    "postedAt": "2025-05-19T18:02:31.9211881",
+    "groupId": null,
+    "isApproved": true,
+    "isVisible": true,
+    "media": [
+      {
+        "mediaId": "cd01392a-ea9e-46fc-b477-32916e958508",
+        "mediaUrl": "https://images.wallpapersden.com/image/download/tree-alone-dark-evening-4k_bWZpam2UmZqaraWkpJRobWllrWdma2U.jpg",
+        "mediaType": "Image",
+        "uploadedAt": "2025-05-19T18:02:33.2522424",
+        "uploadedBy": "f49cbe12-04fe-499a-aa6c-3d6e1a6f6d56"
+      }
+    ],
+    "voteCount": 0,
+    "isVotedByCurrentUser": false,
+    "commentCount": 0
+  }
+]
+[14:50:03 INF] HTTP 200 returned for GET /api/user-posts/f49cbe12-04fe-499a-aa6c-3d6e1a6f6d56
+[14:51:17 INF] HTTP POST /api/groups received from ::1
+[14:51:17 INF] Request Body: {
+  "groupName": "Group Hello",
+  "visibility": "Public",
+  "image": "string"
+}
+[14:51:17 INF] Request: URL: http://localhost:5295/api/groups
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZjQ5Y2JlMTItMDRmZS00OTlhLWFhNmMtM2Q2ZTFhNmY2ZDU2IiwidXNlcm5hbWUiOiJhbmgwMSIsImltYWdlIjoiaHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vZGFwdnZkeHc3L2ltYWdlL3VwbG9hZC92MTc0NzE1OTYzNi9hdmF0YXJfbDJyd3RoLmpwZyIsImV4cCI6MTc1MDE3OTU0OSwiaXNzIjoiTXlBcHAiLCJhdWQiOiJNeUNsaWVudEFwcCJ9.VREJ_Vsv0nRg8O-ZVhx7ZAcgi5NNk6A1x2LV-r50bdc
+Path Parameters:
+  action: CreateGroup
+  controller: Groups
+Body:
+{
+  "groupName": "Group Hello",
+  "visibility": "Public",
+  "image": "string"
+}
+[14:51:18 INF] Response (Duration: 1042ms): API: POST /api/groups
+StatusCode: 201
+Body:
+{
+  "groupId": "b95737b5-0f01-4855-9f36-75d4bf3ed384",
+  "groupName": "Group Hello",
+  "visibility": "Public",
+  "createdBy": "f49cbe12-04fe-499a-aa6c-3d6e1a6f6d56",
+  "createdAt": "2025-05-20T07:51:17.1577291Z",
+  "image": "string",
+  "memberCount": 1
+}
+[14:51:18 INF] HTTP 201 returned for POST /api/groups
+[14:53:04 INF] HTTP POST /api/groups received from ::1
+[14:53:04 INF] Request Body: {
+  "groupName": "Group Hello Private",
+  "visibility": "Private",
+  "image": "string"
+}
+[14:53:04 INF] Request: URL: http://localhost:5295/api/groups
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZjQ5Y2JlMTItMDRmZS00OTlhLWFhNmMtM2Q2ZTFhNmY2ZDU2IiwidXNlcm5hbWUiOiJhbmgwMSIsImltYWdlIjoiaHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vZGFwdnZkeHc3L2ltYWdlL3VwbG9hZC92MTc0NzE1OTYzNi9hdmF0YXJfbDJyd3RoLmpwZyIsImV4cCI6MTc1MDE3OTU0OSwiaXNzIjoiTXlBcHAiLCJhdWQiOiJNeUNsaWVudEFwcCJ9.VREJ_Vsv0nRg8O-ZVhx7ZAcgi5NNk6A1x2LV-r50bdc
+Path Parameters:
+  action: CreateGroup
+  controller: Groups
+Body:
+{
+  "groupName": "Group Hello Private",
+  "visibility": "Private",
+  "image": "string"
+}
+[14:53:04 INF] Response (Duration: 371ms): API: POST /api/groups
+StatusCode: 201
+Body:
+{
+  "groupId": "fe61b36e-3e22-4268-9397-8e4a288f4a12",
+  "groupName": "Group Hello Private",
+  "visibility": "Private",
+  "createdBy": "f49cbe12-04fe-499a-aa6c-3d6e1a6f6d56",
+  "createdAt": "2025-05-20T07:53:04.172095Z",
+  "image": "string",
+  "memberCount": 1
+}
+[14:53:04 INF] HTTP 201 returned for POST /api/groups
+[14:53:26 INF] HTTP GET /api/groups?page=1&pageSize=10 received from ::1
+[14:53:26 INF] Request: URL: http://localhost:5295/api/groups?page=1&pageSize=10
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZjQ5Y2JlMTItMDRmZS00OTlhLWFhNmMtM2Q2ZTFhNmY2ZDU2IiwidXNlcm5hbWUiOiJhbmgwMSIsImltYWdlIjoiaHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vZGFwdnZkeHc3L2ltYWdlL3VwbG9hZC92MTc0NzE1OTYzNi9hdmF0YXJfbDJyd3RoLmpwZyIsImV4cCI6MTc1MDE3OTU0OSwiaXNzIjoiTXlBcHAiLCJhdWQiOiJNeUNsaWVudEFwcCJ9.VREJ_Vsv0nRg8O-ZVhx7ZAcgi5NNk6A1x2LV-r50bdc
+Path Parameters:
+  action: GetGroups
+  controller: Groups
+Query Parameters:
+  page: 1
+  pageSize: 10
+[14:53:27 INF] Response (Duration: 774ms): API: GET /api/groups
+StatusCode: 200
+Body:
+[
+  {
+    "groupId": "fe61b36e-3e22-4268-9397-8e4a288f4a12",
+    "groupName": "Group Hello Private",
+    "visibility": "Private",
+    "createdBy": "f49cbe12-04fe-499a-aa6c-3d6e1a6f6d56",
+    "createdAt": "2025-05-20T07:53:04.172095",
+    "image": "string",
+    "memberCount": 1
+  },
+  {
+    "groupId": "b95737b5-0f01-4855-9f36-75d4bf3ed384",
+    "groupName": "Group Hello",
+    "visibility": "Public",
+    "createdBy": "f49cbe12-04fe-499a-aa6c-3d6e1a6f6d56",
+    "createdAt": "2025-05-20T07:51:17.1577291",
+    "image": "string",
+    "memberCount": 1
+  }
+]
+[14:53:27 INF] HTTP 200 returned for GET /api/groups
+[14:53:50 INF] HTTP GET /api/groups/fe61b36e-3e22-4268-9397-8e4a288f4a12 received from ::1
+[14:53:50 INF] Request: URL: http://localhost:5295/api/groups/fe61b36e-3e22-4268-9397-8e4a288f4a12
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZjQ5Y2JlMTItMDRmZS00OTlhLWFhNmMtM2Q2ZTFhNmY2ZDU2IiwidXNlcm5hbWUiOiJhbmgwMSIsImltYWdlIjoiaHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vZGFwdnZkeHc3L2ltYWdlL3VwbG9hZC92MTc0NzE1OTYzNi9hdmF0YXJfbDJyd3RoLmpwZyIsImV4cCI6MTc1MDE3OTU0OSwiaXNzIjoiTXlBcHAiLCJhdWQiOiJNeUNsaWVudEFwcCJ9.VREJ_Vsv0nRg8O-ZVhx7ZAcgi5NNk6A1x2LV-r50bdc
+Path Parameters:
+  action: GetGroupById
+  controller: Groups
+  groupId: fe61b36e-3e22-4268-9397-8e4a288f4a12
+[14:53:51 INF] Response (Duration: 202ms): API: GET /api/groups/fe61b36e-3e22-4268-9397-8e4a288f4a12
+StatusCode: 200
+Body:
+{
+  "groupId": "fe61b36e-3e22-4268-9397-8e4a288f4a12",
+  "groupName": "Group Hello Private",
+  "visibility": "Private",
+  "createdBy": "f49cbe12-04fe-499a-aa6c-3d6e1a6f6d56",
+  "createdAt": "2025-05-20T07:53:04.172095",
+  "image": "string",
+  "memberCount": 1
+}
+[14:53:51 INF] HTTP 200 returned for GET /api/groups/fe61b36e-3e22-4268-9397-8e4a288f4a12
+[15:08:14 INF] HTTP POST /api/group-posts received from ::1
+[15:08:14 INF] Request Body: {
+  "content": "group post 1",
+  "media": [
+    {
+      "mediaUrl": "string",
+      "mediaType": "string"
+    }
+  ],
+  "groupId": "b95737b5-0f01-4855-9f36-75d4bf3ed384"
+}
+[15:08:14 INF] Request: URL: http://localhost:5295/api/group-posts
+Authenticated: Yes
+Path Parameters:
+  action: CreateGroupPost
+  controller: GroupPosts
+Body:
+{
+  "content": "group post 1",
+  "media": [
+    {
+      "mediaUrl": "string",
+      "mediaType": "string"
+    }
+  ],
+  "groupId": "b95737b5-0f01-4855-9f36-75d4bf3ed384"
+}
+[15:08:14 INF] Response (Duration: 79ms): API: POST /api/group-posts
+StatusCode: 401
+[15:08:14 INF] HTTP 401 returned for POST /api/group-posts
+[15:14:44 INF] HTTP POST /api/group-posts received from ::1
+[15:14:44 INF] Request Body: {
+  "content": "group post 1",
+  "media": [
+    {
+      "mediaUrl": "string",
+      "mediaType": "string"
+    }
+  ],
+  "groupId": "b95737b5-0f01-4855-9f36-75d4bf3ed384"
+}
+[15:14:44 INF] Request: URL: http://localhost:5295/api/group-posts
+Authenticated: Yes
+Path Parameters:
+  action: CreateGroupPost
+  controller: GroupPosts
+Body:
+{
+  "content": "group post 1",
+  "media": [
+    {
+      "mediaUrl": "string",
+      "mediaType": "string"
+    }
+  ],
+  "groupId": "b95737b5-0f01-4855-9f36-75d4bf3ed384"
+}
+[15:14:44 INF] Response (Duration: 31ms): API: POST /api/group-posts
+StatusCode: 401
+[15:14:44 INF] HTTP 401 returned for POST /api/group-posts
+[15:15:05 INF] HTTP POST /api/group-posts received from ::1
+[15:15:05 INF] Request Body: {
+  "content": "group post 1",
+  "media": [
+    {
+      "mediaUrl": "string",
+      "mediaType": "string"
+    }
+  ],
+  "groupId": "b95737b5-0f01-4855-9f36-75d4bf3ed384"
+}
+[15:15:05 INF] Request: URL: http://localhost:5295/api/group-posts
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZjQ5Y2JlMTItMDRmZS00OTlhLWFhNmMtM2Q2ZTFhNmY2ZDU2IiwidXNlcm5hbWUiOiJhbmgwMSIsImltYWdlIjoiaHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vZGFwdnZkeHc3L2ltYWdlL3VwbG9hZC92MTc0NzE1OTYzNi9hdmF0YXJfbDJyd3RoLmpwZyIsImV4cCI6MTc1MDE3OTU0OSwiaXNzIjoiTXlBcHAiLCJhdWQiOiJNeUNsaWVudEFwcCJ9.VREJ_Vsv0nRg8O-ZVhx7ZAcgi5NNk6A1x2LV-r50bdc
+Path Parameters:
+  action: CreateGroupPost
+  controller: GroupPosts
+Body:
+{
+  "content": "group post 1",
+  "media": [
+    {
+      "mediaUrl": "string",
+      "mediaType": "string"
+    }
+  ],
+  "groupId": "b95737b5-0f01-4855-9f36-75d4bf3ed384"
+}
+[15:15:11 INF] Response (Duration: 6137ms): API: POST /api/group-posts
+StatusCode: 201
+Body:
+{
+  "postId": "d280940a-2e08-4a46-86c6-350659650671",
+  "userId": "f49cbe12-04fe-499a-aa6c-3d6e1a6f6d56",
+  "content": "group post 1",
+  "postedAt": "2025-05-20T08:15:10.1463448Z",
+  "groupId": "b95737b5-0f01-4855-9f36-75d4bf3ed384",
+  "isApproved": false,
+  "isVisible": true,
+  "media": [
+    {
+      "mediaId": "3ca40a7a-2e60-4258-a9a9-a0a0a8fd8367",
+      "mediaUrl": "string",
+      "mediaType": "string",
+      "uploadedAt": "2025-05-20T08:15:11.0841409Z",
+      "uploadedBy": "f49cbe12-04fe-499a-aa6c-3d6e1a6f6d56"
+    }
+  ],
+  "voteCount": 0,
+  "isVotedByCurrentUser": false,
+  "commentCount": 0
+}
+[15:15:11 INF] HTTP 201 returned for POST /api/group-posts
+[15:21:23 INF] HTTP POST /api/Authentication/send-otp received from ::1
+[15:21:23 INF] Request Body: {
+  "email": "anhlehongwork@gmail.com",
+  "userName": "anhmember"
+}
+[15:21:23 INF] Request: URL: http://localhost:5295/api/Authentication/send-otp
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZjQ5Y2JlMTItMDRmZS00OTlhLWFhNmMtM2Q2ZTFhNmY2ZDU2IiwidXNlcm5hbWUiOiJhbmgwMSIsImltYWdlIjoiaHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vZGFwdnZkeHc3L2ltYWdlL3VwbG9hZC92MTc0NzE1OTYzNi9hdmF0YXJfbDJyd3RoLmpwZyIsImV4cCI6MTc1MDE3OTU0OSwiaXNzIjoiTXlBcHAiLCJhdWQiOiJNeUNsaWVudEFwcCJ9.VREJ_Vsv0nRg8O-ZVhx7ZAcgi5NNk6A1x2LV-r50bdc
+Path Parameters:
+  action: SendOtp
+  controller: Authentication
+Body:
+{
+  "email": "anhlehongwork@gmail.com",
+  "userName": "anhmember"
+}
+[15:21:24 INF] Response (Duration: 165ms): API: POST /api/Authentication/send-otp
+StatusCode: 400
+Body:
+"Email already exists."
+[15:21:24 INF] HTTP 400 returned for POST /api/Authentication/send-otp
+[15:22:26 INF] HTTP POST /api/Authentication/login received from ::1
+[15:22:26 INF] Request Body: {
+  "email": "anhlehongwork@gmail.com",
+  "password": "12345678"
+}
+[15:22:26 INF] Request: URL: http://localhost:5295/api/Authentication/login
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZjQ5Y2JlMTItMDRmZS00OTlhLWFhNmMtM2Q2ZTFhNmY2ZDU2IiwidXNlcm5hbWUiOiJhbmgwMSIsImltYWdlIjoiaHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vZGFwdnZkeHc3L2ltYWdlL3VwbG9hZC92MTc0NzE1OTYzNi9hdmF0YXJfbDJyd3RoLmpwZyIsImV4cCI6MTc1MDE3OTU0OSwiaXNzIjoiTXlBcHAiLCJhdWQiOiJNeUNsaWVudEFwcCJ9.VREJ_Vsv0nRg8O-ZVhx7ZAcgi5NNk6A1x2LV-r50bdc
+Path Parameters:
+  action: Login
+  controller: Authentication
+Body:
+{
+  "email": "anhlehongwork@gmail.com",
+  "password": "12345678"
+}
+[15:22:27 INF] Response (Duration: 1142ms): API: POST /api/Authentication/login
+StatusCode: 200
+Body:
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwMzIxMzQ3LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.sB6Pp93I6RRsRBWhIWmQKffKMxSJy99_U4sR6HXnACs"
+}
+[15:22:27 INF] HTTP 200 returned for POST /api/Authentication/login
+[15:23:52 INF] HTTP POST /api/group-posts received from ::1
+[15:23:52 INF] Request Body: {
+  "content": "group post by member 01",
+  "media": [
+    {
+      "mediaUrl": "string",
+      "mediaType": "string"
+    }
+  ],
+  "groupId": "b95737b5-0f01-4855-9f36-75d4bf3ed384"
+}
+[15:23:52 INF] Request: URL: http://localhost:5295/api/group-posts
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwMzIxMzQ3LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.sB6Pp93I6RRsRBWhIWmQKffKMxSJy99_U4sR6HXnACs
+Path Parameters:
+  action: CreateGroupPost
+  controller: GroupPosts
+Body:
+{
+  "content": "group post by member 01",
+  "media": [
+    {
+      "mediaUrl": "string",
+      "mediaType": "string"
+    }
+  ],
+  "groupId": "b95737b5-0f01-4855-9f36-75d4bf3ed384"
+}
+[15:23:52 ERR] Error: User is not a member of the group.
+[15:23:52 INF] Response (Duration: 52ms): API: POST /api/group-posts
+StatusCode: 500
+[15:24:52 INF] HTTP POST /api/group-posts received from ::1
+[15:24:52 INF] Request Body: {
+  "content": "group post by member 01",
+  "media": [
+    {
+      "mediaUrl": "string",
+      "mediaType": "string"
+    }
+  ],
+  "groupId": "b95737b5-0f01-4855-9f36-75d4bf3ed384"
+}
+[15:24:52 INF] Request: URL: http://localhost:5295/api/group-posts
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwMzIxMzQ3LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.sB6Pp93I6RRsRBWhIWmQKffKMxSJy99_U4sR6HXnACs
+Path Parameters:
+  action: CreateGroupPost
+  controller: GroupPosts
+Body:
+{
+  "content": "group post by member 01",
+  "media": [
+    {
+      "mediaUrl": "string",
+      "mediaType": "string"
+    }
+  ],
+  "groupId": "b95737b5-0f01-4855-9f36-75d4bf3ed384"
+}
+[15:24:57 ERR] Error: User is not a member of the group.
+[15:24:57 INF] Response (Duration: 4921ms): API: POST /api/group-posts
+StatusCode: 500
+[15:25:56 INF] HTTP POST /api/group-members/request received from ::1
+[15:25:56 INF] Request Body: {
+  "groupId": "b95737b5-0f01-4855-9f36-75d4bf3ed384"
+}
+[15:25:56 INF] Request: URL: http://localhost:5295/api/group-members/request
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwMzIxMzQ3LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.sB6Pp93I6RRsRBWhIWmQKffKMxSJy99_U4sR6HXnACs
+Path Parameters:
+  action: RequestJoinGroup
+  controller: GroupMembers
+Body:
+{
+  "groupId": "b95737b5-0f01-4855-9f36-75d4bf3ed384"
+}
+[15:25:58 INF] Response (Duration: 1450ms): API: POST /api/group-members/request
+StatusCode: 201
+Body:
+{
+  "groupId": "b95737b5-0f01-4855-9f36-75d4bf3ed384",
+  "userId": "e60a6ec4-2820-4aec-933d-d763d81b7cb2",
+  "role": "Member",
+  "joinedAt": "2025-05-20T08:25:57.5434956Z",
+  "status": "Active"
+}
+[15:25:58 INF] HTTP 201 returned for POST /api/group-members/request
+[16:08:57 INF] HTTP POST /api/group-posts received from ::1
+[16:08:57 INF] Request Body: {
+  "content": "group post by member 01",
+  "media": [
+    {
+      "mediaUrl": "string",
+      "mediaType": "string"
+    }
+  ],
+  "groupId": "b95737b5-0f01-4855-9f36-75d4bf3ed384"
+}
+[16:08:57 INF] Request: URL: http://localhost:5295/api/group-posts
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwMzIxMzQ3LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.sB6Pp93I6RRsRBWhIWmQKffKMxSJy99_U4sR6HXnACs
+Path Parameters:
+  action: CreateGroupPost
+  controller: GroupPosts
+Body:
+{
+  "content": "group post by member 01",
+  "media": [
+    {
+      "mediaUrl": "string",
+      "mediaType": "string"
+    }
+  ],
+  "groupId": "b95737b5-0f01-4855-9f36-75d4bf3ed384"
+}
+[16:09:00 INF] Response (Duration: 2604ms): API: POST /api/group-posts
+StatusCode: 201
+Body:
+{
+  "postId": "a9f3ce2a-4353-4607-8793-8bf7031d64af",
+  "userId": "e60a6ec4-2820-4aec-933d-d763d81b7cb2",
+  "content": "group post by member 01",
+  "postedAt": "2025-05-20T09:08:59.9192171Z",
+  "groupId": "b95737b5-0f01-4855-9f36-75d4bf3ed384",
+  "isApproved": false,
+  "isVisible": true,
+  "media": [
+    {
+      "mediaId": "7b671961-11fd-4d0d-84e7-f10dcd8ca7cd",
+      "mediaUrl": "string",
+      "mediaType": "string",
+      "uploadedAt": "2025-05-20T09:09:00.3437476Z",
+      "uploadedBy": "e60a6ec4-2820-4aec-933d-d763d81b7cb2"
+    }
+  ],
+  "voteCount": 0,
+  "isVotedByCurrentUser": false,
+  "commentCount": 0
+}
+[16:09:00 INF] HTTP 201 returned for POST /api/group-posts
+[16:10:39 INF] HTTP POST /api/group-members/request received from ::1
+[16:10:39 INF] Request Body: {
+  "groupId": "fe61b36e-3e22-4268-9397-8e4a288f4a12"
+}
+[16:10:39 INF] Request: URL: http://localhost:5295/api/group-members/request
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwMzIxMzQ3LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.sB6Pp93I6RRsRBWhIWmQKffKMxSJy99_U4sR6HXnACs
+Path Parameters:
+  action: RequestJoinGroup
+  controller: GroupMembers
+Body:
+{
+  "groupId": "fe61b36e-3e22-4268-9397-8e4a288f4a12"
+}
+[16:10:39 INF] Response (Duration: 377ms): API: POST /api/group-members/request
+StatusCode: 201
+Body:
+{
+  "groupId": "fe61b36e-3e22-4268-9397-8e4a288f4a12",
+  "userId": "e60a6ec4-2820-4aec-933d-d763d81b7cb2",
+  "role": "Member",
+  "joinedAt": "2025-05-20T09:10:39.5473779Z",
+  "status": "Pending"
+}
+[16:10:39 INF] HTTP 201 returned for POST /api/group-members/request
+[16:11:18 INF] HTTP POST /api/group-posts received from ::1
+[16:11:18 INF] Request Body: {
+  "content": "private group post by member 01 in",
+  "media": [
+    {
+      "mediaUrl": "string",
+      "mediaType": "string"
+    }
+  ],
+  "groupId": "fe61b36e-3e22-4268-9397-8e4a288f4a12"
+}
+[16:11:18 INF] Request: URL: http://localhost:5295/api/group-posts
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwMzIxMzQ3LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.sB6Pp93I6RRsRBWhIWmQKffKMxSJy99_U4sR6HXnACs
+Path Parameters:
+  action: CreateGroupPost
+  controller: GroupPosts
+Body:
+{
+  "content": "private group post by member 01 in",
+  "media": [
+    {
+      "mediaUrl": "string",
+      "mediaType": "string"
+    }
+  ],
+  "groupId": "fe61b36e-3e22-4268-9397-8e4a288f4a12"
+}
+[16:11:18 ERR] Error: User is not a member of the group.
+[16:11:18 INF] Response (Duration: 155ms): API: POST /api/group-posts
+StatusCode: 500
+[16:15:08 INF] HTTP POST /api/group-members/fe61b36e-3e22-4268-9397-8e4a288f4a12/approve received from ::1
+[16:15:08 INF] Request Body: {
+  "userId": "e60a6ec4-2820-4aec-933d-d763d81b7cb2",
+  "approve": true
+}
+[16:15:08 INF] Request: URL: http://localhost:5295/api/group-members/fe61b36e-3e22-4268-9397-8e4a288f4a12/approve
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwMzIxMzQ3LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.sB6Pp93I6RRsRBWhIWmQKffKMxSJy99_U4sR6HXnACs
+Path Parameters:
+  action: ApproveMember
+  controller: GroupMembers
+  groupId: fe61b36e-3e22-4268-9397-8e4a288f4a12
+Body:
+{
+  "userId": "e60a6ec4-2820-4aec-933d-d763d81b7cb2",
+  "approve": true
+}
+[16:15:08 INF] Response (Duration: 106ms): API: POST /api/group-members/fe61b36e-3e22-4268-9397-8e4a288f4a12/approve
+StatusCode: 401
+Body:
+{
+  "error": "User is not an admin of the group."
+}
+[16:15:08 INF] HTTP 401 returned for POST /api/group-members/fe61b36e-3e22-4268-9397-8e4a288f4a12/approve
+[16:18:42 INF] HTTP POST /api/group-members/fe61b36e-3e22-4268-9397-8e4a288f4a12/approve received from ::1
+[16:18:42 INF] Request Body: {
+  "userId": "e60a6ec4-2820-4aec-933d-d763d81b7cb2",
+  "approve": true
+}
+[16:18:42 INF] Request: URL: http://localhost:5295/api/group-members/fe61b36e-3e22-4268-9397-8e4a288f4a12/approve
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZjQ5Y2JlMTItMDRmZS00OTlhLWFhNmMtM2Q2ZTFhNmY2ZDU2IiwidXNlcm5hbWUiOiJhbmgwMSIsImltYWdlIjoiaHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vZGFwdnZkeHc3L2ltYWdlL3VwbG9hZC92MTc0NzE1OTYzNi9hdmF0YXJfbDJyd3RoLmpwZyIsImV4cCI6MTc1MDE3OTU0OSwiaXNzIjoiTXlBcHAiLCJhdWQiOiJNeUNsaWVudEFwcCJ9.VREJ_Vsv0nRg8O-ZVhx7ZAcgi5NNk6A1x2LV-r50bdc
+Path Parameters:
+  action: ApproveMember
+  controller: GroupMembers
+  groupId: fe61b36e-3e22-4268-9397-8e4a288f4a12
+Body:
+{
+  "userId": "e60a6ec4-2820-4aec-933d-d763d81b7cb2",
+  "approve": true
+}
+[16:18:42 INF] Response (Duration: 447ms): API: POST /api/group-members/fe61b36e-3e22-4268-9397-8e4a288f4a12/approve
+StatusCode: 200
+Body:
+{
+  "groupId": "fe61b36e-3e22-4268-9397-8e4a288f4a12",
+  "userId": "e60a6ec4-2820-4aec-933d-d763d81b7cb2",
+  "role": "Member",
+  "joinedAt": "2025-05-20T09:18:42.5630165Z",
+  "status": "Active"
+}
+[16:18:42 INF] HTTP 200 returned for POST /api/group-members/fe61b36e-3e22-4268-9397-8e4a288f4a12/approve
+[16:19:10 INF] HTTP POST /api/group-posts received from ::1
+[16:19:10 INF] Request Body: {
+  "content": "private group post by member 01 in",
+  "media": [
+    {
+      "mediaUrl": "string",
+      "mediaType": "string"
+    }
+  ],
+  "groupId": "fe61b36e-3e22-4268-9397-8e4a288f4a12"
+}
+[16:19:10 INF] Request: URL: http://localhost:5295/api/group-posts
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZjQ5Y2JlMTItMDRmZS00OTlhLWFhNmMtM2Q2ZTFhNmY2ZDU2IiwidXNlcm5hbWUiOiJhbmgwMSIsImltYWdlIjoiaHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vZGFwdnZkeHc3L2ltYWdlL3VwbG9hZC92MTc0NzE1OTYzNi9hdmF0YXJfbDJyd3RoLmpwZyIsImV4cCI6MTc1MDE3OTU0OSwiaXNzIjoiTXlBcHAiLCJhdWQiOiJNeUNsaWVudEFwcCJ9.VREJ_Vsv0nRg8O-ZVhx7ZAcgi5NNk6A1x2LV-r50bdc
+Path Parameters:
+  action: CreateGroupPost
+  controller: GroupPosts
+Body:
+{
+  "content": "private group post by member 01 in",
+  "media": [
+    {
+      "mediaUrl": "string",
+      "mediaType": "string"
+    }
+  ],
+  "groupId": "fe61b36e-3e22-4268-9397-8e4a288f4a12"
+}
+[16:19:10 INF] Response (Duration: 240ms): API: POST /api/group-posts
+StatusCode: 201
+Body:
+{
+  "postId": "027942ce-2621-45a2-8d4f-d69b3a6e066e",
+  "userId": "f49cbe12-04fe-499a-aa6c-3d6e1a6f6d56",
+  "content": "private group post by member 01 in",
+  "postedAt": "2025-05-20T09:19:10.3344701Z",
+  "groupId": "fe61b36e-3e22-4268-9397-8e4a288f4a12",
+  "isApproved": false,
+  "isVisible": true,
+  "media": [
+    {
+      "mediaId": "19e23e1b-13a2-48d5-9330-b77ee616740e",
+      "mediaUrl": "string",
+      "mediaType": "string",
+      "uploadedAt": "2025-05-20T09:19:10.4859229Z",
+      "uploadedBy": "f49cbe12-04fe-499a-aa6c-3d6e1a6f6d56"
+    }
+  ],
+  "voteCount": 0,
+  "isVotedByCurrentUser": false,
+  "commentCount": 0
+}
+[16:19:10 INF] HTTP 201 returned for POST /api/group-posts
+[16:19:52 INF] HTTP POST /api/group-posts received from ::1
+[16:19:52 INF] Request Body: {
+  "content": "private group real member post by member 01 in",
+  "media": [
+    {
+      "mediaUrl": "string",
+      "mediaType": "string"
+    }
+  ],
+  "groupId": "fe61b36e-3e22-4268-9397-8e4a288f4a12"
+}
+[16:19:52 INF] Request: URL: http://localhost:5295/api/group-posts
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwMzIxMzQ3LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.sB6Pp93I6RRsRBWhIWmQKffKMxSJy99_U4sR6HXnACs
+Path Parameters:
+  action: CreateGroupPost
+  controller: GroupPosts
+Body:
+{
+  "content": "private group real member post by member 01 in",
+  "media": [
+    {
+      "mediaUrl": "string",
+      "mediaType": "string"
+    }
+  ],
+  "groupId": "fe61b36e-3e22-4268-9397-8e4a288f4a12"
+}
+[16:19:53 INF] Response (Duration: 244ms): API: POST /api/group-posts
+StatusCode: 201
+Body:
+{
+  "postId": "6e252b58-8b7e-4376-b7df-034f12e7c578",
+  "userId": "e60a6ec4-2820-4aec-933d-d763d81b7cb2",
+  "content": "private group real member post by member 01 in",
+  "postedAt": "2025-05-20T09:19:52.9103985Z",
+  "groupId": "fe61b36e-3e22-4268-9397-8e4a288f4a12",
+  "isApproved": false,
+  "isVisible": true,
+  "media": [
+    {
+      "mediaId": "a750e98e-0202-4fd6-89bf-22caf6744eef",
+      "mediaUrl": "string",
+      "mediaType": "string",
+      "uploadedAt": "2025-05-20T09:19:53.0714626Z",
+      "uploadedBy": "e60a6ec4-2820-4aec-933d-d763d81b7cb2"
+    }
+  ],
+  "voteCount": 0,
+  "isVotedByCurrentUser": false,
+  "commentCount": 0
+}
+[16:19:53 INF] HTTP 201 returned for POST /api/group-posts
+[16:21:32 INF] HTTP POST /api/group-posts/fe61b36e-3e22-4268-9397-8e4a288f4a12/approve received from ::1
+[16:21:32 INF] Request Body: {
+  "postId": "6e252b58-8b7e-4376-b7df-034f12e7c578",
+  "approve": true
+}
+[16:21:32 INF] Request: URL: http://localhost:5295/api/group-posts/fe61b36e-3e22-4268-9397-8e4a288f4a12/approve
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwMzIxMzQ3LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.sB6Pp93I6RRsRBWhIWmQKffKMxSJy99_U4sR6HXnACs
+Path Parameters:
+  action: ApproveGroupPost
+  controller: GroupPosts
+  groupId: fe61b36e-3e22-4268-9397-8e4a288f4a12
+Body:
+{
+  "postId": "6e252b58-8b7e-4376-b7df-034f12e7c578",
+  "approve": true
+}
+[16:21:32 INF] Response (Duration: 58ms): API: POST /api/group-posts/fe61b36e-3e22-4268-9397-8e4a288f4a12/approve
+StatusCode: 401
+Body:
+{
+  "error": "User is not an admin of the group."
+}
+[16:21:32 INF] HTTP 401 returned for POST /api/group-posts/fe61b36e-3e22-4268-9397-8e4a288f4a12/approve
+[16:21:52 INF] HTTP POST /api/group-posts/fe61b36e-3e22-4268-9397-8e4a288f4a12/approve received from ::1
+[16:21:52 INF] Request Body: {
+  "postId": "6e252b58-8b7e-4376-b7df-034f12e7c578",
+  "approve": true
+}
+[16:21:52 INF] Request: URL: http://localhost:5295/api/group-posts/fe61b36e-3e22-4268-9397-8e4a288f4a12/approve
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZjQ5Y2JlMTItMDRmZS00OTlhLWFhNmMtM2Q2ZTFhNmY2ZDU2IiwidXNlcm5hbWUiOiJhbmgwMSIsImltYWdlIjoiaHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vZGFwdnZkeHc3L2ltYWdlL3VwbG9hZC92MTc0NzE1OTYzNi9hdmF0YXJfbDJyd3RoLmpwZyIsImV4cCI6MTc1MDE3OTU0OSwiaXNzIjoiTXlBcHAiLCJhdWQiOiJNeUNsaWVudEFwcCJ9.VREJ_Vsv0nRg8O-ZVhx7ZAcgi5NNk6A1x2LV-r50bdc
+Path Parameters:
+  action: ApproveGroupPost
+  controller: GroupPosts
+  groupId: fe61b36e-3e22-4268-9397-8e4a288f4a12
+Body:
+{
+  "postId": "6e252b58-8b7e-4376-b7df-034f12e7c578",
+  "approve": true
+}
+[16:21:53 INF] Response (Duration: 694ms): API: POST /api/group-posts/fe61b36e-3e22-4268-9397-8e4a288f4a12/approve
+StatusCode: 200
+Body:
+{
+  "postId": "6e252b58-8b7e-4376-b7df-034f12e7c578",
+  "userId": "e60a6ec4-2820-4aec-933d-d763d81b7cb2",
+  "content": "private group real member post by member 01 in",
+  "postedAt": "2025-05-20T09:19:52.9103985",
+  "groupId": "fe61b36e-3e22-4268-9397-8e4a288f4a12",
+  "isApproved": true,
+  "isVisible": true,
+  "media": [
+    {
+      "mediaId": "a750e98e-0202-4fd6-89bf-22caf6744eef",
+      "mediaUrl": "string",
+      "mediaType": "string",
+      "uploadedAt": "2025-05-20T09:19:53.0714626",
+      "uploadedBy": "e60a6ec4-2820-4aec-933d-d763d81b7cb2"
+    }
+  ],
+  "voteCount": 0,
+  "isVotedByCurrentUser": false,
+  "commentCount": 0
+}
+[16:21:53 INF] HTTP 200 returned for POST /api/group-posts/fe61b36e-3e22-4268-9397-8e4a288f4a12/approve
+[16:22:14 INF] HTTP GET /api/group-posts/fe61b36e-3e22-4268-9397-8e4a288f4a12?page=1&pageSize=10 received from ::1
+[16:22:14 INF] Request: URL: http://localhost:5295/api/group-posts/fe61b36e-3e22-4268-9397-8e4a288f4a12?page=1&pageSize=10
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZjQ5Y2JlMTItMDRmZS00OTlhLWFhNmMtM2Q2ZTFhNmY2ZDU2IiwidXNlcm5hbWUiOiJhbmgwMSIsImltYWdlIjoiaHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vZGFwdnZkeHc3L2ltYWdlL3VwbG9hZC92MTc0NzE1OTYzNi9hdmF0YXJfbDJyd3RoLmpwZyIsImV4cCI6MTc1MDE3OTU0OSwiaXNzIjoiTXlBcHAiLCJhdWQiOiJNeUNsaWVudEFwcCJ9.VREJ_Vsv0nRg8O-ZVhx7ZAcgi5NNk6A1x2LV-r50bdc
+Path Parameters:
+  action: GetGroupPosts
+  controller: GroupPosts
+  groupId: fe61b36e-3e22-4268-9397-8e4a288f4a12
+Query Parameters:
+  page: 1
+  pageSize: 10
+[16:22:14 INF] Response (Duration: 675ms): API: GET /api/group-posts/fe61b36e-3e22-4268-9397-8e4a288f4a12
+StatusCode: 200
+Body:
+[
+  {
+    "postId": "6e252b58-8b7e-4376-b7df-034f12e7c578",
+    "userId": "e60a6ec4-2820-4aec-933d-d763d81b7cb2",
+    "content": "private group real member post by member 01 in",
+    "postedAt": "2025-05-20T09:19:52.9103985",
+    "groupId": "fe61b36e-3e22-4268-9397-8e4a288f4a12",
+    "isApproved": true,
+    "isVisible": true,
+    "media": [
+      {
+        "mediaId": "a750e98e-0202-4fd6-89bf-22caf6744eef",
+        "mediaUrl": "string",
+        "mediaType": "string",
+        "uploadedAt": "2025-05-20T09:19:53.0714626",
+        "uploadedBy": "e60a6ec4-2820-4aec-933d-d763d81b7cb2"
+      }
+    ],
+    "voteCount": 0,
+    "isVotedByCurrentUser": false,
+    "commentCount": 0
+  }
+]
+[16:22:14 INF] HTTP 200 returned for GET /api/group-posts/fe61b36e-3e22-4268-9397-8e4a288f4a12

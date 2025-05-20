@@ -18,4 +18,5 @@ public interface IPostRepository
     Task DeleteMediaByPostIdAsync(Guid postId);
     Task<bool> IsGroupMemberAsync(Guid userId, Guid groupId);
     Task<bool> IsGroupAdminAsync(Guid userId, Guid groupId);
+    Task SetPostsInvisibleByUserInGroupAsync(Guid userId, Guid groupId);
 }
