@@ -191,6 +191,9 @@ public partial class ApplicationDbContext : DbContext
             entity.HasIndex(e => e.ReceiverId, "IDX_Messages_ReceiverId");
 
             entity.HasIndex(e => e.SenderId, "IDX_Messages_SenderId");
+            
+            entity.Property(e => e.IsRead).HasDefaultValue(false);
+
 
             entity.Property(e => e.MessageId).ValueGeneratedNever();
             entity.Property(e => e.IsVisible).HasDefaultValue(true);
@@ -315,12 +318,12 @@ public partial class ApplicationDbContext : DbContext
 
             entity.HasIndex(e => e.FollowerId, "IDX_UserFollows_FollowerId");
 
-            entity.HasOne(d => d.Followed).WithMany(p => p.Followings)
+            entity.HasOne(d => d.Followed).WithMany(p => p.Followers) // Sửa: Followed ánh xạ tới Followers
                 .HasForeignKey(d => d.FollowedId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_UserFollows_FollowedId");
 
-            entity.HasOne(d => d.Follower).WithMany(p => p.Followers)
+            entity.HasOne(d => d.Follower).WithMany(p => p.Followings) // Sửa: Follower ánh xạ tới Followings
                 .HasForeignKey(d => d.FollowerId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_UserFollows_FollowerId");
