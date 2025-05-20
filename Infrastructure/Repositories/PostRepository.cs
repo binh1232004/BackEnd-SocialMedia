@@ -172,5 +172,19 @@ namespace Infrastructure.Repositories
             Console.WriteLine($"User {userId} is {(isAdmin ? "" : "not")} an admin of group {groupId}");
             return isAdmin;
         }
+        public async Task SetPostsInvisibleByUserInGroupAsync(Guid userId, Guid groupId)
+        {
+            var posts = await _context.Posts
+                .Where(p => p.UserId == userId && p.GroupId == groupId && p.IsVisible == true)
+                .ToListAsync();
+
+            foreach (var post in posts)
+            {
+                post.IsVisible = false;
+            }
+
+            await _context.SaveChangesAsync();
+            Console.WriteLine($"Set {posts.Count} posts invisible for user {userId} in group {groupId}");
+        }
     }
 }

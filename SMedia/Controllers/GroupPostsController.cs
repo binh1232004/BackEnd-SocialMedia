@@ -36,5 +36,35 @@ namespace SMedia.Controllers
             var posts = await _postService.GetGroupPostsAsync(groupId, page, pageSize, currentUserId);
             return Ok(posts);
         }
+        
+        [HttpPost("{groupId}/approve")]
+        public async Task<ActionResult<PostDto>> ApproveGroupPost(Guid groupId, [FromBody] GroupPostApproveDto approveDto)
+        {
+            try
+            {
+                if (!Guid.TryParse(User.FindFirst("user_id")?.Value, out var adminId))
+                    return Unauthorized(new { Error = "Invalid token: user_id is missing or invalid." });
+
+                var post = await _postService.ApproveGroupPostAsync(groupId, approveDto, adminId);
+                return Ok(post);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new { Error = ex.Message });
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(new { Error = ex.Message });
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return Unauthorized(new { Error = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error approving post {approveDto.PostId} for group {groupId}: {ex.Message}");
+                return StatusCode(500, new { Error = "An error occurred while approving the post." });
+            }
+        }
     }
 }
