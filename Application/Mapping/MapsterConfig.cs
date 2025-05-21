@@ -16,7 +16,7 @@ public static class MapsterConfig
             .Map(dest => dest.Gender, src => src.Gender)
             .Map(dest => dest.UserId, src => Guid.NewGuid().ToString())
             .Map(dest => dest.DeletedUserEmail, src => (string?)null)
-            .Map(dest => dest.JoinedAt, src => DateTime.UtcNow)
+            .Map(dest => dest.JoinedAt, src => DateTimeHelper.GetVietnamTime())
             .Map(dest => dest.Status, src => "active")
             .Map(dest => dest.Intro, src => (string?)null)
             .Map(dest => dest.Image,
@@ -33,7 +33,7 @@ public static class MapsterConfig
         //     .Map(dest => dest.content, src => src.content)
         //     .Map(dest => dest.media_type, src => src.media_type)
         //     .Map(dest => dest.media_url, src => src.media_url)
-        //     .Map(dest => dest.sent_time, src => src.sent_time ?? DateTime.UtcNow) // Gán mặc định nếu null
+        //     .Map(dest => dest.sent_time, src => src.sent_time ?? DateTimeHelper.GetVietnamTime()) // Gán mặc định nếu null
         //     .Map(dest => dest.is_read, src => src.is_read ?? false); // Gán mặc định nếu null
         //
         // // Ánh xạ cho message -> MessageDto
@@ -51,7 +51,7 @@ public static class MapsterConfig
         // MediaCreateDto -> Media
         TypeAdapterConfig<MediaCreateDto, Media>.NewConfig()
             .Map(dest => dest.MediaId, src => Guid.NewGuid())
-            .Map(dest => dest.UploadedAt, src => DateTime.UtcNow)
+            .Map(dest => dest.UploadedAt, src => DateTimeHelper.GetVietnamTime())
             .Ignore(dest => dest.UploadedBy)
             .Ignore(dest => dest.PostId);
 
@@ -59,7 +59,7 @@ public static class MapsterConfig
         TypeAdapterConfig<(PostCreateDto Dto, Guid UserId), Post>.NewConfig()
             .Map(dest => dest.PostId, src => Guid.NewGuid())
             .Map(dest => dest.UserId, src => src.UserId)
-            .Map(dest => dest.PostedAt, src => DateTime.UtcNow)
+            .Map(dest => dest.PostedAt, src => DateTimeHelper.GetVietnamTime())
             .Map(dest => dest.IsApproved, src => true)
             .Map(dest => dest.GroupId, src => (Guid?)null)
             .Map(dest => dest.IsVisible, src => true)
@@ -71,7 +71,7 @@ public static class MapsterConfig
             .Map(dest => dest.PostId, src => Guid.NewGuid())
             .Map(dest => dest.UserId, src => src.UserId)
             .Map(dest => dest.GroupId, src => src.Dto.GroupId)
-            .Map(dest => dest.PostedAt, src => DateTime.UtcNow)
+            .Map(dest => dest.PostedAt, src => DateTimeHelper.GetVietnamTime())
             .Map(dest => dest.IsApproved, src => false)
             .Map(dest => dest.IsVisible, src => true)
             .Map(dest => dest.Content, src => src.Dto.Content)
@@ -97,7 +97,7 @@ public static class MapsterConfig
         TypeAdapterConfig<(GroupCreateDto Dto, Guid UserId), Group>.NewConfig()
             .Map(dest => dest.GroupId, src => Guid.NewGuid())
             .Map(dest => dest.CreatedBy, src => src.UserId)
-            .Map(dest => dest.CreatedAt, src => DateTime.UtcNow)
+            .Map(dest => dest.CreatedAt, src => DateTimeHelper.GetVietnamTime())
             .Map(dest => dest.GroupName, src => src.Dto.GroupName)
             .Map(dest => dest.Visibility, src => src.Dto.Visibility)
             .Map(dest => dest.Image, src => src.Dto.Image);
@@ -111,7 +111,7 @@ public static class MapsterConfig
             .Map(dest => dest.GroupId, src => src.Dto.GroupId)
             .Map(dest => dest.UserId, src => src.UserId)
             .Map(dest => dest.Role, src => "Member")
-            .Map(dest => dest.JoinedAt, src => DateTime.UtcNow)
+            .Map(dest => dest.JoinedAt, src => DateTimeHelper.GetVietnamTime())
             .Map(dest => dest.Status, src => "Pending"); // Private group mặc định Pending
 
         // GroupMember -> GroupMemberDto
@@ -120,11 +120,10 @@ public static class MapsterConfig
         TypeAdapterConfig<Comment, CommentDto>.NewConfig();
 
         TypeAdapterConfig<CommentCreateDto, Comment>.NewConfig()
+            .Map(dest => dest.PostedAt, src => DateTimeHelper.GetVietnamTime())
             .Ignore(dest => dest.CommentId)
             .Ignore(dest => dest.PostId)
-            .Ignore(dest => dest.UserId)
-            .Ignore(dest => dest.PostedAt);
-
+            .Ignore(dest => dest.UserId);
 
         // -------------------------------------------------------------------------------------------------------------------
         // -------------------------------------------------------------------------------------------------------------------
