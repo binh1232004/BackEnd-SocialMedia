@@ -264,7 +264,7 @@ namespace Application.Services
             }
         }
 
-        public async Task<CommentDto> CreateCommentAsync(Guid postId, CommentCreateDto commentDto, Guid userId)
+        public async Task<StaticCommentDto> CreateCommentAsync(Guid postId, StaticCommentCreateDto commentDto, Guid userId)
         {
             try
             {
@@ -286,7 +286,7 @@ namespace Application.Services
 
                 await _postRepository.CreateCommentAsync(comment);
                 Console.WriteLine($"Created comment {comment.CommentId} for post {postId}");
-                return comment.Adapt<CommentDto>();
+                return comment.Adapt<StaticCommentDto>();
             }
             catch (Exception ex)
             {

@@ -44,12 +44,15 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IUserService, UserService>();
         services.AddScoped<IFollowService, FollowService>();
         services.AddScoped<ISearchService, SearchService>();
+        services.AddScoped<ICommentService, CommentService>();
             
         // Đăng ký các kho lưu trữ
         services.AddScoped<IGroupRepository, GroupRepository>();
         services.AddScoped<IPostRepository, PostRepository>();
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IFollowRepository, FollowRepository>();
+        services.AddScoped<ICommentRepository, CommentRepository>();
+        
         // Thêm Mapster
         services.AddMapster();
         MapsterConfig.RegisterMappings();

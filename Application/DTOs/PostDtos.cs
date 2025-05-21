@@ -49,13 +49,13 @@ public class PostDtos
         public MediaCreateDto[] Media { get; set; } = Array.Empty<MediaCreateDto>();
     }
 
-    public class CommentCreateDto
+    public class StaticCommentCreateDto
     {
         public string Content { get; set; } = string.Empty;
         public Guid? ParentCommentId { get; set; }
     }
 
-    public class CommentDto
+    public class StaticCommentDto
     {
         public Guid CommentId { get; set; }
         public Guid PostId { get; set; }
