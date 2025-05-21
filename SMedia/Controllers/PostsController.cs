@@ -48,7 +48,7 @@ namespace SMedia.Controllers
         }
 
         [HttpPost("{postId}/comments")]
-        public async Task<ActionResult<CommentDto>> CreateComment(Guid postId, [FromBody] CommentCreateDto commentDto)
+        public async Task<ActionResult<StaticCommentDto>> CreateComment(Guid postId, [FromBody] StaticCommentCreateDto commentDto)
         {
             var userId = Guid.Parse(User.FindFirst("user_id")?.Value ?? throw new UnauthorizedAccessException("Invalid token."));
             var comment = await _postService.CreateCommentAsync(postId, commentDto, userId);

@@ -2,6 +2,7 @@ using Application.DTOs;
 using static Application.DTOs.PostDtos;
 using Mapster;
 using Domain.Entities;
+using CommentDto = Application.DTOs.CommentDto;
 
 public static class MapsterConfig
 {
@@ -117,9 +118,9 @@ public static class MapsterConfig
         // GroupMember -> GroupMemberDto
         TypeAdapterConfig<GroupMember, GroupMemberDto>.NewConfig();
 
-        TypeAdapterConfig<Comment, CommentDto>.NewConfig();
+        TypeAdapterConfig<Comment, PostDtos.StaticCommentDto>.NewConfig();
 
-        TypeAdapterConfig<CommentCreateDto, Comment>.NewConfig()
+        TypeAdapterConfig<PostDtos.StaticCommentDto, Comment>.NewConfig()
             .Map(dest => dest.PostedAt, src => DateTimeHelper.GetVietnamTime())
             .Ignore(dest => dest.CommentId)
             .Ignore(dest => dest.PostId)
@@ -151,13 +152,26 @@ public static class MapsterConfig
             .Map(dest => dest.Followed, src => src.Followed);
 
         // Cấu hình ánh xạ cho (Guid, string, string?, string?, int) -> UserSuggestionDto
-        TypeAdapterConfig<(Guid UserId, string Username, string? FullName, string? Image, int MutualFollowersCount), UserSuggestionDto>.NewConfig()
+        TypeAdapterConfig<(Guid UserId, string Username, string? FullName, string? Image, int MutualFollowersCount),
+                UserSuggestionDto>.NewConfig()
             .Map(dest => dest.UserId, src => src.UserId)
             .Map(dest => dest.Username, src => src.Username)
             .Map(dest => dest.FullName, src => src.FullName)
             .Map(dest => dest.Image, src => src.Image)
             .Map(dest => dest.MutualFollowersCount, src => src.MutualFollowersCount);
-        
+
+
+        // Ánh xạ mới cho Comment
+        TypeAdapterConfig<Comment, CommentDto>.NewConfig()
+            .Map(dest => dest.CommentId, src => src.CommentId)
+            .Map(dest => dest.PostId, src => src.PostId)
+            .Map(dest => dest.UserId, src => src.UserId)
+            .Map(dest => dest.Username, src => src.User.Username)
+            .Map(dest => dest.ParentCommentId, src => src.ParentCommentId)
+            .Map(dest => dest.Content, src => src.Content)
+            .Map(dest => dest.PostedAt, src => src.PostedAt)
+            .Map(dest => dest.ChildComments, src => src.ChildComments);
+
         // không được xóa ------------------------------------------------------------------------------------------------------------
         // không được xóa ------------------------------------------------------------------------------------------------------------
         // không được xóa ------------------------------------------------------------------------------------------------------------

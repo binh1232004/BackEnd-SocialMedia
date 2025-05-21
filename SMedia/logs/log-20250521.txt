@@ -668,3 +668,233 @@ Body:
   "commentCount": 0
 }
 [16:17:50 INF] HTTP 201 returned for POST /api/user-posts
+[16:40:27 INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json received from ::1
+[16:40:27 INF] Request: URL: https://localhost:44357/.well-known/appspecific/com.chrome.devtools.json
+Authenticated: Yes
+[16:40:27 INF] Response (Duration: 77ms): API: GET /.well-known/appspecific/com.chrome.devtools.json
+StatusCode: 404
+[16:40:27 INF] HTTP 404 returned for GET /.well-known/appspecific/com.chrome.devtools.json
+[16:57:59 INF] HTTP GET /api/Comments/post/2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657?skip=0&take=10&nested=false received from ::1
+[16:57:59 INF] Request: URL: https://localhost:44357/api/Comments/post/2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657?skip=0&take=10&nested=false
+Authenticated: Yes
+Path Parameters:
+  action: GetCommentsByPost
+  controller: Comments
+  postId: 2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657
+Query Parameters:
+  skip: 0
+  take: 10
+  nested: false
+[16:57:59 INF] Response (Duration: 97ms): API: GET /api/Comments/post/2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657
+StatusCode: 401
+[16:57:59 INF] HTTP 401 returned for GET /api/Comments/post/2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657
+[16:59:31 INF] HTTP GET /api/Comments/post/2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657?skip=0&take=10&nested=false received from ::1
+[16:59:31 INF] Request: URL: http://localhost:5295/api/Comments/post/2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657?skip=0&take=10&nested=false
+Authenticated: Yes
+Path Parameters:
+  action: GetCommentsByPost
+  controller: Comments
+  postId: 2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657
+Query Parameters:
+  skip: 0
+  take: 10
+  nested: false
+[16:59:31 INF] Response (Duration: 37ms): API: GET /api/Comments/post/2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657
+StatusCode: 401
+[16:59:31 INF] HTTP 401 returned for GET /api/Comments/post/2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657
+[17:05:30 INF] HTTP GET /api/Comments/post/2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657?skip=0&take=10&nested=false received from ::1
+[17:05:30 INF] Request: URL: http://localhost:5295/api/Comments/post/2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657?skip=0&take=10&nested=false
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwMzIxMzQ3LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.sB6Pp93I6RRsRBWhIWmQKffKMxSJy99_U4sR6HXnACs
+Path Parameters:
+  action: GetCommentsByPost
+  controller: Comments
+  postId: 2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657
+Query Parameters:
+  skip: 0
+  take: 10
+  nested: false
+[17:05:33 INF] Response (Duration: 3118ms): API: GET /api/Comments/post/2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657
+StatusCode: 200
+Body:
+[
+  {
+    "commentId": "018b1f44-d32f-43e1-9dcf-a245e4264355",
+    "postId": "2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657",
+    "userId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "username": "4801104017",
+    "parentCommentId": null,
+    "content": "hello ",
+    "postedAt": "2025-05-21T08:39:12.0833146",
+    "childComments": []
+  },
+  {
+    "commentId": "dbf0fd3a-5120-4d98-8099-6d6dbe94f8c9",
+    "postId": "2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657",
+    "userId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "username": "4801104017",
+    "parentCommentId": null,
+    "content": "Hello 3",
+    "postedAt": "2025-05-21T08:34:20.7428391",
+    "childComments": []
+  },
+  {
+    "commentId": "df6d53de-4c5a-411a-9847-91b1451cabca",
+    "postId": "2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657",
+    "userId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "username": "4801104017",
+    "parentCommentId": null,
+    "content": "Hello 2",
+    "postedAt": "2025-05-21T08:32:50.1129265",
+    "childComments": []
+  },
+  {
+    "commentId": "b1e3ba27-5db5-4fe7-8ff2-215990905ab9",
+    "postId": "2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657",
+    "userId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "username": "4801104017",
+    "parentCommentId": null,
+    "content": "Hello",
+    "postedAt": "2025-05-21T08:31:07.6158936",
+    "childComments": []
+  },
+  {
+    "commentId": "0923ca06-1c48-41ee-bcaa-92b2ba77c699",
+    "postId": "2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657",
+    "userId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "username": "4801104017",
+    "parentCommentId": null,
+    "content": "Hello",
+    "postedAt": "2025-05-21T08:04:51.2989547",
+    "childComments": []
+  },
+  {
+    "commentId": "cfb42c0e-2eb3-452c-b042-8af1b4ff6c81",
+    "postId": "2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657",
+    "userId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "username": "4801104017",
+    "parentCommentId": null,
+    "content": "Hello",
+    "postedAt": "2025-05-21T08:04:09.9226532",
+    "childComments": []
+  },
+  {
+    "commentId": "1ce299de-898c-42c1-bf16-e7e9cd16d480",
+    "postId": "2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657",
+    "userId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "username": "4801104017",
+    "parentCommentId": null,
+    "content": "Hello",
+    "postedAt": "2025-05-21T07:53:36.8832745",
+    "childComments": []
+  },
+  {
+    "commentId": "81ea8d80-2409-4dbe-910a-d1ba6e6cf96d",
+    "postId": "2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657",
+    "userId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "username": "4801104017",
+    "parentCommentId": null,
+    "content": "hello",
+    "postedAt": "2025-05-21T07:51:33.6422057",
+    "childComments": []
+  }
+]
+[17:05:33 INF] HTTP 200 returned for GET /api/Comments/post/2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657
+[17:05:39 INF] HTTP GET /api/Comments/post/2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657?skip=0&take=10&nested=true received from ::1
+[17:05:39 INF] Request: URL: http://localhost:5295/api/Comments/post/2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657?skip=0&take=10&nested=true
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwMzIxMzQ3LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.sB6Pp93I6RRsRBWhIWmQKffKMxSJy99_U4sR6HXnACs
+Path Parameters:
+  action: GetCommentsByPost
+  controller: Comments
+  postId: 2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657
+Query Parameters:
+  skip: 0
+  take: 10
+  nested: true
+[17:05:44 INF] Response (Duration: 5359ms): API: GET /api/Comments/post/2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657
+StatusCode: 200
+Body:
+[
+  {
+    "commentId": "018b1f44-d32f-43e1-9dcf-a245e4264355",
+    "postId": "2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657",
+    "userId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "username": "4801104017",
+    "parentCommentId": null,
+    "content": "hello ",
+    "postedAt": "2025-05-21T08:39:12.0833146",
+    "childComments": []
+  },
+  {
+    "commentId": "dbf0fd3a-5120-4d98-8099-6d6dbe94f8c9",
+    "postId": "2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657",
+    "userId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "username": "4801104017",
+    "parentCommentId": null,
+    "content": "Hello 3",
+    "postedAt": "2025-05-21T08:34:20.7428391",
+    "childComments": []
+  },
+  {
+    "commentId": "df6d53de-4c5a-411a-9847-91b1451cabca",
+    "postId": "2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657",
+    "userId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "username": "4801104017",
+    "parentCommentId": null,
+    "content": "Hello 2",
+    "postedAt": "2025-05-21T08:32:50.1129265",
+    "childComments": []
+  },
+  {
+    "commentId": "b1e3ba27-5db5-4fe7-8ff2-215990905ab9",
+    "postId": "2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657",
+    "userId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "username": "4801104017",
+    "parentCommentId": null,
+    "content": "Hello",
+    "postedAt": "2025-05-21T08:31:07.6158936",
+    "childComments": []
+  },
+  {
+    "commentId": "0923ca06-1c48-41ee-bcaa-92b2ba77c699",
+    "postId": "2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657",
+    "userId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "username": "4801104017",
+    "parentCommentId": null,
+    "content": "Hello",
+    "postedAt": "2025-05-21T08:04:51.2989547",
+    "childComments": []
+  },
+  {
+    "commentId": "cfb42c0e-2eb3-452c-b042-8af1b4ff6c81",
+    "postId": "2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657",
+    "userId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "username": "4801104017",
+    "parentCommentId": null,
+    "content": "Hello",
+    "postedAt": "2025-05-21T08:04:09.9226532",
+    "childComments": []
+  },
+  {
+    "commentId": "1ce299de-898c-42c1-bf16-e7e9cd16d480",
+    "postId": "2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657",
+    "userId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "username": "4801104017",
+    "parentCommentId": null,
+    "content": "Hello",
+    "postedAt": "2025-05-21T07:53:36.8832745",
+    "childComments": []
+  },
+  {
+    "commentId": "81ea8d80-2409-4dbe-910a-d1ba6e6cf96d",
+    "postId": "2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657",
+    "userId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "username": "4801104017",
+    "parentCommentId": null,
+    "content": "hello",
+    "postedAt": "2025-05-21T07:51:33.6422057",
+    "childComments": []
+  }
+]
+[17:05:44 INF] HTTP 200 returned for GET /api/Comments/post/2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657

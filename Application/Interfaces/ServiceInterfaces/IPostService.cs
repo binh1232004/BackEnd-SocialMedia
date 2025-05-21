@@ -11,7 +11,7 @@ public interface IPostService
     Task<PostDto[]> GetGroupPostsAsync(Guid groupId, int page, int pageSize, Guid currentUserId);
     Task<PostDto> UpdatePostAsync(Guid postId, PostUpdateDto postDto, Guid userId);
     Task DeletePostAsync(Guid postId, Guid userId);
-    Task<CommentDto> CreateCommentAsync(Guid postId, CommentCreateDto commentDto, Guid userId);
+    Task<StaticCommentDto> CreateCommentAsync(Guid postId, StaticCommentCreateDto commentDto, Guid userId);
     Task ToggleVotePostAsync(Guid postId, Guid userId);
     Task<PostDto> ApproveGroupPostAsync(Guid groupId, GroupPostApproveDto approveDto, Guid adminId);
 }

@@ -1,13 +1,14 @@
 using Application.DTOs;
 using Application.Interfaces;
 using Application.Interfaces.ServiceInterfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Presentation.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-
+[Authorize]
 public class FollowsController : ControllerBase
 {
     private readonly IFollowService _followService;
