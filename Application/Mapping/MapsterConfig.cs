@@ -19,10 +19,11 @@ public static class MapsterConfig
             .Map(dest => dest.JoinedAt, src => DateTime.UtcNow)
             .Map(dest => dest.Status, src => "active")
             .Map(dest => dest.Intro, src => (string?)null)
-            .Map(dest => dest.Image, src => "https://res.cloudinary.com/dapvvdxw7/image/upload/v1747159636/avatar_l2rwth.jpg")
+            .Map(dest => dest.Image,
+                src => "https://res.cloudinary.com/dapvvdxw7/image/upload/v1747159636/avatar_l2rwth.jpg")
             .Ignore(dest => dest.PasswordHash)
             .AfterMapping((src, dest) => dest.SetPassword(src.Password));
-        
+
         // Ánh xạ cho MessageDto -> message
         // TypeAdapterConfig<MessageDto, message>.NewConfig()
         //     .Map(dest => dest.message_id, src => src.message_id ?? Guid.NewGuid().ToString()) // Tạo mới message_id nếu null
@@ -46,7 +47,7 @@ public static class MapsterConfig
         //     .Map(dest => dest.media_url, src => src.media_url)
         //     .Map(dest => dest.sent_time, src => src.sent_time)
         //     .Map(dest => dest.is_read, src => src.is_read);
-        
+
         // MediaCreateDto -> Media
         TypeAdapterConfig<MediaCreateDto, Media>.NewConfig()
             .Map(dest => dest.MediaId, src => Guid.NewGuid())
@@ -122,8 +123,42 @@ public static class MapsterConfig
             .Ignore(dest => dest.CommentId)
             .Ignore(dest => dest.PostId)
             .Ignore(dest => dest.UserId)
-            .Ignore(dest => dest.PostedAt);    
-            
+            .Ignore(dest => dest.PostedAt);
+
+
+        // -------------------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------------------------------------------
+
+        // Cấu hình ánh xạ cho User -> UserDto
+        TypeAdapterConfig<User, UserDto>.NewConfig()
+            .Map(dest => dest.UserId, src => src.UserId)
+            .Map(dest => dest.Username, src => src.Username)
+            .Map(dest => dest.Email, src => src.Email)
+            .Map(dest => dest.FullName, src => src.FullName)
+            .Map(dest => dest.Intro, src => src.Intro)
+            .Map(dest => dest.Image, src => src.Image)
+            .Map(dest => dest.JoinedAt, src => src.JoinedAt);
+
+        // Cấu hình ánh xạ cho UserUpdateDto -> User (bỏ qua các thuộc tính null)
+        TypeAdapterConfig<UserUpdateDto, User>.NewConfig()
+            .IgnoreNullValues(true);
+
+        // Cấu hình ánh xạ cho UserFollow -> FollowDto
+        TypeAdapterConfig<UserFollow, FollowDto>.NewConfig()
+            .Map(dest => dest.FollowerId, src => src.FollowerId)
+            .Map(dest => dest.FollowedId, src => src.FollowedId)
+            .Map(dest => dest.FollowedAt, src => src.FollowedAt)
+            .Map(dest => dest.Follower, src => src.Follower)
+            .Map(dest => dest.Followed, src => src.Followed);
+
+        // Cấu hình ánh xạ cho (Guid, string, string?, string?, int) -> UserSuggestionDto
+        TypeAdapterConfig<(Guid UserId, string Username, string? FullName, string? Image, int MutualFollowersCount), UserSuggestionDto>.NewConfig()
+            .Map(dest => dest.UserId, src => src.UserId)
+            .Map(dest => dest.Username, src => src.Username)
+            .Map(dest => dest.FullName, src => src.FullName)
+            .Map(dest => dest.Image, src => src.Image)
+            .Map(dest => dest.MutualFollowersCount, src => src.MutualFollowersCount);
+        
         // không được xóa ------------------------------------------------------------------------------------------------------------
         // không được xóa ------------------------------------------------------------------------------------------------------------
         // không được xóa ------------------------------------------------------------------------------------------------------------

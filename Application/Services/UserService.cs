@@ -53,4 +53,21 @@ public class UserService : IUserService
             Token = token
         };
     }
+    // ---------------------------------------------------------------------------------------------------------------
+    public async Task<UserDto> UpdateUserAsync(Guid userId, UserUpdateDto updateDto)
+    {
+        var user = await _userRepository.GetByIdAsync(userId)
+                   ?? throw new KeyNotFoundException("Người dùng không tồn tại");
+
+        updateDto.Adapt(user); // Sử dụng Mapster để ánh xạ, chỉ cập nhật các thuộc tính không null
+        await _userRepository.UpdateAsync(user);
+        return user.Adapt<UserDto>();
+    }
+
+    public async Task<UserDto> GetUserByIdAsync(Guid userId)
+    {
+        var user = await _userRepository.GetByIdAsync(userId)
+                   ?? throw new KeyNotFoundException("Người dùng không tồn tại");
+        return user.Adapt<UserDto>();
+    }
 }

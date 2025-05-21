@@ -42,12 +42,14 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IJwtTokenService, JwtTokenService>();
         services.AddScoped<IPostService, PostService>();
         services.AddScoped<IUserService, UserService>();
+        services.AddScoped<IFollowService, FollowService>();
+        services.AddScoped<ISearchService, SearchService>();
             
         // Đăng ký các kho lưu trữ
         services.AddScoped<IGroupRepository, GroupRepository>();
         services.AddScoped<IPostRepository, PostRepository>();
         services.AddScoped<IUserRepository, UserRepository>();
-
+        services.AddScoped<IFollowRepository, FollowRepository>();
         // Thêm Mapster
         services.AddMapster();
         MapsterConfig.RegisterMappings();
