@@ -11,5 +11,7 @@ public interface IGroupService
     Task DeleteGroupAsync(Guid groupId, Guid userId);
     Task<GroupMemberDto> RequestJoinGroupAsync(GroupMemberRequestDto requestDto, Guid userId);
     Task<GroupMemberDto> ApproveMemberAsync(Guid groupId, GroupMemberApproveDto approveDto, Guid adminId);
-    Task RemoveMemberAsync(Guid groupId, Guid userId, Guid adminId);    
+    Task RemoveMemberAsync(Guid groupId, Guid userId, Guid adminId);
+    Task<bool> IsMemberOfGroupAsync(Guid groupId, Guid userId);
+    Task<List<GroupMemberDto>> GetGroupMemberAsync(Guid groupId);
 }

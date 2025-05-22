@@ -14,4 +14,5 @@ public interface IGroupRepository
     Task UpdateMemberAsync(GroupMember member);
     Task<bool> IsGroupMemberAsync(Guid userId, Guid groupId);
     Task<bool> IsGroupAdminAsync(Guid userId, Guid groupId);
+    Task<List<GroupMember>> GetMembersByGroupIdAsync(Guid groupId);
 }

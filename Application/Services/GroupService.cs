@@ -239,4 +239,41 @@ public class GroupService : IGroupService
             throw;
         }
     }
+
+
+    public async Task<bool> IsMemberOfGroupAsync(Guid groupId, Guid userId)
+    {
+        try
+        {
+            var group = await _groupRepository.GetGroupByIdAsync(groupId);
+            if(group == null)
+                throw new KeyNotFoundException("Group not found.");
+            
+            var member = await _groupRepository.GetGroupMemberAsync(userId, groupId);
+            return member != null && member.Status == "Active";
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+    }
+
+    public async Task<List<GroupMemberDto>> GetGroupMemberAsync(Guid groupId)
+    {
+        try
+        {
+            var group = await _groupRepository.GetGroupByIdAsync(groupId);
+            if(group == null)
+                throw new KeyNotFoundException("Group not found.");
+            
+            var members = await _groupRepository.GetMembersByGroupIdAsync(groupId);
+            return members.Adapt<List<GroupMemberDto>>();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+    }
 }

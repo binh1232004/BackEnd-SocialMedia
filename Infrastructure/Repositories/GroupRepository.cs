@@ -125,4 +125,12 @@ public class GroupRepository : IGroupRepository
         Console.WriteLine($"User {userId} is {(isAdmin ? "" : "not")} an admin of group {groupId}");
         return isAdmin;
     }
+    
+    public async Task<List<GroupMember>> GetMembersByGroupIdAsync(Guid groupId)
+    {
+        return await _context.GroupMembers
+            .AsNoTracking()
+            .Where(m => m.GroupId == groupId)
+            .ToListAsync();
+    }
 }
