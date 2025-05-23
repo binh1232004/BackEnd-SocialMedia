@@ -333,9 +333,7 @@ namespace Application.Services
                 Console.WriteLine($"Error voting on post {postId}: {ex.Message}");
                 throw;
             }
-        }
-
-        public async Task<PostDto[]> GetPendingGroupPostsAsync(Guid groupId, int page, int pageSize, Guid currentUserId)
+        }        public async Task<PostDto[]> GetPendingGroupPostsAsync(Guid groupId, int page, int pageSize, Guid currentUserId)
         {
             try
             {
@@ -352,12 +350,12 @@ namespace Application.Services
                     return dto;
                 }).ToArray();
 
-                Console.WriteLine($"Retrieved {postsDto.Length} pending posts for group {groupId}");
+                Console.WriteLine($"Retrieved {postsDto.Length} pending visible posts for group {groupId}");
                 return postsDto;
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error getting pending posts for group {groupId}: {ex.Message}");
+                Console.WriteLine($"Error getting pending visible posts for group {groupId}: {ex.Message}");
                 throw;
             }
         }

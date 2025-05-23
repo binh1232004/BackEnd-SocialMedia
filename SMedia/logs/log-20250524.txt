@@ -27030,3 +27030,239 @@ StatusCode: 200
 Body:
 []
 [05:10:35 INF] HTTP 200 returned for GET /api/group-posts/b529b743-a897-4abe-be9b-aa495482d969
+[05:13:49 INF] HTTP GET /api/group-posts/b529b743-a897-4abe-be9b-aa495482d969?page=1&pageSize=10 received from ::1
+[05:13:49 INF] HTTP GET /api/group-posts/pending/b529b743-a897-4abe-be9b-aa495482d969?page=1&pageSize=10 received from ::1
+[05:13:49 INF] Request: URL: https://localhost:7247/api/group-posts/b529b743-a897-4abe-be9b-aa495482d969?page=1&pageSize=10
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTQxZjE5MjUtOWY2MC00MzE2LWJhMjktY2EyN2VkNjhiOWJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDAzIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjI4MTY3LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.5H3TIQYtgfU-wpGctCycS5_Xq2WW9VY4aTd1Pi9Wkg8
+Path Parameters:
+  action: GetGroupPosts
+  controller: GroupPosts
+  groupId: b529b743-a897-4abe-be9b-aa495482d969
+Query Parameters:
+  page: 1
+  pageSize: 10
+[05:13:49 INF] Request: URL: https://localhost:7247/api/group-posts/pending/b529b743-a897-4abe-be9b-aa495482d969?page=1&pageSize=10
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTQxZjE5MjUtOWY2MC00MzE2LWJhMjktY2EyN2VkNjhiOWJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDAzIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjI4MTY3LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.5H3TIQYtgfU-wpGctCycS5_Xq2WW9VY4aTd1Pi9Wkg8
+Path Parameters:
+  action: GetPendingGroupPosts
+  controller: GroupPosts
+  groupId: b529b743-a897-4abe-be9b-aa495482d969
+Query Parameters:
+  page: 1
+  pageSize: 10
+[05:13:49 INF] Response (Duration: 350ms): API: GET /api/group-posts/b529b743-a897-4abe-be9b-aa495482d969
+StatusCode: 200
+Body:
+[]
+[05:13:49 INF] HTTP 200 returned for GET /api/group-posts/b529b743-a897-4abe-be9b-aa495482d969
+[05:13:50 INF] HTTP GET /api/group-posts/b529b743-a897-4abe-be9b-aa495482d969?page=1&pageSize=10 received from ::1
+[05:13:50 INF] Request: URL: https://localhost:7247/api/group-posts/b529b743-a897-4abe-be9b-aa495482d969?page=1&pageSize=10
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTQxZjE5MjUtOWY2MC00MzE2LWJhMjktY2EyN2VkNjhiOWJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDAzIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjI4MTY3LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.5H3TIQYtgfU-wpGctCycS5_Xq2WW9VY4aTd1Pi9Wkg8
+Path Parameters:
+  action: GetGroupPosts
+  controller: GroupPosts
+  groupId: b529b743-a897-4abe-be9b-aa495482d969
+Query Parameters:
+  page: 1
+  pageSize: 10
+[05:13:50 INF] Response (Duration: 694ms): API: GET /api/group-posts/pending/b529b743-a897-4abe-be9b-aa495482d969
+StatusCode: 200
+Body:
+[
+  {
+    "id": "230a934c-43f1-4f31-acd3-f4142379e58f",
+    "user": {
+      "id": "141f1925-9f60-4316-ba29-ca27ed68b9ba",
+      "name": "4801104003",
+      "avatarUrl": "https://res.cloudinary.com/dapvvdxw7/image/upload/v1747159636/avatar_l2rwth.jpg"
+    },
+    "content": "xin chao",
+    "media": [],
+    "createdAt": "2025-05-24T05:08:05.3377061",
+    "groupId": "b529b743-a897-4abe-be9b-aa495482d969",
+    "isVisible": false
+  },
+  {
+    "id": "44885529-7ac9-4131-916c-d10791cd1973",
+    "user": {
+      "id": "141f1925-9f60-4316-ba29-ca27ed68b9ba",
+      "name": "4801104003",
+      "avatarUrl": "https://res.cloudinary.com/dapvvdxw7/image/upload/v1747159636/avatar_l2rwth.jpg"
+    },
+    "content": "Xin ch\u00E0o \u0111\u00E2y l\u00E0 test ",
+    "media": [],
+    "createdAt": "2025-05-24T04:37:42.055838",
+    "groupId": "b529b743-a897-4abe-be9b-aa495482d969",
+    "isVisible": false
+  }
+]
+[05:13:50 INF] HTTP 200 returned for GET /api/group-posts/pending/b529b743-a897-4abe-be9b-aa495482d969
+[05:13:50 INF] Response (Duration: 187ms): API: GET /api/group-posts/b529b743-a897-4abe-be9b-aa495482d969
+StatusCode: 200
+Body:
+[]
+[05:13:50 INF] HTTP 200 returned for GET /api/group-posts/b529b743-a897-4abe-be9b-aa495482d969
+[05:13:50 INF] HTTP GET /api/group-posts/pending/b529b743-a897-4abe-be9b-aa495482d969?page=1&pageSize=10 received from ::1
+[05:13:50 INF] Request: URL: https://localhost:7247/api/group-posts/pending/b529b743-a897-4abe-be9b-aa495482d969?page=1&pageSize=10
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTQxZjE5MjUtOWY2MC00MzE2LWJhMjktY2EyN2VkNjhiOWJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDAzIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjI4MTY3LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.5H3TIQYtgfU-wpGctCycS5_Xq2WW9VY4aTd1Pi9Wkg8
+Path Parameters:
+  action: GetPendingGroupPosts
+  controller: GroupPosts
+  groupId: b529b743-a897-4abe-be9b-aa495482d969
+Query Parameters:
+  page: 1
+  pageSize: 10
+[05:13:50 INF] HTTP GET /api/group-posts/b529b743-a897-4abe-be9b-aa495482d969?page=1&pageSize=10 received from ::1
+[05:13:50 INF] HTTP GET /api/group-posts/b529b743-a897-4abe-be9b-aa495482d969?page=1&pageSize=10 received from ::1
+[05:13:50 INF] Request: URL: https://localhost:7247/api/group-posts/b529b743-a897-4abe-be9b-aa495482d969?page=1&pageSize=10
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTQxZjE5MjUtOWY2MC00MzE2LWJhMjktY2EyN2VkNjhiOWJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDAzIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjI4MTY3LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.5H3TIQYtgfU-wpGctCycS5_Xq2WW9VY4aTd1Pi9Wkg8
+Path Parameters:
+  action: GetGroupPosts
+  controller: GroupPosts
+  groupId: b529b743-a897-4abe-be9b-aa495482d969
+Query Parameters:
+  page: 1
+  pageSize: 10
+[05:13:50 INF] Request: URL: https://localhost:7247/api/group-posts/b529b743-a897-4abe-be9b-aa495482d969?page=1&pageSize=10
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTQxZjE5MjUtOWY2MC00MzE2LWJhMjktY2EyN2VkNjhiOWJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDAzIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjI4MTY3LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.5H3TIQYtgfU-wpGctCycS5_Xq2WW9VY4aTd1Pi9Wkg8
+Path Parameters:
+  action: GetGroupPosts
+  controller: GroupPosts
+  groupId: b529b743-a897-4abe-be9b-aa495482d969
+Query Parameters:
+  page: 1
+  pageSize: 10
+[05:13:50 INF] Response (Duration: 114ms): API: GET /api/group-posts/b529b743-a897-4abe-be9b-aa495482d969
+StatusCode: 200
+Body:
+[]
+[05:13:50 INF] Response (Duration: 104ms): API: GET /api/group-posts/b529b743-a897-4abe-be9b-aa495482d969
+StatusCode: 200
+Body:
+[]
+[05:13:50 INF] HTTP 200 returned for GET /api/group-posts/b529b743-a897-4abe-be9b-aa495482d969
+[05:13:50 INF] HTTP 200 returned for GET /api/group-posts/b529b743-a897-4abe-be9b-aa495482d969
+[05:13:50 INF] Response (Duration: 388ms): API: GET /api/group-posts/pending/b529b743-a897-4abe-be9b-aa495482d969
+StatusCode: 200
+Body:
+[
+  {
+    "id": "230a934c-43f1-4f31-acd3-f4142379e58f",
+    "user": {
+      "id": "141f1925-9f60-4316-ba29-ca27ed68b9ba",
+      "name": "4801104003",
+      "avatarUrl": "https://res.cloudinary.com/dapvvdxw7/image/upload/v1747159636/avatar_l2rwth.jpg"
+    },
+    "content": "xin chao",
+    "media": [],
+    "createdAt": "2025-05-24T05:08:05.3377061",
+    "groupId": "b529b743-a897-4abe-be9b-aa495482d969",
+    "isVisible": false
+  },
+  {
+    "id": "44885529-7ac9-4131-916c-d10791cd1973",
+    "user": {
+      "id": "141f1925-9f60-4316-ba29-ca27ed68b9ba",
+      "name": "4801104003",
+      "avatarUrl": "https://res.cloudinary.com/dapvvdxw7/image/upload/v1747159636/avatar_l2rwth.jpg"
+    },
+    "content": "Xin ch\u00E0o \u0111\u00E2y l\u00E0 test ",
+    "media": [],
+    "createdAt": "2025-05-24T04:37:42.055838",
+    "groupId": "b529b743-a897-4abe-be9b-aa495482d969",
+    "isVisible": false
+  }
+]
+[05:13:50 INF] HTTP 200 returned for GET /api/group-posts/pending/b529b743-a897-4abe-be9b-aa495482d969
+[05:13:51 INF] HTTP GET /api/group-posts/b529b743-a897-4abe-be9b-aa495482d969?page=1&pageSize=10 received from ::1
+[05:13:51 INF] Request: URL: https://localhost:7247/api/group-posts/b529b743-a897-4abe-be9b-aa495482d969?page=1&pageSize=10
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTQxZjE5MjUtOWY2MC00MzE2LWJhMjktY2EyN2VkNjhiOWJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDAzIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjI4MTY3LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.5H3TIQYtgfU-wpGctCycS5_Xq2WW9VY4aTd1Pi9Wkg8
+Path Parameters:
+  action: GetGroupPosts
+  controller: GroupPosts
+  groupId: b529b743-a897-4abe-be9b-aa495482d969
+Query Parameters:
+  page: 1
+  pageSize: 10
+[05:13:51 INF] HTTP GET /api/group-posts/b529b743-a897-4abe-be9b-aa495482d969?page=1&pageSize=10 received from ::1
+[05:13:51 INF] Request: URL: https://localhost:7247/api/group-posts/b529b743-a897-4abe-be9b-aa495482d969?page=1&pageSize=10
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTQxZjE5MjUtOWY2MC00MzE2LWJhMjktY2EyN2VkNjhiOWJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDAzIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjI4MTY3LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.5H3TIQYtgfU-wpGctCycS5_Xq2WW9VY4aTd1Pi9Wkg8
+Path Parameters:
+  action: GetGroupPosts
+  controller: GroupPosts
+  groupId: b529b743-a897-4abe-be9b-aa495482d969
+Query Parameters:
+  page: 1
+  pageSize: 10
+[05:13:51 INF] HTTP GET /api/group-posts/b529b743-a897-4abe-be9b-aa495482d969?page=1&pageSize=10 received from ::1
+[05:13:51 INF] Request: URL: https://localhost:7247/api/group-posts/b529b743-a897-4abe-be9b-aa495482d969?page=1&pageSize=10
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTQxZjE5MjUtOWY2MC00MzE2LWJhMjktY2EyN2VkNjhiOWJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDAzIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjI4MTY3LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.5H3TIQYtgfU-wpGctCycS5_Xq2WW9VY4aTd1Pi9Wkg8
+Path Parameters:
+  action: GetGroupPosts
+  controller: GroupPosts
+  groupId: b529b743-a897-4abe-be9b-aa495482d969
+Query Parameters:
+  page: 1
+  pageSize: 10
+[05:13:51 INF] Response (Duration: 108ms): API: GET /api/group-posts/b529b743-a897-4abe-be9b-aa495482d969
+StatusCode: 200
+Body:
+[]
+[05:13:51 INF] HTTP 200 returned for GET /api/group-posts/b529b743-a897-4abe-be9b-aa495482d969
+[05:13:51 INF] Response (Duration: 115ms): API: GET /api/group-posts/b529b743-a897-4abe-be9b-aa495482d969
+StatusCode: 200
+Body:
+[]
+[05:13:51 INF] Response (Duration: 110ms): API: GET /api/group-posts/b529b743-a897-4abe-be9b-aa495482d969
+StatusCode: 200
+Body:
+[]
+[05:13:51 INF] HTTP 200 returned for GET /api/group-posts/b529b743-a897-4abe-be9b-aa495482d969
+[05:13:51 INF] HTTP 200 returned for GET /api/group-posts/b529b743-a897-4abe-be9b-aa495482d969
+[05:18:34 INF] HTTP POST /api/Authentication/login received from 127.0.0.1
+[05:18:34 INF] Request Body: {
+  "email": "4801104003@student.hcmue.edu.vn",
+  "password": "123456789"
+}
+[05:18:34 INF] Request: URL: https://localhost:7247/api/Authentication/login
+Authenticated: Yes
+Path Parameters:
+  action: Login
+  controller: Authentication
+Body:
+{
+  "email": "4801104003@student.hcmue.edu.vn",
+  "password": "123456789"
+}
+[05:18:36 INF] Response (Duration: 2164ms): API: POST /api/Authentication/login
+StatusCode: 200
+Body:
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTQxZjE5MjUtOWY2MC00MzE2LWJhMjktY2EyN2VkNjhiOWJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDAzIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjMwNzE2LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.CWUFHCzNKMZsqjziXeBHohtaqZF2Ahvcvm3kw5c0M-Y"
+}
+[05:18:36 INF] HTTP 200 returned for POST /api/Authentication/login
+[05:19:05 INF] HTTP GET /api/group-posts/pending/b529b743-a897-4abe-be9b-aa495482d969?page=1&pageSize=10 received from 127.0.0.1
+[05:19:05 INF] Request: URL: https://localhost:7247/api/group-posts/pending/b529b743-a897-4abe-be9b-aa495482d969?page=1&pageSize=10
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTQxZjE5MjUtOWY2MC00MzE2LWJhMjktY2EyN2VkNjhiOWJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDAzIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjMwNzE2LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.CWUFHCzNKMZsqjziXeBHohtaqZF2Ahvcvm3kw5c0M-Y
+Path Parameters:
+  action: GetPendingGroupPosts
+  controller: GroupPosts
+  groupId: b529b743-a897-4abe-be9b-aa495482d969
+Query Parameters:
+  page: 1
+  pageSize: 10
+[05:19:05 INF] Response (Duration: 494ms): API: GET /api/group-posts/pending/b529b743-a897-4abe-be9b-aa495482d969
+StatusCode: 200
+Body:
+[]
+[05:19:05 INF] HTTP 200 returned for GET /api/group-posts/pending/b529b743-a897-4abe-be9b-aa495482d969

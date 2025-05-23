@@ -8,7 +8,7 @@ GET /api/group-posts/pending/{groupId}
 
 ## Description
 
-This endpoint retrieves a list of pending posts for a specific group. Only group administrators can access this endpoint.
+This endpoint retrieves a list of pending posts that are visible for a specific group. Only group administrators can access this endpoint. The endpoint filters to include only posts that are not approved (pending) and are marked as visible.
 
 ## Authentication Requirements
 
@@ -162,7 +162,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 ## Implementation Notes
 
 - Only group administrators can access pending posts for their groups.
-- The `isVisible` property indicates whether the post is currently visible in the group. Pending posts are typically not visible (isVisible = false) until they are approved.
+- Only posts that are pending (not approved) AND visible are returned.
+- Hidden posts (where isVisible = false) are not included in the response.
+- The `isVisible` property indicates whether the post is currently visible in the group.
 - Posts are returned in reverse chronological order (newest first).
 - The API supports pagination to handle large numbers of pending posts.
 - Media attachments, if any, are included in the response for each post.

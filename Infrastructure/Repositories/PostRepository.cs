@@ -79,21 +79,19 @@ namespace Infrastructure.Repositories
 
             Console.WriteLine($"Retrieved {posts.Count} group posts for group {groupId}, page {page}, pageSize {pageSize}");
             return posts;
-        }
-
-        public async Task<List<Post>> GetPendingGroupPostsAsync(Guid groupId, int page, int pageSize)
+        }        public async Task<List<Post>> GetPendingGroupPostsAsync(Guid groupId, int page, int pageSize)
         {
             var posts = await _context.Posts
                 .Include(p => p.Media)
                 .Include(p => p.Comments)
                 .Include(p => p.PostVotes)
-                .Where(p => p.GroupId == groupId && p.IsApproved == false)
+                .Where(p => p.GroupId == groupId && p.IsApproved == false && p.IsVisible == true)
                 .OrderByDescending(p => p.PostedAt)
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize)
                 .ToListAsync();
 
-            Console.WriteLine($"Retrieved {posts.Count} pending posts for group {groupId}, page {page}, pageSize {pageSize}");
+            Console.WriteLine($"Retrieved {posts.Count} pending visible posts for group {groupId}, page {page}, pageSize {pageSize}");
             return posts;
         }
 
