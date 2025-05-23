@@ -8,7 +8,8 @@ public interface IPostService
     Task<PostDto> CreateGroupPostAsync(GroupPostCreateDto postDto, Guid userId);
     Task<PostDto?> GetPostByIdAsync(Guid postId, Guid currentUserId);
     Task<PostDto[]> GetUserPostsAsync(Guid userId, int page, int pageSize, Guid currentUserId);
-    Task<PostDto[]> GetGroupPostsAsync(Guid groupId, int page, int pageSize, Guid currentUserId);
+    Task<PostImgDto[]> GetGroupPostsAsync(Guid groupId, int page, int pageSize, Guid currentUserId);
+
     Task<PostDto[]> GetPendingGroupPostsAsync(Guid groupId, int page, int pageSize, Guid currentUserId);
     Task<PostDto> UpdatePostAsync(Guid postId, PostUpdateDto postDto, Guid userId);
     Task DeletePostAsync(Guid postId, Guid userId);
