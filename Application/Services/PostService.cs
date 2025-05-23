@@ -334,5 +334,32 @@ namespace Application.Services
                 throw;
             }
         }
+
+        public async Task<PostDto[]> GetPendingGroupPostsAsync(Guid groupId, int page, int pageSize, Guid currentUserId)
+        {
+            try
+            {
+                var isAdmin = await _postRepository.IsGroupAdminAsync(currentUserId, groupId);
+                if (!isAdmin)
+                    throw new UnauthorizedAccessException("Only group administrators can access pending posts.");
+
+                var posts = await _postRepository.GetPendingGroupPostsAsync(groupId, page, pageSize);
+
+                var postsDto = posts.Select(p =>
+                {
+                    var dto = p.Adapt<PostDto>();
+                    dto.IsVotedByCurrentUser = p.PostVotes.Any(v => v.UserId == currentUserId && v.VoteType == "Vote");
+                    return dto;
+                }).ToArray();
+
+                Console.WriteLine($"Retrieved {postsDto.Length} pending posts for group {groupId}");
+                return postsDto;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error getting pending posts for group {groupId}: {ex.Message}");
+                throw;
+            }
+        }
     }
 }

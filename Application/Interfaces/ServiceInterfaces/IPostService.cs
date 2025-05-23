@@ -9,6 +9,7 @@ public interface IPostService
     Task<PostDto?> GetPostByIdAsync(Guid postId, Guid currentUserId);
     Task<PostDto[]> GetUserPostsAsync(Guid userId, int page, int pageSize, Guid currentUserId);
     Task<PostDto[]> GetGroupPostsAsync(Guid groupId, int page, int pageSize, Guid currentUserId);
+    Task<PostDto[]> GetPendingGroupPostsAsync(Guid groupId, int page, int pageSize, Guid currentUserId);
     Task<PostDto> UpdatePostAsync(Guid postId, PostUpdateDto postDto, Guid userId);
     Task DeletePostAsync(Guid postId, Guid userId);
     Task<StaticCommentDto> CreateCommentAsync(Guid postId, StaticCommentCreateDto commentDto, Guid userId);
