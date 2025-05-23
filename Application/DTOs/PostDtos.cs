@@ -2,7 +2,7 @@ namespace Application.DTOs;
 
 public class PostDtos
 {
-    public class MediaDto
+    public class PostDtosMediaDto
     {
         public Guid MediaId { get; set; }
         public string MediaUrl { get; set; } = string.Empty;
@@ -37,7 +37,7 @@ public class PostDtos
         public Guid? GroupId { get; set; }
         public bool IsApproved { get; set; }
         public bool IsVisible { get; set; }
-        public MediaDto[] Media { get; set; } = Array.Empty<MediaDto>();
+        public PostDtosMediaDto[] Media { get; set; } = Array.Empty<PostDtosMediaDto>();
         public int VoteCount { get; set; }
         public bool IsVotedByCurrentUser { get; set; }
         public int CommentCount { get; set; }

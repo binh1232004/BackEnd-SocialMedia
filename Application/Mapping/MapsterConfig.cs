@@ -147,6 +147,23 @@ public static class MapsterConfig
             .Map(dest => dest.Content, src => src.Content)
             .Map(dest => dest.PostedAt, src => src.PostedAt)
             .Map(dest => dest.ChildComments, src => src.ChildComments);
+        
+        // Message ----------------------------------------------------------------------------------------------------
+        // Message ----------------------------------------------------------------------------------------------------
+
+        TypeAdapterConfig<Message, MessageDto>
+            .NewConfig()
+            .Map(dest => dest.SenderUsername, src => src.Sender.Username)
+            .Map(dest => dest.Media, src => src.Media);
+        
+        TypeAdapterConfig<Media, MediaDto>.NewConfig();
+        
+        TypeAdapterConfig<Notification, NotificationDto>
+            .NewConfig()
+            .Map(dest => dest.RelatedUsername, src => src.RelatedUser.Username);
+        // Message ----------------------------------------------------------------------------------------------------
+        // Message ----------------------------------------------------------------------------------------------------
+
 
         // không được xóa ------------------------------------------------------------------------------------------------------------
         // không được xóa ------------------------------------------------------------------------------------------------------------
