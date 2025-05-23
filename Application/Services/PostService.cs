@@ -361,5 +361,35 @@ namespace Application.Services
                 throw;
             }
         }
+
+        public async Task<PostDto> UpdateGroupPostVisibilityAsync(Guid groupId, GroupPostVisibilityDto visibilityDto, Guid adminId)
+        {
+            try
+            {
+                var isAdmin = await _postRepository.IsGroupAdminAsync(adminId, groupId);
+                if (!isAdmin)
+                    throw new UnauthorizedAccessException("User is not an admin of the group.");
+
+                var post = await _postRepository.GetPostByIdAsync(visibilityDto.PostId);
+                if (post == null || post.GroupId != groupId)
+                    throw new KeyNotFoundException("Post not found in the group.");
+
+                if (post.IsVisible == visibilityDto.IsVisible)
+                    throw new InvalidOperationException($"Post visibility is already set to {(visibilityDto.IsVisible ? "visible" : "hidden")}.");
+
+                post.IsVisible = visibilityDto.IsVisible;
+                await _postRepository.UpdatePostAsync(post);
+
+                var postDto = post.Adapt<PostDto>();
+                postDto.IsVotedByCurrentUser = post.PostVotes.Any(v => v.UserId == adminId && v.VoteType == "Vote");
+                Console.WriteLine($"Updated visibility for post {visibilityDto.PostId} in group {groupId}, visibility: {post.IsVisible}");
+                return postDto;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error updating visibility for post {visibilityDto.PostId} in group {groupId}: {ex.Message}");
+                throw;
+            }
+        }
     }
 }

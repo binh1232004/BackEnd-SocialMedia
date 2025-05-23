@@ -15,4 +15,5 @@ public interface IPostService
     Task<StaticCommentDto> CreateCommentAsync(Guid postId, StaticCommentCreateDto commentDto, Guid userId);
     Task ToggleVotePostAsync(Guid postId, Guid userId);
     Task<PostDto> ApproveGroupPostAsync(Guid groupId, GroupPostApproveDto approveDto, Guid adminId);
+    Task<PostDto> UpdateGroupPostVisibilityAsync(Guid groupId, GroupPostVisibilityDto visibilityDto, Guid adminId);
 }

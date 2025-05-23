@@ -119,7 +119,45 @@ namespace SMedia.Controllers
                 Console.WriteLine($"Error retrieving pending posts for group {groupId}: {ex.Message}");
                 return StatusCode(500, new { Error = "An error occurred while retrieving pending group posts." });
             }
-        }        // Helper methods to get user information
+        }        [HttpPut("visible")]
+        public async Task<ActionResult<PostDto>> UpdateGroupPostVisibility([FromBody] GroupPostVisibilityDto visibilityDto)
+        {
+            try
+            {
+                if (!Guid.TryParse(User.FindFirst("user_id")?.Value, out var adminId))
+                    return Unauthorized(new { Error = "Invalid token: user_id is missing or invalid." });
+
+                // First, get the post to determine which group it belongs to
+                var currentPost = await _postService.GetPostByIdAsync(visibilityDto.PostId, adminId);
+                if (currentPost == null)
+                    return NotFound(new { Error = "Post not found." });
+
+                if (!currentPost.GroupId.HasValue)
+                    return BadRequest(new { Error = "This operation is only applicable to group posts." });
+
+                var post = await _postService.UpdateGroupPostVisibilityAsync(currentPost.GroupId.Value, visibilityDto, adminId);
+                return Ok(post);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new { Error = ex.Message });
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(new { Error = ex.Message });
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return Unauthorized(new { Error = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error updating visibility for post {visibilityDto.PostId}: {ex.Message}");
+                return StatusCode(500, new { Error = "An error occurred while updating the post visibility." });
+            }
+        }
+
+        // Helper methods to get user information
         private async Task<string> GetUserNameById(Guid userId)
         {
             try

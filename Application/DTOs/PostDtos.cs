@@ -94,4 +94,10 @@ public class PostDtos
         public Guid PostId { get; set; }
         public bool Approve { get; set; } // true: Approved, false: Rejected
     }
+
+    public class GroupPostVisibilityDto
+    {
+        public Guid PostId { get; set; }
+        public bool IsVisible { get; set; }
+    }
 }
