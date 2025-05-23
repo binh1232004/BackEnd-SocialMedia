@@ -42,6 +42,22 @@ public class PostDtos
         public bool IsVotedByCurrentUser { get; set; }
         public int CommentCount { get; set; }
     }
+    
+    public class PostImgDto
+    {
+        public Guid PostId { get; set; }
+        public Guid UserId { get; set; }
+        public string ImageUrl { get; set; } = string.Empty;
+        public string Content { get; set; } = string.Empty;
+        public DateTime PostedAt { get; set; }
+        public Guid? GroupId { get; set; }
+        public bool IsApproved { get; set; }
+        public bool IsVisible { get; set; }
+        public PostDtosMediaDto[] Media { get; set; } = Array.Empty<PostDtosMediaDto>();
+        public int VoteCount { get; set; }
+        public bool IsVotedByCurrentUser { get; set; }
+        public int CommentCount { get; set; }
+    }
 
     public class PostUpdateDto
     {

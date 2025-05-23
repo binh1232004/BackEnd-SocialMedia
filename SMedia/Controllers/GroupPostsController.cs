@@ -29,12 +29,24 @@ namespace SMedia.Controllers
             return CreatedAtAction(nameof(GetGroupPosts), new { groupId = post.GroupId, page = 1, pageSize = 10 }, post);
         }
 
-        [HttpGet("{groupId}")]
-        public async Task<ActionResult<PostDto[]>> GetGroupPosts(Guid groupId, [FromQuery] int page = 1, [FromQuery] int pageSize = 10)
+        [HttpGet("group/{groupId}")]
+        public async Task<ActionResult<PostImgDto[]>> GetGroupPosts(Guid groupId, [FromQuery] int page = 1, [FromQuery] int pageSize = 10)
         {
-            var currentUserId = Guid.Parse(User.FindFirst("user_id")?.Value ?? throw new UnauthorizedAccessException("Invalid token."));
-            var posts = await _postService.GetGroupPostsAsync(groupId, page, pageSize, currentUserId);
-            return Ok(posts);
+            try
+            {
+                // Giả sử currentUserId lấy từ JWT token
+                var currentUserId = Guid.Parse(User.FindFirst("user_id")?.Value ?? throw new UnauthorizedAccessException("User not authenticated"));
+                var posts = await _postService.GetGroupPostsAsync(groupId, page, pageSize, currentUserId);
+                return Ok(posts);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return Unauthorized(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
         
         [HttpPost("{groupId}/approve")]
