@@ -80,8 +80,7 @@ namespace SMedia.Controllers
                 
                 // Transform the PostDto to PendingPostDto format
                 List<PendingPostDto> pendingPosts = new List<PendingPostDto>();
-                
-                foreach (var p in posts)
+                  foreach (var p in posts)
                 {
                     pendingPosts.Add(new PendingPostDto
                     {
@@ -100,7 +99,8 @@ namespace SMedia.Controllers
                             Type = m.MediaType
                         }).ToList(),
                         CreatedAt = p.PostedAt,
-                        GroupId = p.GroupId ?? groupId
+                        GroupId = p.GroupId ?? groupId,
+                        IsVisible = p.IsVisible
                     });
                 }
 

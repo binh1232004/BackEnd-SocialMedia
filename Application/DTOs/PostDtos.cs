@@ -40,9 +40,7 @@ public class PostDtos
         public Guid Id { get; set; }
         public string Url { get; set; } = string.Empty;
         public string Type { get; set; } = string.Empty;
-    }
-
-    public class PendingPostDto
+    }    public class PendingPostDto
     {
         public Guid Id { get; set; }
         public PostUserDto User { get; set; } = null!;
@@ -50,6 +48,7 @@ public class PostDtos
         public List<PendingPostMediaDto> Media { get; set; } = new List<PendingPostMediaDto>();
         public DateTime CreatedAt { get; set; }
         public Guid GroupId { get; set; }
+        public bool IsVisible { get; set; }
     }
 
     public class PostDto
