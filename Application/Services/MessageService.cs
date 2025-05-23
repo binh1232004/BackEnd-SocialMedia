@@ -1,147 +1,123 @@
-// using Application.DTOs;
-// using Application.Interfaces.RepositoryInterfaces;
-// using Application.Interfaces.ServiceInterfaces;
-// using Domain.Entities;
-//
-//
-//
-// namespace Application.Services;
-//
-// public class MessageService 
-// {
-//     private readonly IMessageRepository _messageRepository;
-//     private readonly IUserRepository _userRepository;
-//
-//     public MessageService(IMessageRepository messageRepository, IUserRepository userRepository)
-//     {
-//         _messageRepository = messageRepository;
-//         _userRepository = userRepository;
-//     }
-//
-//     public async Task<MessageResponseDto> SendMessage(Guid senderId, SendMessageDto messageDto)
-//     {
-//         // Verify the sender exists
-//         var sender = await _userRepository.GetUserById(senderId);
-//         if (sender == null)
-//         {
-//             return new MessageResponseDto
-//             {
-//                 Success = false,
-//                 Message = "Sender not found"
-//             };
-//         }
-//
-//         // Verify receiver if specified
-//         User? receiver = null;
-//         if (!string.IsNullOrEmpty(messageDto.ReceiverId))
-//         {
-//             receiver = await _userRepository.GetUserById(messageDto.ReceiverId);
-//             if (receiver == null)
-//             {
-//                 return new MessageResponseDto
-//                 {
-//                     Success = false,
-//                     Message = "Receiver not found"
-//                 };
-//             }
-//         }
-//
-//         // Create the message
-//         var message = new Message
-//         {
-//             MessageId = Guid.NewGuid(),
-//             SenderId = senderId,
-//             ReceiverId = messageDto.ReceiverId,
-//             GroupChatId = messageDto.GroupChatId,
-//             Content = messageDto.Content,
-//             Media = messageDto.MediaType,
-//             media_url = messageDto.MediaUrl,
-//             sent_time = DateTime.UtcNow,
-//             is_read = false
-//         };
-//
-//         await _messageRepository.CreateMessage(message);
-//
-//         return new MessageResponseDto
-//         {
-//             Success = true,
-//             Message = "Message sent successfully",
-//             Data = new MessageDto
-//             {
-//                 MessageId = message.message_id,
-//                 SenderId = message.sender_id,
-//                 SenderName = sender.username,
-//                 SenderImage = sender.image,
-//                 ReceiverId = message.receiver_id,
-//                 ReceiverName = receiver?.username,
-//                 ReceiverImage = receiver?.image,
-//                 GroupChatId = message.group_chat_id,
-//                 Content = message.content,
-//                 MediaType = message.media_type,
-//                 MediaUrl = message.media_url,
-//                 SentTime = message.sent_time,
-//                 IsRead = message.is_read
-//             }
-//         };
-//     }
-//
-//     public async Task<GetMessagesResponseDto> GetMessagesBetweenUsers(string currentUserId, string otherUserId, int page = 1, int pageSize = 20)
-//     {
-//         int skip = (page - 1) * pageSize;
-//         var messages = await _messageRepository.GetMessagesBetweenUsers(currentUserId, otherUserId, skip, pageSize);
-//         var totalCount = await _messageRepository.GetMessageCountBetweenUsers(currentUserId, otherUserId);
-//
-//         var messageDtos = messages.Select(m => new MessageDto
-//         {
-//             MessageId = m.message_id,
-//             SenderId = m.sender_id,
-//             SenderName = m.sender.username,
-//             SenderImage = m.sender.image,
-//             ReceiverId = m.receiver_id,
-//             ReceiverName = m.receiver?.username,
-//             ReceiverImage = m.receiver?.image,
-//             GroupChatId = m.group_chat_id,
-//             Content = m.content,
-//             MediaType = m.media_type,
-//             MediaUrl = m.media_url,
-//             SentTime = m.sent_time,
-//             IsRead = m.is_read
-//         }).ToList();
-//
-//         return new GetMessagesResponseDto
-//         {
-//             Messages = messageDtos,
-//             TotalCount = totalCount
-//         };
-//     }
-//
-//     public async Task<bool> MarkMessagesAsRead(string senderId, string receiverId)
-//     {
-//         return await _messageRepository.MarkMessagesAsRead(senderId, receiverId);
-//     }
-//
-//     public async Task<List<MessageDto>> GetUnreadMessages(string userId)
-//     {
-//         var messages = await _messageRepository.GetUnreadMessages(userId);
-//
-//         return messages.Select(m => new MessageDto
-//         {
-//             MessageId = m.message_id,
-//             SenderId = m.sender_id,
-//             SenderName = m.sender.username,
-//             SenderImage = m.sender.image,
-//             ReceiverId = m.receiver_id,
-//             Content = m.content,
-//             MediaType = m.media_type,
-//             MediaUrl = m.media_url,
-//             SentTime = m.sent_time,
-//             IsRead = m.is_read
-//         }).ToList();
-//     }
-//
-//     public async Task<List<user>> GetChatUsers(string userId, int page = 1, int pageSize = 20)
-//     {
-//         int skip = (page - 1) * pageSize;
-//         return await _messageRepository.GetChatUsers(userId, skip, pageSize);
-//     }
-// }
+using Application.DTOs;
+using Application.Interfaces.RepositoryInterfaces;
+using Application.Interfaces.ServiceInterfaces;
+using Domain.Entities;
+using Mapster;
+using Microsoft.AspNetCore.SignalR;
+
+
+
+namespace Application.Services;
+
+public class MessageService : IMessageService
+{
+    private readonly IMessageRepository _messageRepository;
+    private readonly IGroupChatRepository _groupChatRepository;
+    private readonly INotificationService _notificationService;
+    private readonly IHubContext<Hubs.ChatHub> _hubContext; // Fixed namespace
+
+
+    public MessageService(
+        IMessageRepository messageRepository,
+        IGroupChatRepository groupChatRepository,
+        INotificationService notificationService,
+        IHubContext<Hubs.ChatHub> hubContext)
+    {
+        _messageRepository = messageRepository;
+        _groupChatRepository = groupChatRepository;
+        _notificationService = notificationService;
+        _hubContext = hubContext;
+    }
+
+    public async Task<MessageDto> SendMessageAsync(CreateMessageDto createMessageDto)
+    {
+        if (createMessageDto.ReceiverId == null && createMessageDto.GroupChatId == null)
+            throw new ArgumentException("ReceiverId or GroupChatId must be provided.");
+
+        if (createMessageDto.GroupChatId.HasValue)
+        {
+            if (!await _groupChatRepository.IsUserInGroupAsync(createMessageDto.SenderId,
+                    createMessageDto.GroupChatId.Value))
+                throw new UnauthorizedAccessException("User is not in this group chat.");
+        }
+
+        var message = createMessageDto.Adapt<Message>();
+        message.MessageId = Guid.NewGuid();
+        message.SentAt = DateTime.UtcNow;
+        message.IsRead = false;
+
+        if (createMessageDto.MediaUrls != null && createMessageDto.MediaUrls.Any())
+        {
+            message.Media = createMessageDto.MediaUrls.Select(url => new Media
+            {
+                MediaId = Guid.NewGuid(),
+                MediaUrl = url,
+                MediaType = url.EndsWith(".jpg") || url.EndsWith(".png") ? "image" : "video",
+                UploadedAt = DateTime.UtcNow,
+                UploadedBy = createMessageDto.SenderId,
+                MessageId = message.MessageId
+            }).ToList();
+        }
+
+        await _messageRepository.AddAsync(message);
+
+        var messageDto = message.Adapt<MessageDto>();
+        if (createMessageDto.ReceiverId.HasValue)
+        {
+            await _notificationService.CreateMessageNotificationAsync(createMessageDto.ReceiverId.Value,
+                createMessageDto.SenderId, message.MessageId);
+            await _hubContext.Clients.User(createMessageDto.ReceiverId.Value.ToString())
+                .SendAsync("ReceiveMessage", messageDto);
+        }
+        else if (createMessageDto.GroupChatId.HasValue)
+        {
+            await _hubContext.Clients.Group(createMessageDto.GroupChatId.Value.ToString())
+                .SendAsync("ReceiveGroupMessage", messageDto);
+        }
+
+        return messageDto;
+    }
+
+    public async Task<PagedMessageDto> GetMessagesWithUserAsync(Guid userId, Guid receiverId, int page, int pageSize)
+    {
+        var messages = await _messageRepository.GetByUserAsync(userId, receiverId, page, pageSize);
+        var messageDtos = messages.Adapt<List<MessageDto>>();
+        return new PagedMessageDto
+        {
+            Messages = messageDtos,
+            TotalCount = messageDtos.Count,
+            Page = page,
+            PageSize = pageSize
+        };
+    }
+
+    public async Task<PagedMessageDto> GetGroupMessagesAsync(Guid userId, Guid groupChatId, int page, int pageSize)
+    {
+        if (!await _groupChatRepository.IsUserInGroupAsync(userId, groupChatId))
+            throw new UnauthorizedAccessException("User is not in this group chat.");
+
+        var messages = await _messageRepository.GetByGroupAsync(groupChatId, page, pageSize);
+        var messageDtos = messages.Adapt<List<MessageDto>>();
+        return new PagedMessageDto
+        {
+            Messages = messageDtos,
+            TotalCount = messageDtos.Count,
+            Page = page,
+            PageSize = pageSize
+        };
+    }
+
+    public async Task MarkMessageAsReadAsync(Guid userId, Guid messageId)
+    {
+        var message = await _messageRepository.GetByIdAsync(messageId);
+        if (message == null || (message.ReceiverId != userId && message.GroupChatId == null))
+            throw new UnauthorizedAccessException("Invalid message or user.");
+
+        if (message.IsRead != true)
+        {
+            message.IsRead = true;
+            await _messageRepository.UpdateAsync(message);
+            await _hubContext.Clients.User(message.SenderId.ToString()).SendAsync("MessageRead", messageId);
+        }
+    }
+}

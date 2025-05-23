@@ -1,3 +1,4 @@
+using Application.Hubs;
 using DotNetEnv;
 using SMedia.Configuration;
 using Serilog;
@@ -5,6 +6,13 @@ using SMedia.Extensions;
 Env.Load();
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNamingPolicy = null; // Không thay đổi tên property (giữ nguyên chữ hoa/thường)
+        options.JsonSerializerOptions.PropertyNameCaseInsensitive = true; // Không phân biệt hoa/thường
+    });
 
 // Tắt tất cả logger mặc định
 builder.Logging.ClearProviders();
@@ -37,21 +45,73 @@ builder.Services.AddLogging(logging =>
 
 
 builder.Services.AddApplicationServices();
-// builder.Services.AddWebSocketServices();
 
 //Cho phép website khác truy cập vào API
+// builder.Services.AddCors(options =>
+// {
+//     options.AddPolicy("AllowFrontend",
+//         policy =>
+//         {
+//             policy.WithOrigins(Env.GetString("FQDN_FRONTEND"))
+//                   .AllowAnyHeader()
+//                   .AllowAnyMethod();
+//         });
+// });
+
+// Thêm SignalR
+// builder.Services.AddSignalR();
+
+// Thêm SignalR và tối ưu WebSocket
+builder.Services.AddSignalR(options =>
+    {
+        // Các cấu hình chung cho SignalR
+        options.EnableDetailedErrors = true; // Hiển thị lỗi chi tiết để debug
+        options.KeepAliveInterval = TimeSpan.FromSeconds(15); // Giữ kết nối WebSocket
+        options.ClientTimeoutInterval = TimeSpan.FromSeconds(60); // Tăng thời gian chờ client
+        options.HandshakeTimeout = TimeSpan.FromSeconds(30); // Tăng thời gian chờ handshake
+        options.MaximumReceiveMessageSize = 1024000; // Tăng giới hạn kích thước tin nhắn
+    })
+    .AddHubOptions<ChatHub>(options =>
+    {
+        // Cấu hình cho ChatHub
+        options.SupportedProtocols = new List<string> { "json" }; // Giao thức truyền dữ liệu
+    });
+
+
+// Cập nhật CORS để hỗ trợ SignalR (thêm AllowCredentials)
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend",
         policy =>
         {
-            policy.WithOrigins(Env.GetString("FQDN_FRONTEND"))
-                  .AllowAnyHeader()
-                  .AllowAnyMethod();
+            // policy.WithOrigins(Env.GetString("FQDN_FRONTEND"))
+            policy.WithOrigins("http://localhost:3000")
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowCredentials(); // Thêm để hỗ trợ SignalR
         });
 });
 
 var app = builder.Build();
+
+// Đặt middleware CORS trước tất cả middleware khác
+app.UseCors("AllowFrontend");
+
+// Middleware để bỏ qua xác thực cho yêu cầu OPTIONS
+app.Use(async (context, next) =>
+{
+    if (context.Request.Method == "OPTIONS")
+    {
+        context.Response.StatusCode = 204; // No Content
+        context.Response.Headers.Append("Access-Control-Allow-Origin", "http://localhost:3000");
+        context.Response.Headers.Append("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
+        context.Response.Headers.Append("Access-Control-Allow-Headers", "Authorization,Content-Type");
+        context.Response.Headers.Append("Access-Control-Allow-Credentials", "true");
+        return;
+    }
+    await next.Invoke();
+});
+
 
 if (app.Environment.IsDevelopment())
 {
@@ -68,14 +128,14 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseCustomHttpLogging();
-app.UseWebSockets(); // Kích hoạt WebSocket middleware
-// app.UseWebSocketHandler(); // Xử lý các yêu cầu WebSocket tại /ws
 
 // Đăng ký middleware
 app.UseMiddleware<RequestResponseLoggingMiddleware>();
 
 app.UseAuthentication();
 app.UseAuthorization();
+// Map SignalR Hub
+app.MapHub<Application.Hubs.ChatHub>("/hubs/chat");
 app.MapControllers();
 
 app.Run();
