@@ -40664,3 +40664,1653 @@ Body:
   }
 ]
 [05:26:05 INF] HTTP 200 returned for GET /api/group-posts/42de19d5-f6ed-49e9-8a10-5fbf24bbfe1f
+[05:49:27 INF] HTTP POST /hubs/chat/negotiate?negotiateVersion=1 received from ::1
+[05:49:27 INF] Request: URL: http://localhost:5295/hubs/chat/negotiate?negotiateVersion=1
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjMxNTIwLCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.hBC0AHd-tsKL4-MwqyycRamgOvVs7P-U--XxiQ1JzFg
+Query Parameters:
+  negotiateVersion: 1
+[05:49:28 INF] Response (Duration: 102ms): API: POST /hubs/chat/negotiate
+StatusCode: 200
+Body:
+{
+  "negotiateVersion": 1,
+  "connectionId": "ptXpOHHN4P4DuPjv_HGwsw",
+  "connectionToken": "VMWhorvRri1sXR3vtH9wlA",
+  "availableTransports": [
+    {
+      "transport": "WebSockets",
+      "transferFormats": [
+        "Text",
+        "Binary"
+      ]
+    },
+    {
+      "transport": "ServerSentEvents",
+      "transferFormats": [
+        "Text"
+      ]
+    },
+    {
+      "transport": "LongPolling",
+      "transferFormats": [
+        "Text",
+        "Binary"
+      ]
+    }
+  ]
+}
+[05:49:28 INF] HTTP 200 returned for POST /hubs/chat/negotiate
+[05:49:28 INF] HTTP GET /hubs/chat?id=VMWhorvRri1sXR3vtH9wlA&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjMxNTIwLCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.hBC0AHd-tsKL4-MwqyycRamgOvVs7P-U--XxiQ1JzFg received from ::1
+[05:49:28 INF] Request: URL: http://localhost:5295/hubs/chat?id=VMWhorvRri1sXR3vtH9wlA&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjMxNTIwLCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.hBC0AHd-tsKL4-MwqyycRamgOvVs7P-U--XxiQ1JzFg
+Authenticated: Yes
+Query Parameters:
+  id: VMWhorvRri1sXR3vtH9wlA
+  access_token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjMxNTIwLCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.hBC0AHd-tsKL4-MwqyycRamgOvVs7P-U--XxiQ1JzFg
+[05:53:20 INF] Response (Duration: 232518ms): API: GET /hubs/chat
+StatusCode: 101
+[05:53:20 INF] HTTP 101 returned for GET /hubs/chat
+[05:53:32 INF] HTTP POST /hubs/chat/negotiate?negotiateVersion=1 received from ::1
+[05:53:32 INF] Request: URL: http://localhost:5295/hubs/chat/negotiate?negotiateVersion=1
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjMxNTIwLCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.hBC0AHd-tsKL4-MwqyycRamgOvVs7P-U--XxiQ1JzFg
+Query Parameters:
+  negotiateVersion: 1
+[05:53:32 INF] Response (Duration: 138ms): API: POST /hubs/chat/negotiate
+StatusCode: 200
+Body:
+{
+  "negotiateVersion": 1,
+  "connectionId": "Fhrd-ppZ-5ue6o3U1StwMA",
+  "connectionToken": "Yb0MQzD3kTLkiS642lEM8g",
+  "availableTransports": [
+    {
+      "transport": "WebSockets",
+      "transferFormats": [
+        "Text",
+        "Binary"
+      ]
+    },
+    {
+      "transport": "ServerSentEvents",
+      "transferFormats": [
+        "Text"
+      ]
+    },
+    {
+      "transport": "LongPolling",
+      "transferFormats": [
+        "Text",
+        "Binary"
+      ]
+    }
+  ]
+}
+[05:53:32 INF] HTTP 200 returned for POST /hubs/chat/negotiate
+[05:53:32 INF] HTTP GET /hubs/chat?id=Yb0MQzD3kTLkiS642lEM8g&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjMxNTIwLCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.hBC0AHd-tsKL4-MwqyycRamgOvVs7P-U--XxiQ1JzFg received from ::1
+[05:53:32 INF] Request: URL: http://localhost:5295/hubs/chat?id=Yb0MQzD3kTLkiS642lEM8g&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjMxNTIwLCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.hBC0AHd-tsKL4-MwqyycRamgOvVs7P-U--XxiQ1JzFg
+Authenticated: Yes
+Query Parameters:
+  id: Yb0MQzD3kTLkiS642lEM8g
+  access_token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjMxNTIwLCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.hBC0AHd-tsKL4-MwqyycRamgOvVs7P-U--XxiQ1JzFg
+[05:53:39 INF] HTTP POST /api/Authentication/login received from ::1
+[05:53:39 INF] Request Body: {"email":"4801104003@student.hcmue.edu.vn","password":"123456789"}
+[05:53:39 INF] Request: URL: https://localhost:7247/api/Authentication/login
+Authenticated: Yes
+Path Parameters:
+  action: Login
+  controller: Authentication
+Body:
+{
+  "email": "4801104003@student.hcmue.edu.vn",
+  "password": "123456789"
+}
+[05:53:44 INF] Response (Duration: 5111ms): API: POST /api/Authentication/login
+StatusCode: 200
+Body:
+{
+  "Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTQxZjE5MjUtOWY2MC00MzE2LWJhMjktY2EyN2VkNjhiOWJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDAzIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjMyODI0LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.wrHqYEEz3FE_Zii3GHMja2D3zk5xhJtADZDq8Fz1mGo"
+}
+[05:53:44 INF] HTTP 200 returned for POST /api/Authentication/login
+[05:54:26 INF] HTTP POST /api/Authentication/login received from ::1
+[05:54:26 INF] Request Body: {"email":"4801104003@student.hcmue.edu.vn","password":"123456789"}
+[05:54:26 INF] Request: URL: https://localhost:7247/api/Authentication/login
+Authenticated: Yes
+Path Parameters:
+  action: Login
+  controller: Authentication
+Body:
+{
+  "email": "4801104003@student.hcmue.edu.vn",
+  "password": "123456789"
+}
+[05:54:26 INF] Response (Duration: 534ms): API: POST /api/Authentication/login
+StatusCode: 200
+Body:
+{
+  "Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTQxZjE5MjUtOWY2MC00MzE2LWJhMjktY2EyN2VkNjhiOWJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDAzIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjMyODY2LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.kO2_OjewIE2Ap9hvKG-T23YdDfZQp0KGsVew2J-VcF0"
+}
+[05:54:26 INF] HTTP 200 returned for POST /api/Authentication/login
+[05:56:42 INF] HTTP POST /api/Authentication/login received from ::1
+[05:56:42 INF] Request Body: {"email":"4801104003@student.hcmue.edu.vn","password":"123456789"}
+[05:56:42 INF] Request: URL: https://localhost:7247/api/Authentication/login
+Authenticated: Yes
+Path Parameters:
+  action: Login
+  controller: Authentication
+Body:
+{
+  "email": "4801104003@student.hcmue.edu.vn",
+  "password": "123456789"
+}
+[05:56:42 INF] Response (Duration: 362ms): API: POST /api/Authentication/login
+StatusCode: 200
+Body:
+{
+  "Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTQxZjE5MjUtOWY2MC00MzE2LWJhMjktY2EyN2VkNjhiOWJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDAzIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjMzMDAyLCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.jsBq6GwMPX9RMdTghodoYliA-0sUDRry28YOPaJkmRs"
+}
+[05:56:42 INF] HTTP 200 returned for POST /api/Authentication/login
+[06:02:17 INF] HTTP GET / received from ::1
+[06:02:17 INF] Request: URL: https://c94e-27-77-253-55.ngrok-free.app/
+Authenticated: Yes
+[06:02:17 INF] Response (Duration: 0ms): API: GET /
+StatusCode: 404
+[06:02:17 INF] HTTP 404 returned for GET /
+[06:19:09 INF] Response (Duration: 1536077ms): API: GET /hubs/chat
+StatusCode: 101
+[06:19:09 INF] HTTP 101 returned for GET /hubs/chat
+[06:19:15 INF] HTTP POST /hubs/chat/negotiate?negotiateVersion=1 received from ::1
+[06:19:15 INF] Request: URL: http://localhost:5295/hubs/chat/negotiate?negotiateVersion=1
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjMxNTIwLCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.hBC0AHd-tsKL4-MwqyycRamgOvVs7P-U--XxiQ1JzFg
+Query Parameters:
+  negotiateVersion: 1
+[06:19:15 INF] Response (Duration: 78ms): API: POST /hubs/chat/negotiate
+StatusCode: 200
+Body:
+{
+  "negotiateVersion": 1,
+  "connectionId": "HOSRzG-MN-aydESQHUNPww",
+  "connectionToken": "9_KU-uv5aLnNmxAeNm5v8w",
+  "availableTransports": [
+    {
+      "transport": "WebSockets",
+      "transferFormats": [
+        "Text",
+        "Binary"
+      ]
+    },
+    {
+      "transport": "ServerSentEvents",
+      "transferFormats": [
+        "Text"
+      ]
+    },
+    {
+      "transport": "LongPolling",
+      "transferFormats": [
+        "Text",
+        "Binary"
+      ]
+    }
+  ]
+}
+[06:19:15 INF] HTTP 200 returned for POST /hubs/chat/negotiate
+[06:19:15 INF] HTTP GET /hubs/chat?id=9_KU-uv5aLnNmxAeNm5v8w&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjMxNTIwLCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.hBC0AHd-tsKL4-MwqyycRamgOvVs7P-U--XxiQ1JzFg received from ::1
+[06:19:15 INF] Request: URL: http://localhost:5295/hubs/chat?id=9_KU-uv5aLnNmxAeNm5v8w&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjMxNTIwLCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.hBC0AHd-tsKL4-MwqyycRamgOvVs7P-U--XxiQ1JzFg
+Authenticated: Yes
+Query Parameters:
+  id: 9_KU-uv5aLnNmxAeNm5v8w
+  access_token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjMxNTIwLCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.hBC0AHd-tsKL4-MwqyycRamgOvVs7P-U--XxiQ1JzFg
+[06:20:18 INF] HTTP POST /api/Authentication/login received from ::1
+[06:20:18 INF] Request Body: {"email":"4801104003@student.hcmue.edu.vn","password":"123456789"}
+[06:20:18 INF] Request: URL: https://localhost:7247/api/Authentication/login
+Authenticated: Yes
+Path Parameters:
+  action: Login
+  controller: Authentication
+Body:
+{
+  "email": "4801104003@student.hcmue.edu.vn",
+  "password": "123456789"
+}
+[06:20:22 INF] Response (Duration: 4068ms): API: POST /api/Authentication/login
+StatusCode: 200
+Body:
+{
+  "Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTQxZjE5MjUtOWY2MC00MzE2LWJhMjktY2EyN2VkNjhiOWJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDAzIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjM0NDIyLCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.BH33YBDqUPeMGk0qd8wlYerapJQWJA9o2jDeDscFpRY"
+}
+[06:20:22 INF] HTTP 200 returned for POST /api/Authentication/login
+[06:24:43 INF] HTTP GET /api/user-posts/4b516857-e734-40fe-887a-b3e9e3b1392a?page=1&pageSize=10 received from ::1
+[06:24:43 INF] Request: URL: https://0068-27-77-253-55.ngrok-free.app/api/user-posts/4b516857-e734-40fe-887a-b3e9e3b1392a?page=1&pageSize=10
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNGI1MTY4NTctZTczNC00MGZlLTg4N2EtYjNlOWUzYjEzOTJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDE3IiwiaW1hZ2UiOiJodHRwczovL3NvY2lhbG1lZGlhc3RvcmFnZWJpbmguYmxvYi5jb3JlLndpbmRvd3MubmV0L3VzZXItdXBsb2Fkcy8xNzQ3OTIxMTc3NjYzLWJveS5qcGciLCJleHAiOjE3NTA1ODUwNTIsImlzcyI6Ik15QXBwIiwiYXVkIjoiTXlDbGllbnRBcHAifQ.wezuxTMy6U7ePDJwtAo0hJce3tXDkZECmFLgn_tsk7Q
+Path Parameters:
+  action: GetUserPosts
+  controller: UserPosts
+  userId: 4b516857-e734-40fe-887a-b3e9e3b1392a
+Query Parameters:
+  page: 1
+  pageSize: 10
+[06:24:43 INF] HTTP GET /api/user-posts/4b516857-e734-40fe-887a-b3e9e3b1392a?page=1&pageSize=10 received from ::1
+[06:24:43 INF] Request: URL: https://0068-27-77-253-55.ngrok-free.app/api/user-posts/4b516857-e734-40fe-887a-b3e9e3b1392a?page=1&pageSize=10
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNGI1MTY4NTctZTczNC00MGZlLTg4N2EtYjNlOWUzYjEzOTJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDE3IiwiaW1hZ2UiOiJodHRwczovL3NvY2lhbG1lZGlhc3RvcmFnZWJpbmguYmxvYi5jb3JlLndpbmRvd3MubmV0L3VzZXItdXBsb2Fkcy8xNzQ3OTIxMTc3NjYzLWJveS5qcGciLCJleHAiOjE3NTA1ODUwNTIsImlzcyI6Ik15QXBwIiwiYXVkIjoiTXlDbGllbnRBcHAifQ.wezuxTMy6U7ePDJwtAo0hJce3tXDkZECmFLgn_tsk7Q
+Path Parameters:
+  action: GetUserPosts
+  controller: UserPosts
+  userId: 4b516857-e734-40fe-887a-b3e9e3b1392a
+Query Parameters:
+  page: 1
+  pageSize: 10
+[06:24:43 INF] HTTP GET /api/Follows/following/4b516857-e734-40fe-887a-b3e9e3b1392a?skip=0&take=20 received from ::1
+[06:24:43 INF] HTTP GET /api/Follows/following/4b516857-e734-40fe-887a-b3e9e3b1392a?skip=0&take=20 received from ::1
+[06:24:43 INF] Request: URL: https://0068-27-77-253-55.ngrok-free.app/api/Follows/following/4b516857-e734-40fe-887a-b3e9e3b1392a?skip=0&take=20
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNGI1MTY4NTctZTczNC00MGZlLTg4N2EtYjNlOWUzYjEzOTJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDE3IiwiaW1hZ2UiOiJodHRwczovL3NvY2lhbG1lZGlhc3RvcmFnZWJpbmguYmxvYi5jb3JlLndpbmRvd3MubmV0L3VzZXItdXBsb2Fkcy8xNzQ3OTIxMTc3NjYzLWJveS5qcGciLCJleHAiOjE3NTA1ODUwNTIsImlzcyI6Ik15QXBwIiwiYXVkIjoiTXlDbGllbnRBcHAifQ.wezuxTMy6U7ePDJwtAo0hJce3tXDkZECmFLgn_tsk7Q
+Path Parameters:
+  action: GetFollowing
+  controller: Follows
+  userId: 4b516857-e734-40fe-887a-b3e9e3b1392a
+Query Parameters:
+  skip: 0
+  take: 20
+[06:24:43 INF] Request: URL: https://0068-27-77-253-55.ngrok-free.app/api/Follows/following/4b516857-e734-40fe-887a-b3e9e3b1392a?skip=0&take=20
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNGI1MTY4NTctZTczNC00MGZlLTg4N2EtYjNlOWUzYjEzOTJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDE3IiwiaW1hZ2UiOiJodHRwczovL3NvY2lhbG1lZGlhc3RvcmFnZWJpbmguYmxvYi5jb3JlLndpbmRvd3MubmV0L3VzZXItdXBsb2Fkcy8xNzQ3OTIxMTc3NjYzLWJveS5qcGciLCJleHAiOjE3NTA1ODUwNTIsImlzcyI6Ik15QXBwIiwiYXVkIjoiTXlDbGllbnRBcHAifQ.wezuxTMy6U7ePDJwtAo0hJce3tXDkZECmFLgn_tsk7Q
+Path Parameters:
+  action: GetFollowing
+  controller: Follows
+  userId: 4b516857-e734-40fe-887a-b3e9e3b1392a
+Query Parameters:
+  skip: 0
+  take: 20
+[06:24:44 INF] Response (Duration: 1235ms): API: GET /api/user-posts/4b516857-e734-40fe-887a-b3e9e3b1392a
+StatusCode: 200
+Body:
+[
+  {
+    "PostId": "756d780b-5797-457f-a547-e6640621ffb6",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "Hello this is pdf",
+    "PostedAt": "2025-05-23T18:15:22.8673957",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [
+      {
+        "MediaId": "52006695-c842-4b21-a7f0-775875c27ce7",
+        "MediaUrl": "https://socialmediastoragebinh.blob.core.windows.net/user-uploads/1747998912578-examp-upload.pdf",
+        "MediaType": "document",
+        "UploadedAt": "2025-05-23T18:15:23.1183101",
+        "UploadedBy": "4b516857-e734-40fe-887a-b3e9e3b1392a"
+      }
+    ],
+    "VoteCount": 1,
+    "IsVotedByCurrentUser": true,
+    "CommentCount": 1
+  },
+  {
+    "PostId": "2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "Day la file pdf",
+    "PostedAt": "2025-05-21T00:48:58.5326478",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [
+      {
+        "MediaId": "19a96e94-f644-4aae-937e-e6cbdc50f504",
+        "MediaUrl": "https://socialmediastoragebinh.blob.core.windows.net/user-uploads/1747788522804-examp-upload.pdf",
+        "MediaType": "document",
+        "UploadedAt": "2025-05-21T00:48:59.1894589",
+        "UploadedBy": "4b516857-e734-40fe-887a-b3e9e3b1392a"
+      }
+    ],
+    "VoteCount": 2,
+    "IsVotedByCurrentUser": true,
+    "CommentCount": 12
+  },
+  {
+    "PostId": "a09cc9b4-dbbb-4ca3-adfe-45d62477d170",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "Hello",
+    "PostedAt": "2025-05-20T23:15:09.8049152",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [
+      {
+        "MediaId": "2d55b915-6035-40ed-afff-4291008ebfbc",
+        "MediaUrl": "https://socialmediastoragebinh.blob.core.windows.net/user-uploads/1747782888682-examp-upload.docx",
+        "MediaType": "document",
+        "UploadedAt": "2025-05-20T23:15:10.1493477",
+        "UploadedBy": "4b516857-e734-40fe-887a-b3e9e3b1392a"
+      }
+    ],
+    "VoteCount": 1,
+    "IsVotedByCurrentUser": true,
+    "CommentCount": 1
+  },
+  {
+    "PostId": "dcc7dd6a-66e6-4095-97e4-9cca8f7124dc",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "Hello",
+    "PostedAt": "2025-05-20T22:48:09.6961366",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [
+      {
+        "MediaId": "5f80f44b-c1c1-451e-99be-37226c027005",
+        "MediaUrl": "https://socialmediastoragebinh.blob.core.windows.net/user-uploads/1747781289104-examp-upload.docx",
+        "MediaType": "document",
+        "UploadedAt": "2025-05-20T22:48:10.0080054",
+        "UploadedBy": "4b516857-e734-40fe-887a-b3e9e3b1392a"
+      }
+    ],
+    "VoteCount": 0,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  },
+  {
+    "PostId": "982d8030-4a91-4ba6-bf01-7fefbe515330",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "Hello",
+    "PostedAt": "2025-05-20T22:44:47.1135396",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [
+      {
+        "MediaId": "441f075d-6f7c-410d-aec4-40d4f682335f",
+        "MediaUrl": "https://socialmediastoragebinh.blob.core.windows.net/user-uploads/1747781086325-boy.jpg",
+        "MediaType": "image",
+        "UploadedAt": "2025-05-20T22:44:47.7142261",
+        "UploadedBy": "4b516857-e734-40fe-887a-b3e9e3b1392a"
+      }
+    ],
+    "VoteCount": 0,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  },
+  {
+    "PostId": "81956ca3-eda0-4050-a8f7-13ef4a21ba05",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "Hello",
+    "PostedAt": "2025-05-20T13:00:24.0222908",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [
+      {
+        "MediaId": "c7f1ef86-cfc4-41b3-8256-c06236366e20",
+        "MediaUrl": "",
+        "MediaType": "",
+        "UploadedAt": "2025-05-20T13:00:24.2712632",
+        "UploadedBy": "4b516857-e734-40fe-887a-b3e9e3b1392a"
+      }
+    ],
+    "VoteCount": 0,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  },
+  {
+    "PostId": "04bd74df-11d0-473b-afec-ef981094c380",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "",
+    "PostedAt": "2025-05-20T12:52:45.7150886",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [],
+    "VoteCount": 0,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  },
+  {
+    "PostId": "dbd651cd-fe24-4716-a44f-f0916b93c46e",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "",
+    "PostedAt": "2025-05-20T12:50:18.8182867",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [],
+    "VoteCount": 0,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  },
+  {
+    "PostId": "614c47ac-a31b-40a1-b8d0-f1f59c829aeb",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "",
+    "PostedAt": "2025-05-20T12:49:32.9314612",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [],
+    "VoteCount": 0,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  },
+  {
+    "PostId": "f9c2cbc2-d620-4500-a223-ddcc5df03c77",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "",
+    "PostedAt": "2025-05-20T12:45:05.7998567",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [],
+    "VoteCount": 0,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  }
+]
+[06:24:44 INF] Response (Duration: 1263ms): API: GET /api/user-posts/4b516857-e734-40fe-887a-b3e9e3b1392a
+StatusCode: 200
+Body:
+[
+  {
+    "PostId": "756d780b-5797-457f-a547-e6640621ffb6",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "Hello this is pdf",
+    "PostedAt": "2025-05-23T18:15:22.8673957",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [
+      {
+        "MediaId": "52006695-c842-4b21-a7f0-775875c27ce7",
+        "MediaUrl": "https://socialmediastoragebinh.blob.core.windows.net/user-uploads/1747998912578-examp-upload.pdf",
+        "MediaType": "document",
+        "UploadedAt": "2025-05-23T18:15:23.1183101",
+        "UploadedBy": "4b516857-e734-40fe-887a-b3e9e3b1392a"
+      }
+    ],
+    "VoteCount": 1,
+    "IsVotedByCurrentUser": true,
+    "CommentCount": 1
+  },
+  {
+    "PostId": "2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "Day la file pdf",
+    "PostedAt": "2025-05-21T00:48:58.5326478",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [
+      {
+        "MediaId": "19a96e94-f644-4aae-937e-e6cbdc50f504",
+        "MediaUrl": "https://socialmediastoragebinh.blob.core.windows.net/user-uploads/1747788522804-examp-upload.pdf",
+        "MediaType": "document",
+        "UploadedAt": "2025-05-21T00:48:59.1894589",
+        "UploadedBy": "4b516857-e734-40fe-887a-b3e9e3b1392a"
+      }
+    ],
+    "VoteCount": 2,
+    "IsVotedByCurrentUser": true,
+    "CommentCount": 12
+  },
+  {
+    "PostId": "a09cc9b4-dbbb-4ca3-adfe-45d62477d170",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "Hello",
+    "PostedAt": "2025-05-20T23:15:09.8049152",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [
+      {
+        "MediaId": "2d55b915-6035-40ed-afff-4291008ebfbc",
+        "MediaUrl": "https://socialmediastoragebinh.blob.core.windows.net/user-uploads/1747782888682-examp-upload.docx",
+        "MediaType": "document",
+        "UploadedAt": "2025-05-20T23:15:10.1493477",
+        "UploadedBy": "4b516857-e734-40fe-887a-b3e9e3b1392a"
+      }
+    ],
+    "VoteCount": 1,
+    "IsVotedByCurrentUser": true,
+    "CommentCount": 1
+  },
+  {
+    "PostId": "dcc7dd6a-66e6-4095-97e4-9cca8f7124dc",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "Hello",
+    "PostedAt": "2025-05-20T22:48:09.6961366",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [
+      {
+        "MediaId": "5f80f44b-c1c1-451e-99be-37226c027005",
+        "MediaUrl": "https://socialmediastoragebinh.blob.core.windows.net/user-uploads/1747781289104-examp-upload.docx",
+        "MediaType": "document",
+        "UploadedAt": "2025-05-20T22:48:10.0080054",
+        "UploadedBy": "4b516857-e734-40fe-887a-b3e9e3b1392a"
+      }
+    ],
+    "VoteCount": 0,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  },
+  {
+    "PostId": "982d8030-4a91-4ba6-bf01-7fefbe515330",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "Hello",
+    "PostedAt": "2025-05-20T22:44:47.1135396",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [
+      {
+        "MediaId": "441f075d-6f7c-410d-aec4-40d4f682335f",
+        "MediaUrl": "https://socialmediastoragebinh.blob.core.windows.net/user-uploads/1747781086325-boy.jpg",
+        "MediaType": "image",
+        "UploadedAt": "2025-05-20T22:44:47.7142261",
+        "UploadedBy": "4b516857-e734-40fe-887a-b3e9e3b1392a"
+      }
+    ],
+    "VoteCount": 0,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  },
+  {
+    "PostId": "81956ca3-eda0-4050-a8f7-13ef4a21ba05",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "Hello",
+    "PostedAt": "2025-05-20T13:00:24.0222908",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [
+      {
+        "MediaId": "c7f1ef86-cfc4-41b3-8256-c06236366e20",
+        "MediaUrl": "",
+        "MediaType": "",
+        "UploadedAt": "2025-05-20T13:00:24.2712632",
+        "UploadedBy": "4b516857-e734-40fe-887a-b3e9e3b1392a"
+      }
+    ],
+    "VoteCount": 0,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  },
+  {
+    "PostId": "04bd74df-11d0-473b-afec-ef981094c380",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "",
+    "PostedAt": "2025-05-20T12:52:45.7150886",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [],
+    "VoteCount": 0,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  },
+  {
+    "PostId": "dbd651cd-fe24-4716-a44f-f0916b93c46e",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "",
+    "PostedAt": "2025-05-20T12:50:18.8182867",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [],
+    "VoteCount": 0,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  },
+  {
+    "PostId": "614c47ac-a31b-40a1-b8d0-f1f59c829aeb",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "",
+    "PostedAt": "2025-05-20T12:49:32.9314612",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [],
+    "VoteCount": 0,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  },
+  {
+    "PostId": "f9c2cbc2-d620-4500-a223-ddcc5df03c77",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "",
+    "PostedAt": "2025-05-20T12:45:05.7998567",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [],
+    "VoteCount": 0,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  }
+]
+[06:24:44 INF] HTTP 200 returned for GET /api/user-posts/4b516857-e734-40fe-887a-b3e9e3b1392a
+[06:24:44 INF] HTTP 200 returned for GET /api/user-posts/4b516857-e734-40fe-887a-b3e9e3b1392a
+[06:24:44 INF] Response (Duration: 977ms): API: GET /api/Follows/following/4b516857-e734-40fe-887a-b3e9e3b1392a
+StatusCode: 200
+Body:
+[
+  {
+    "FollowerId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "FollowedId": "ebffb103-a942-4f83-b882-14f117370e53",
+    "FollowedAt": "2025-05-23T21:34:15.7194536",
+    "Follower": {
+      "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+      "Username": "4801104017",
+      "Email": "4801104017@student.hcmue.edu.vn",
+      "FullName": "4801104017",
+      "Intro": null,
+      "Image": "https://socialmediastoragebinh.blob.core.windows.net/user-uploads/1747921177663-boy.jpg",
+      "JoinedAt": "2025-05-20T07:37:51.1590691"
+    },
+    "Followed": {
+      "UserId": "ebffb103-a942-4f83-b882-14f117370e53",
+      "Username": "binh",
+      "Email": "binhwork245@gmail.com",
+      "FullName": null,
+      "Intro": null,
+      "Image": "https://res.cloudinary.com/dapvvdxw7/image/upload/v1747159636/avatar_l2rwth.jpg",
+      "JoinedAt": "2025-05-23T13:27:35.80182"
+    }
+  },
+  {
+    "FollowerId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "FollowedId": "141f1925-9f60-4316-ba29-ca27ed68b9ba",
+    "FollowedAt": "2025-05-23T21:25:51.1247994",
+    "Follower": {
+      "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+      "Username": "4801104017",
+      "Email": "4801104017@student.hcmue.edu.vn",
+      "FullName": "4801104017",
+      "Intro": null,
+      "Image": "https://socialmediastoragebinh.blob.core.windows.net/user-uploads/1747921177663-boy.jpg",
+      "JoinedAt": "2025-05-20T07:37:51.1590691"
+    },
+    "Followed": {
+      "UserId": "141f1925-9f60-4316-ba29-ca27ed68b9ba",
+      "Username": "4801104003",
+      "Email": "4801104003@student.hcmue.edu.vn",
+      "FullName": null,
+      "Intro": null,
+      "Image": "https://res.cloudinary.com/dapvvdxw7/image/upload/v1747159636/avatar_l2rwth.jpg",
+      "JoinedAt": "2025-05-22T21:29:49.3748733"
+    }
+  }
+]
+[06:24:44 INF] HTTP 200 returned for GET /api/Follows/following/4b516857-e734-40fe-887a-b3e9e3b1392a
+[06:24:44 INF] Response (Duration: 1158ms): API: GET /api/Follows/following/4b516857-e734-40fe-887a-b3e9e3b1392a
+StatusCode: 200
+Body:
+[
+  {
+    "FollowerId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "FollowedId": "ebffb103-a942-4f83-b882-14f117370e53",
+    "FollowedAt": "2025-05-23T21:34:15.7194536",
+    "Follower": {
+      "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+      "Username": "4801104017",
+      "Email": "4801104017@student.hcmue.edu.vn",
+      "FullName": "4801104017",
+      "Intro": null,
+      "Image": "https://socialmediastoragebinh.blob.core.windows.net/user-uploads/1747921177663-boy.jpg",
+      "JoinedAt": "2025-05-20T07:37:51.1590691"
+    },
+    "Followed": {
+      "UserId": "ebffb103-a942-4f83-b882-14f117370e53",
+      "Username": "binh",
+      "Email": "binhwork245@gmail.com",
+      "FullName": null,
+      "Intro": null,
+      "Image": "https://res.cloudinary.com/dapvvdxw7/image/upload/v1747159636/avatar_l2rwth.jpg",
+      "JoinedAt": "2025-05-23T13:27:35.80182"
+    }
+  },
+  {
+    "FollowerId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "FollowedId": "141f1925-9f60-4316-ba29-ca27ed68b9ba",
+    "FollowedAt": "2025-05-23T21:25:51.1247994",
+    "Follower": {
+      "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+      "Username": "4801104017",
+      "Email": "4801104017@student.hcmue.edu.vn",
+      "FullName": "4801104017",
+      "Intro": null,
+      "Image": "https://socialmediastoragebinh.blob.core.windows.net/user-uploads/1747921177663-boy.jpg",
+      "JoinedAt": "2025-05-20T07:37:51.1590691"
+    },
+    "Followed": {
+      "UserId": "141f1925-9f60-4316-ba29-ca27ed68b9ba",
+      "Username": "4801104003",
+      "Email": "4801104003@student.hcmue.edu.vn",
+      "FullName": null,
+      "Intro": null,
+      "Image": "https://res.cloudinary.com/dapvvdxw7/image/upload/v1747159636/avatar_l2rwth.jpg",
+      "JoinedAt": "2025-05-22T21:29:49.3748733"
+    }
+  }
+]
+[06:24:44 INF] HTTP 200 returned for GET /api/Follows/following/4b516857-e734-40fe-887a-b3e9e3b1392a
+[06:25:16 INF] HTTP GET /api/user-posts/4b516857-e734-40fe-887a-b3e9e3b1392a?page=1&pageSize=10 received from ::1
+[06:25:16 INF] Request: URL: https://0068-27-77-253-55.ngrok-free.app/api/user-posts/4b516857-e734-40fe-887a-b3e9e3b1392a?page=1&pageSize=10
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNGI1MTY4NTctZTczNC00MGZlLTg4N2EtYjNlOWUzYjEzOTJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDE3IiwiaW1hZ2UiOiJodHRwczovL3NvY2lhbG1lZGlhc3RvcmFnZWJpbmguYmxvYi5jb3JlLndpbmRvd3MubmV0L3VzZXItdXBsb2Fkcy8xNzQ3OTIxMTc3NjYzLWJveS5qcGciLCJleHAiOjE3NTA1ODUwNTIsImlzcyI6Ik15QXBwIiwiYXVkIjoiTXlDbGllbnRBcHAifQ.wezuxTMy6U7ePDJwtAo0hJce3tXDkZECmFLgn_tsk7Q
+Path Parameters:
+  action: GetUserPosts
+  controller: UserPosts
+  userId: 4b516857-e734-40fe-887a-b3e9e3b1392a
+Query Parameters:
+  page: 1
+  pageSize: 10
+[06:25:16 INF] HTTP GET /api/user-posts/4b516857-e734-40fe-887a-b3e9e3b1392a?page=1&pageSize=10 received from ::1
+[06:25:16 INF] Request: URL: https://0068-27-77-253-55.ngrok-free.app/api/user-posts/4b516857-e734-40fe-887a-b3e9e3b1392a?page=1&pageSize=10
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNGI1MTY4NTctZTczNC00MGZlLTg4N2EtYjNlOWUzYjEzOTJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDE3IiwiaW1hZ2UiOiJodHRwczovL3NvY2lhbG1lZGlhc3RvcmFnZWJpbmguYmxvYi5jb3JlLndpbmRvd3MubmV0L3VzZXItdXBsb2Fkcy8xNzQ3OTIxMTc3NjYzLWJveS5qcGciLCJleHAiOjE3NTA1ODUwNTIsImlzcyI6Ik15QXBwIiwiYXVkIjoiTXlDbGllbnRBcHAifQ.wezuxTMy6U7ePDJwtAo0hJce3tXDkZECmFLgn_tsk7Q
+Path Parameters:
+  action: GetUserPosts
+  controller: UserPosts
+  userId: 4b516857-e734-40fe-887a-b3e9e3b1392a
+Query Parameters:
+  page: 1
+  pageSize: 10
+[06:25:17 INF] HTTP GET /api/Follows/following/4b516857-e734-40fe-887a-b3e9e3b1392a?skip=0&take=20 received from ::1
+[06:25:17 INF] HTTP GET /api/Follows/following/4b516857-e734-40fe-887a-b3e9e3b1392a?skip=0&take=20 received from ::1
+[06:25:17 INF] Request: URL: https://0068-27-77-253-55.ngrok-free.app/api/Follows/following/4b516857-e734-40fe-887a-b3e9e3b1392a?skip=0&take=20
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNGI1MTY4NTctZTczNC00MGZlLTg4N2EtYjNlOWUzYjEzOTJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDE3IiwiaW1hZ2UiOiJodHRwczovL3NvY2lhbG1lZGlhc3RvcmFnZWJpbmguYmxvYi5jb3JlLndpbmRvd3MubmV0L3VzZXItdXBsb2Fkcy8xNzQ3OTIxMTc3NjYzLWJveS5qcGciLCJleHAiOjE3NTA1ODUwNTIsImlzcyI6Ik15QXBwIiwiYXVkIjoiTXlDbGllbnRBcHAifQ.wezuxTMy6U7ePDJwtAo0hJce3tXDkZECmFLgn_tsk7Q
+Path Parameters:
+  action: GetFollowing
+  controller: Follows
+  userId: 4b516857-e734-40fe-887a-b3e9e3b1392a
+Query Parameters:
+  skip: 0
+  take: 20
+[06:25:17 INF] Request: URL: https://0068-27-77-253-55.ngrok-free.app/api/Follows/following/4b516857-e734-40fe-887a-b3e9e3b1392a?skip=0&take=20
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNGI1MTY4NTctZTczNC00MGZlLTg4N2EtYjNlOWUzYjEzOTJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDE3IiwiaW1hZ2UiOiJodHRwczovL3NvY2lhbG1lZGlhc3RvcmFnZWJpbmguYmxvYi5jb3JlLndpbmRvd3MubmV0L3VzZXItdXBsb2Fkcy8xNzQ3OTIxMTc3NjYzLWJveS5qcGciLCJleHAiOjE3NTA1ODUwNTIsImlzcyI6Ik15QXBwIiwiYXVkIjoiTXlDbGllbnRBcHAifQ.wezuxTMy6U7ePDJwtAo0hJce3tXDkZECmFLgn_tsk7Q
+Path Parameters:
+  action: GetFollowing
+  controller: Follows
+  userId: 4b516857-e734-40fe-887a-b3e9e3b1392a
+Query Parameters:
+  skip: 0
+  take: 20
+[06:25:17 INF] Response (Duration: 554ms): API: GET /api/user-posts/4b516857-e734-40fe-887a-b3e9e3b1392a
+StatusCode: 200
+Body:
+[
+  {
+    "PostId": "756d780b-5797-457f-a547-e6640621ffb6",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "Hello this is pdf",
+    "PostedAt": "2025-05-23T18:15:22.8673957",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [
+      {
+        "MediaId": "52006695-c842-4b21-a7f0-775875c27ce7",
+        "MediaUrl": "https://socialmediastoragebinh.blob.core.windows.net/user-uploads/1747998912578-examp-upload.pdf",
+        "MediaType": "document",
+        "UploadedAt": "2025-05-23T18:15:23.1183101",
+        "UploadedBy": "4b516857-e734-40fe-887a-b3e9e3b1392a"
+      }
+    ],
+    "VoteCount": 1,
+    "IsVotedByCurrentUser": true,
+    "CommentCount": 1
+  },
+  {
+    "PostId": "2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "Day la file pdf",
+    "PostedAt": "2025-05-21T00:48:58.5326478",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [
+      {
+        "MediaId": "19a96e94-f644-4aae-937e-e6cbdc50f504",
+        "MediaUrl": "https://socialmediastoragebinh.blob.core.windows.net/user-uploads/1747788522804-examp-upload.pdf",
+        "MediaType": "document",
+        "UploadedAt": "2025-05-21T00:48:59.1894589",
+        "UploadedBy": "4b516857-e734-40fe-887a-b3e9e3b1392a"
+      }
+    ],
+    "VoteCount": 2,
+    "IsVotedByCurrentUser": true,
+    "CommentCount": 12
+  },
+  {
+    "PostId": "a09cc9b4-dbbb-4ca3-adfe-45d62477d170",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "Hello",
+    "PostedAt": "2025-05-20T23:15:09.8049152",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [
+      {
+        "MediaId": "2d55b915-6035-40ed-afff-4291008ebfbc",
+        "MediaUrl": "https://socialmediastoragebinh.blob.core.windows.net/user-uploads/1747782888682-examp-upload.docx",
+        "MediaType": "document",
+        "UploadedAt": "2025-05-20T23:15:10.1493477",
+        "UploadedBy": "4b516857-e734-40fe-887a-b3e9e3b1392a"
+      }
+    ],
+    "VoteCount": 1,
+    "IsVotedByCurrentUser": true,
+    "CommentCount": 1
+  },
+  {
+    "PostId": "dcc7dd6a-66e6-4095-97e4-9cca8f7124dc",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "Hello",
+    "PostedAt": "2025-05-20T22:48:09.6961366",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [
+      {
+        "MediaId": "5f80f44b-c1c1-451e-99be-37226c027005",
+        "MediaUrl": "https://socialmediastoragebinh.blob.core.windows.net/user-uploads/1747781289104-examp-upload.docx",
+        "MediaType": "document",
+        "UploadedAt": "2025-05-20T22:48:10.0080054",
+        "UploadedBy": "4b516857-e734-40fe-887a-b3e9e3b1392a"
+      }
+    ],
+    "VoteCount": 0,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  },
+  {
+    "PostId": "982d8030-4a91-4ba6-bf01-7fefbe515330",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "Hello",
+    "PostedAt": "2025-05-20T22:44:47.1135396",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [
+      {
+        "MediaId": "441f075d-6f7c-410d-aec4-40d4f682335f",
+        "MediaUrl": "https://socialmediastoragebinh.blob.core.windows.net/user-uploads/1747781086325-boy.jpg",
+        "MediaType": "image",
+        "UploadedAt": "2025-05-20T22:44:47.7142261",
+        "UploadedBy": "4b516857-e734-40fe-887a-b3e9e3b1392a"
+      }
+    ],
+    "VoteCount": 0,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  },
+  {
+    "PostId": "81956ca3-eda0-4050-a8f7-13ef4a21ba05",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "Hello",
+    "PostedAt": "2025-05-20T13:00:24.0222908",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [
+      {
+        "MediaId": "c7f1ef86-cfc4-41b3-8256-c06236366e20",
+        "MediaUrl": "",
+        "MediaType": "",
+        "UploadedAt": "2025-05-20T13:00:24.2712632",
+        "UploadedBy": "4b516857-e734-40fe-887a-b3e9e3b1392a"
+      }
+    ],
+    "VoteCount": 0,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  },
+  {
+    "PostId": "04bd74df-11d0-473b-afec-ef981094c380",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "",
+    "PostedAt": "2025-05-20T12:52:45.7150886",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [],
+    "VoteCount": 0,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  },
+  {
+    "PostId": "dbd651cd-fe24-4716-a44f-f0916b93c46e",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "",
+    "PostedAt": "2025-05-20T12:50:18.8182867",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [],
+    "VoteCount": 0,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  },
+  {
+    "PostId": "614c47ac-a31b-40a1-b8d0-f1f59c829aeb",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "",
+    "PostedAt": "2025-05-20T12:49:32.9314612",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [],
+    "VoteCount": 0,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  },
+  {
+    "PostId": "f9c2cbc2-d620-4500-a223-ddcc5df03c77",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "",
+    "PostedAt": "2025-05-20T12:45:05.7998567",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [],
+    "VoteCount": 0,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  }
+]
+[06:25:17 INF] Response (Duration: 567ms): API: GET /api/user-posts/4b516857-e734-40fe-887a-b3e9e3b1392a
+StatusCode: 200
+Body:
+[
+  {
+    "PostId": "756d780b-5797-457f-a547-e6640621ffb6",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "Hello this is pdf",
+    "PostedAt": "2025-05-23T18:15:22.8673957",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [
+      {
+        "MediaId": "52006695-c842-4b21-a7f0-775875c27ce7",
+        "MediaUrl": "https://socialmediastoragebinh.blob.core.windows.net/user-uploads/1747998912578-examp-upload.pdf",
+        "MediaType": "document",
+        "UploadedAt": "2025-05-23T18:15:23.1183101",
+        "UploadedBy": "4b516857-e734-40fe-887a-b3e9e3b1392a"
+      }
+    ],
+    "VoteCount": 1,
+    "IsVotedByCurrentUser": true,
+    "CommentCount": 1
+  },
+  {
+    "PostId": "2fd6bcdf-b41c-42f6-8d3a-7b538f0b1657",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "Day la file pdf",
+    "PostedAt": "2025-05-21T00:48:58.5326478",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [
+      {
+        "MediaId": "19a96e94-f644-4aae-937e-e6cbdc50f504",
+        "MediaUrl": "https://socialmediastoragebinh.blob.core.windows.net/user-uploads/1747788522804-examp-upload.pdf",
+        "MediaType": "document",
+        "UploadedAt": "2025-05-21T00:48:59.1894589",
+        "UploadedBy": "4b516857-e734-40fe-887a-b3e9e3b1392a"
+      }
+    ],
+    "VoteCount": 2,
+    "IsVotedByCurrentUser": true,
+    "CommentCount": 12
+  },
+  {
+    "PostId": "a09cc9b4-dbbb-4ca3-adfe-45d62477d170",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "Hello",
+    "PostedAt": "2025-05-20T23:15:09.8049152",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [
+      {
+        "MediaId": "2d55b915-6035-40ed-afff-4291008ebfbc",
+        "MediaUrl": "https://socialmediastoragebinh.blob.core.windows.net/user-uploads/1747782888682-examp-upload.docx",
+        "MediaType": "document",
+        "UploadedAt": "2025-05-20T23:15:10.1493477",
+        "UploadedBy": "4b516857-e734-40fe-887a-b3e9e3b1392a"
+      }
+    ],
+    "VoteCount": 1,
+    "IsVotedByCurrentUser": true,
+    "CommentCount": 1
+  },
+  {
+    "PostId": "dcc7dd6a-66e6-4095-97e4-9cca8f7124dc",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "Hello",
+    "PostedAt": "2025-05-20T22:48:09.6961366",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [
+      {
+        "MediaId": "5f80f44b-c1c1-451e-99be-37226c027005",
+        "MediaUrl": "https://socialmediastoragebinh.blob.core.windows.net/user-uploads/1747781289104-examp-upload.docx",
+        "MediaType": "document",
+        "UploadedAt": "2025-05-20T22:48:10.0080054",
+        "UploadedBy": "4b516857-e734-40fe-887a-b3e9e3b1392a"
+      }
+    ],
+    "VoteCount": 0,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  },
+  {
+    "PostId": "982d8030-4a91-4ba6-bf01-7fefbe515330",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "Hello",
+    "PostedAt": "2025-05-20T22:44:47.1135396",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [
+      {
+        "MediaId": "441f075d-6f7c-410d-aec4-40d4f682335f",
+        "MediaUrl": "https://socialmediastoragebinh.blob.core.windows.net/user-uploads/1747781086325-boy.jpg",
+        "MediaType": "image",
+        "UploadedAt": "2025-05-20T22:44:47.7142261",
+        "UploadedBy": "4b516857-e734-40fe-887a-b3e9e3b1392a"
+      }
+    ],
+    "VoteCount": 0,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  },
+  {
+    "PostId": "81956ca3-eda0-4050-a8f7-13ef4a21ba05",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "Hello",
+    "PostedAt": "2025-05-20T13:00:24.0222908",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [
+      {
+        "MediaId": "c7f1ef86-cfc4-41b3-8256-c06236366e20",
+        "MediaUrl": "",
+        "MediaType": "",
+        "UploadedAt": "2025-05-20T13:00:24.2712632",
+        "UploadedBy": "4b516857-e734-40fe-887a-b3e9e3b1392a"
+      }
+    ],
+    "VoteCount": 0,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  },
+  {
+    "PostId": "04bd74df-11d0-473b-afec-ef981094c380",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "",
+    "PostedAt": "2025-05-20T12:52:45.7150886",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [],
+    "VoteCount": 0,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  },
+  {
+    "PostId": "dbd651cd-fe24-4716-a44f-f0916b93c46e",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "",
+    "PostedAt": "2025-05-20T12:50:18.8182867",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [],
+    "VoteCount": 0,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  },
+  {
+    "PostId": "614c47ac-a31b-40a1-b8d0-f1f59c829aeb",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "",
+    "PostedAt": "2025-05-20T12:49:32.9314612",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [],
+    "VoteCount": 0,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  },
+  {
+    "PostId": "f9c2cbc2-d620-4500-a223-ddcc5df03c77",
+    "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "Content": "",
+    "PostedAt": "2025-05-20T12:45:05.7998567",
+    "GroupId": null,
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [],
+    "VoteCount": 0,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  }
+]
+[06:25:17 INF] HTTP 200 returned for GET /api/user-posts/4b516857-e734-40fe-887a-b3e9e3b1392a
+[06:25:17 INF] HTTP 200 returned for GET /api/user-posts/4b516857-e734-40fe-887a-b3e9e3b1392a
+[06:25:17 INF] Response (Duration: 555ms): API: GET /api/Follows/following/4b516857-e734-40fe-887a-b3e9e3b1392a
+StatusCode: 200
+Body:
+[
+  {
+    "FollowerId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "FollowedId": "ebffb103-a942-4f83-b882-14f117370e53",
+    "FollowedAt": "2025-05-23T21:34:15.7194536",
+    "Follower": {
+      "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+      "Username": "4801104017",
+      "Email": "4801104017@student.hcmue.edu.vn",
+      "FullName": "4801104017",
+      "Intro": null,
+      "Image": "https://socialmediastoragebinh.blob.core.windows.net/user-uploads/1747921177663-boy.jpg",
+      "JoinedAt": "2025-05-20T07:37:51.1590691"
+    },
+    "Followed": {
+      "UserId": "ebffb103-a942-4f83-b882-14f117370e53",
+      "Username": "binh",
+      "Email": "binhwork245@gmail.com",
+      "FullName": null,
+      "Intro": null,
+      "Image": "https://res.cloudinary.com/dapvvdxw7/image/upload/v1747159636/avatar_l2rwth.jpg",
+      "JoinedAt": "2025-05-23T13:27:35.80182"
+    }
+  },
+  {
+    "FollowerId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "FollowedId": "141f1925-9f60-4316-ba29-ca27ed68b9ba",
+    "FollowedAt": "2025-05-23T21:25:51.1247994",
+    "Follower": {
+      "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+      "Username": "4801104017",
+      "Email": "4801104017@student.hcmue.edu.vn",
+      "FullName": "4801104017",
+      "Intro": null,
+      "Image": "https://socialmediastoragebinh.blob.core.windows.net/user-uploads/1747921177663-boy.jpg",
+      "JoinedAt": "2025-05-20T07:37:51.1590691"
+    },
+    "Followed": {
+      "UserId": "141f1925-9f60-4316-ba29-ca27ed68b9ba",
+      "Username": "4801104003",
+      "Email": "4801104003@student.hcmue.edu.vn",
+      "FullName": null,
+      "Intro": null,
+      "Image": "https://res.cloudinary.com/dapvvdxw7/image/upload/v1747159636/avatar_l2rwth.jpg",
+      "JoinedAt": "2025-05-22T21:29:49.3748733"
+    }
+  }
+]
+[06:25:17 INF] Response (Duration: 557ms): API: GET /api/Follows/following/4b516857-e734-40fe-887a-b3e9e3b1392a
+StatusCode: 200
+Body:
+[
+  {
+    "FollowerId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "FollowedId": "ebffb103-a942-4f83-b882-14f117370e53",
+    "FollowedAt": "2025-05-23T21:34:15.7194536",
+    "Follower": {
+      "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+      "Username": "4801104017",
+      "Email": "4801104017@student.hcmue.edu.vn",
+      "FullName": "4801104017",
+      "Intro": null,
+      "Image": "https://socialmediastoragebinh.blob.core.windows.net/user-uploads/1747921177663-boy.jpg",
+      "JoinedAt": "2025-05-20T07:37:51.1590691"
+    },
+    "Followed": {
+      "UserId": "ebffb103-a942-4f83-b882-14f117370e53",
+      "Username": "binh",
+      "Email": "binhwork245@gmail.com",
+      "FullName": null,
+      "Intro": null,
+      "Image": "https://res.cloudinary.com/dapvvdxw7/image/upload/v1747159636/avatar_l2rwth.jpg",
+      "JoinedAt": "2025-05-23T13:27:35.80182"
+    }
+  },
+  {
+    "FollowerId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+    "FollowedId": "141f1925-9f60-4316-ba29-ca27ed68b9ba",
+    "FollowedAt": "2025-05-23T21:25:51.1247994",
+    "Follower": {
+      "UserId": "4b516857-e734-40fe-887a-b3e9e3b1392a",
+      "Username": "4801104017",
+      "Email": "4801104017@student.hcmue.edu.vn",
+      "FullName": "4801104017",
+      "Intro": null,
+      "Image": "https://socialmediastoragebinh.blob.core.windows.net/user-uploads/1747921177663-boy.jpg",
+      "JoinedAt": "2025-05-20T07:37:51.1590691"
+    },
+    "Followed": {
+      "UserId": "141f1925-9f60-4316-ba29-ca27ed68b9ba",
+      "Username": "4801104003",
+      "Email": "4801104003@student.hcmue.edu.vn",
+      "FullName": null,
+      "Intro": null,
+      "Image": "https://res.cloudinary.com/dapvvdxw7/image/upload/v1747159636/avatar_l2rwth.jpg",
+      "JoinedAt": "2025-05-22T21:29:49.3748733"
+    }
+  }
+]
+[06:25:17 INF] HTTP 200 returned for GET /api/Follows/following/4b516857-e734-40fe-887a-b3e9e3b1392a
+[06:25:17 INF] HTTP 200 returned for GET /api/Follows/following/4b516857-e734-40fe-887a-b3e9e3b1392a
+[06:28:08 INF] HTTP POST /api/Authentication/login received from ::1
+[06:28:08 INF] Request Body: {"email":"4801104017@student.hcmue.edu.vn","password":"123456789"}
+[06:28:08 INF] Request: URL: https://0068-27-77-253-55.ngrok-free.app/api/Authentication/login
+Authenticated: Yes
+Path Parameters:
+  action: Login
+  controller: Authentication
+Body:
+{
+  "email": "4801104017@student.hcmue.edu.vn",
+  "password": "123456789"
+}
+[06:28:08 INF] Response (Duration: 379ms): API: POST /api/Authentication/login
+StatusCode: 200
+Body:
+{
+  "Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNGI1MTY4NTctZTczNC00MGZlLTg4N2EtYjNlOWUzYjEzOTJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDE3IiwiaW1hZ2UiOiJodHRwczovL3NvY2lhbG1lZGlhc3RvcmFnZWJpbmguYmxvYi5jb3JlLndpbmRvd3MubmV0L3VzZXItdXBsb2Fkcy8xNzQ3OTIxMTc3NjYzLWJveS5qcGciLCJleHAiOjE3NTA2MzQ4ODgsImlzcyI6Ik15QXBwIiwiYXVkIjoiTXlDbGllbnRBcHAifQ.DI10L0kNXEMN6oKk12tvFC1uJutPmlEnQNgobHByNns"
+}
+[06:28:08 INF] HTTP 200 returned for POST /api/Authentication/login
+[06:28:19 INF] HTTP POST /api/Authentication/login received from ::1
+[06:28:19 INF] Request Body: {"email":"4801104017@student.hcmue.edu.vn","password":"123456789"}
+[06:28:19 INF] Request: URL: https://0068-27-77-253-55.ngrok-free.app/api/Authentication/login
+Authenticated: Yes
+Path Parameters:
+  action: Login
+  controller: Authentication
+Body:
+{
+  "email": "4801104017@student.hcmue.edu.vn",
+  "password": "123456789"
+}
+[06:28:19 INF] Response (Duration: 340ms): API: POST /api/Authentication/login
+StatusCode: 200
+Body:
+{
+  "Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNGI1MTY4NTctZTczNC00MGZlLTg4N2EtYjNlOWUzYjEzOTJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDE3IiwiaW1hZ2UiOiJodHRwczovL3NvY2lhbG1lZGlhc3RvcmFnZWJpbmguYmxvYi5jb3JlLndpbmRvd3MubmV0L3VzZXItdXBsb2Fkcy8xNzQ3OTIxMTc3NjYzLWJveS5qcGciLCJleHAiOjE3NTA2MzQ4OTksImlzcyI6Ik15QXBwIiwiYXVkIjoiTXlDbGllbnRBcHAifQ.6YqebokbOgeqv6tE-gZywrAFVUoqCF4CMW0gk9D815o"
+}
+[06:28:19 INF] HTTP 200 returned for POST /api/Authentication/login
+[06:28:21 INF] HTTP POST /api/Authentication/login received from ::1
+[06:28:21 INF] Request Body: {"email":"4801104017@student.hcmue.edu.vn","password":"123456789"}
+[06:28:21 INF] Request: URL: https://0068-27-77-253-55.ngrok-free.app/api/Authentication/login
+Authenticated: Yes
+Path Parameters:
+  action: Login
+  controller: Authentication
+Body:
+{
+  "email": "4801104017@student.hcmue.edu.vn",
+  "password": "123456789"
+}
+[06:28:21 INF] Response (Duration: 305ms): API: POST /api/Authentication/login
+StatusCode: 200
+Body:
+{
+  "Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNGI1MTY4NTctZTczNC00MGZlLTg4N2EtYjNlOWUzYjEzOTJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDE3IiwiaW1hZ2UiOiJodHRwczovL3NvY2lhbG1lZGlhc3RvcmFnZWJpbmguYmxvYi5jb3JlLndpbmRvd3MubmV0L3VzZXItdXBsb2Fkcy8xNzQ3OTIxMTc3NjYzLWJveS5qcGciLCJleHAiOjE3NTA2MzQ5MDEsImlzcyI6Ik15QXBwIiwiYXVkIjoiTXlDbGllbnRBcHAifQ.JXZKlf6ETAwdjBue1MKEjitnIMfRmmIVKjFQHwKkVq0"
+}
+[06:28:21 INF] HTTP 200 returned for POST /api/Authentication/login
+[06:28:22 INF] HTTP POST /api/Authentication/login received from ::1
+[06:28:22 INF] Request Body: {"email":"4801104017@student.hcmue.edu.vn","password":"123456789"}
+[06:28:22 INF] Request: URL: https://0068-27-77-253-55.ngrok-free.app/api/Authentication/login
+Authenticated: Yes
+Path Parameters:
+  action: Login
+  controller: Authentication
+Body:
+{
+  "email": "4801104017@student.hcmue.edu.vn",
+  "password": "123456789"
+}
+[06:28:23 INF] Response (Duration: 261ms): API: POST /api/Authentication/login
+StatusCode: 200
+Body:
+{
+  "Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNGI1MTY4NTctZTczNC00MGZlLTg4N2EtYjNlOWUzYjEzOTJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDE3IiwiaW1hZ2UiOiJodHRwczovL3NvY2lhbG1lZGlhc3RvcmFnZWJpbmguYmxvYi5jb3JlLndpbmRvd3MubmV0L3VzZXItdXBsb2Fkcy8xNzQ3OTIxMTc3NjYzLWJveS5qcGciLCJleHAiOjE3NTA2MzQ5MDMsImlzcyI6Ik15QXBwIiwiYXVkIjoiTXlDbGllbnRBcHAifQ.z0fXX4RnTaPDCeXihi2oDWqSf4Rw-2fI8fr5R3c-hxM"
+}
+[06:28:23 INF] HTTP 200 returned for POST /api/Authentication/login
+[06:28:23 INF] HTTP POST /api/Authentication/login received from ::1
+[06:28:23 INF] Request Body: {"email":"4801104017@student.hcmue.edu.vn","password":"123456789"}
+[06:28:23 INF] Request: URL: https://0068-27-77-253-55.ngrok-free.app/api/Authentication/login
+Authenticated: Yes
+Path Parameters:
+  action: Login
+  controller: Authentication
+Body:
+{
+  "email": "4801104017@student.hcmue.edu.vn",
+  "password": "123456789"
+}
+[06:28:24 INF] Response (Duration: 264ms): API: POST /api/Authentication/login
+StatusCode: 200
+Body:
+{
+  "Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNGI1MTY4NTctZTczNC00MGZlLTg4N2EtYjNlOWUzYjEzOTJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDE3IiwiaW1hZ2UiOiJodHRwczovL3NvY2lhbG1lZGlhc3RvcmFnZWJpbmguYmxvYi5jb3JlLndpbmRvd3MubmV0L3VzZXItdXBsb2Fkcy8xNzQ3OTIxMTc3NjYzLWJveS5qcGciLCJleHAiOjE3NTA2MzQ5MDQsImlzcyI6Ik15QXBwIiwiYXVkIjoiTXlDbGllbnRBcHAifQ.Rx9UJFvhiKoH9itbEeuS3jMOe79YCCQIlCsDcQe-BCU"
+}
+[06:28:24 INF] HTTP 200 returned for POST /api/Authentication/login
+[06:28:57 INF] HTTP POST /api/Authentication/login received from ::1
+[06:28:57 INF] Request Body: {"email":"4801104003@student.hcmue.edu.vn","password":"123456789"}
+[06:28:57 INF] Request: URL: https://localhost:7247/api/Authentication/login
+Authenticated: Yes
+Path Parameters:
+  action: Login
+  controller: Authentication
+Body:
+{
+  "email": "4801104003@student.hcmue.edu.vn",
+  "password": "123456789"
+}
+[06:28:57 INF] Response (Duration: 289ms): API: POST /api/Authentication/login
+StatusCode: 200
+Body:
+{
+  "Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTQxZjE5MjUtOWY2MC00MzE2LWJhMjktY2EyN2VkNjhiOWJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDAzIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjM0OTM3LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.5b2vz8uD_yKwYV1EiPrEW9aX1d7nbHAF7wbxnczVMI8"
+}
+[06:28:57 INF] HTTP 200 returned for POST /api/Authentication/login
+[06:31:09 INF] HTTP POST /api/Authentication/login received from ::1
+[06:31:09 INF] Request Body: {"email":"4801104003@student.hcmue.edu.vn","password":"123456789"}
+[06:31:09 INF] Request: URL: https://localhost:7247/api/Authentication/login
+Authenticated: Yes
+Path Parameters:
+  action: Login
+  controller: Authentication
+Body:
+{
+  "email": "4801104003@student.hcmue.edu.vn",
+  "password": "123456789"
+}
+[06:31:09 INF] Response (Duration: 260ms): API: POST /api/Authentication/login
+StatusCode: 200
+Body:
+{
+  "Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTQxZjE5MjUtOWY2MC00MzE2LWJhMjktY2EyN2VkNjhiOWJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDAzIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjM1MDY5LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.HICicSBZcKUu421QQ-G0OTLgO6L_Xzszx5j__94MES0"
+}
+[06:31:09 INF] HTTP 200 returned for POST /api/Authentication/login
+[06:33:23 INF] Response (Duration: 847392ms): API: GET /hubs/chat
+StatusCode: 101
+[06:33:23 INF] HTTP 101 returned for GET /hubs/chat
+[06:33:29 INF] HTTP POST /hubs/chat/negotiate?negotiateVersion=1 received from ::1
+[06:33:29 INF] Request: URL: http://localhost:5295/hubs/chat/negotiate?negotiateVersion=1
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjMxNTIwLCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.hBC0AHd-tsKL4-MwqyycRamgOvVs7P-U--XxiQ1JzFg
+Query Parameters:
+  negotiateVersion: 1
+[06:33:29 INF] Response (Duration: 87ms): API: POST /hubs/chat/negotiate
+StatusCode: 200
+Body:
+{
+  "negotiateVersion": 1,
+  "connectionId": "vJLCXGD7cTQUrsttsHLaUg",
+  "connectionToken": "7xM_j1gru6GphhW93Jz5Gg",
+  "availableTransports": [
+    {
+      "transport": "WebSockets",
+      "transferFormats": [
+        "Text",
+        "Binary"
+      ]
+    },
+    {
+      "transport": "ServerSentEvents",
+      "transferFormats": [
+        "Text"
+      ]
+    },
+    {
+      "transport": "LongPolling",
+      "transferFormats": [
+        "Text",
+        "Binary"
+      ]
+    }
+  ]
+}
+[06:33:29 INF] HTTP 200 returned for POST /hubs/chat/negotiate
+[06:33:29 INF] HTTP GET /hubs/chat?id=7xM_j1gru6GphhW93Jz5Gg&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjMxNTIwLCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.hBC0AHd-tsKL4-MwqyycRamgOvVs7P-U--XxiQ1JzFg received from ::1
+[06:33:29 INF] Request: URL: http://localhost:5295/hubs/chat?id=7xM_j1gru6GphhW93Jz5Gg&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjMxNTIwLCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.hBC0AHd-tsKL4-MwqyycRamgOvVs7P-U--XxiQ1JzFg
+Authenticated: Yes
+Query Parameters:
+  id: 7xM_j1gru6GphhW93Jz5Gg
+  access_token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjMxNTIwLCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.hBC0AHd-tsKL4-MwqyycRamgOvVs7P-U--XxiQ1JzFg
+[06:34:18 INF] HTTP POST /api/Authentication/login received from ::1
+[06:34:18 INF] Request Body: {"email":"4801104003@student.hcmue.edu.vn","password":"123456789"}
+[06:34:18 INF] Request: URL: https://c3b7-27-77-253-55.ngrok-free.app/api/Authentication/login
+Authenticated: Yes
+Path Parameters:
+  action: Login
+  controller: Authentication
+Body:
+{
+  "email": "4801104003@student.hcmue.edu.vn",
+  "password": "123456789"
+}
+[06:34:23 INF] Response (Duration: 4214ms): API: POST /api/Authentication/login
+StatusCode: 200
+Body:
+{
+  "Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTQxZjE5MjUtOWY2MC00MzE2LWJhMjktY2EyN2VkNjhiOWJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDAzIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjM1MjYzLCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0._wxfsiAHJOxA7dTpmeMqNZrWYiRI1dPW-j2qI5Ui0SU"
+}
+[06:34:23 INF] HTTP 200 returned for POST /api/Authentication/login
+[06:42:41 INF] HTTP POST /api/Authentication/login received from ::1
+[06:42:41 INF] Request Body: {"email":"4801104003@student.hcmue.edu.vn","password":"123456789"}
+[06:42:41 INF] Request: URL: https://localhost:7247/api/Authentication/login
+Authenticated: Yes
+Path Parameters:
+  action: Login
+  controller: Authentication
+Body:
+{
+  "email": "4801104003@student.hcmue.edu.vn",
+  "password": "123456789"
+}
+[06:42:41 INF] Response (Duration: 418ms): API: POST /api/Authentication/login
+StatusCode: 200
+Body:
+{
+  "Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTQxZjE5MjUtOWY2MC00MzE2LWJhMjktY2EyN2VkNjhiOWJhIiwidXNlcm5hbWUiOiI0ODAxMTA0MDAzIiwiaW1hZ2UiOiJodHRwczovL3NvY2lhbG1lZGlhc3RvcmFnZWJpbmguYmxvYi5jb3JlLndpbmRvd3MubmV0L3VzZXItdXBsb2Fkcy8xNzQ4MDQzNDYyMjcyLW1hbi5qcGciLCJleHAiOjE3NTA2MzU3NjEsImlzcyI6Ik15QXBwIiwiYXVkIjoiTXlDbGllbnRBcHAifQ.Z_B_M7uIGNYYyiie8qWb58MEVwX_s93ZU2e8TF_kU2g"
+}
+[06:42:41 INF] HTTP 200 returned for POST /api/Authentication/login
+[06:45:32 INF] Response (Duration: 722465ms): API: GET /hubs/chat
+StatusCode: 101
+[06:45:32 INF] HTTP 101 returned for GET /hubs/chat
+[06:47:33 INF] HTTP POST /hubs/chat/negotiate?negotiateVersion=1 received from ::1
+[06:47:33 INF] Request: URL: http://localhost:5295/hubs/chat/negotiate?negotiateVersion=1
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjMxNTIwLCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.hBC0AHd-tsKL4-MwqyycRamgOvVs7P-U--XxiQ1JzFg
+Query Parameters:
+  negotiateVersion: 1
+[06:47:33 INF] Response (Duration: 77ms): API: POST /hubs/chat/negotiate
+StatusCode: 200
+Body:
+{
+  "negotiateVersion": 1,
+  "connectionId": "GjtSbyDA2Bq5aEIQAldktA",
+  "connectionToken": "Q7SpNFBlqLqOvX_26NzeQw",
+  "availableTransports": [
+    {
+      "transport": "WebSockets",
+      "transferFormats": [
+        "Text",
+        "Binary"
+      ]
+    },
+    {
+      "transport": "ServerSentEvents",
+      "transferFormats": [
+        "Text"
+      ]
+    },
+    {
+      "transport": "LongPolling",
+      "transferFormats": [
+        "Text",
+        "Binary"
+      ]
+    }
+  ]
+}
+[06:47:33 INF] HTTP 200 returned for POST /hubs/chat/negotiate
+[06:47:33 INF] HTTP GET /hubs/chat?id=Q7SpNFBlqLqOvX_26NzeQw&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjMxNTIwLCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.hBC0AHd-tsKL4-MwqyycRamgOvVs7P-U--XxiQ1JzFg received from ::1
+[06:47:33 INF] Request: URL: http://localhost:5295/hubs/chat?id=Q7SpNFBlqLqOvX_26NzeQw&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjMxNTIwLCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.hBC0AHd-tsKL4-MwqyycRamgOvVs7P-U--XxiQ1JzFg
+Authenticated: Yes
+Query Parameters:
+  id: Q7SpNFBlqLqOvX_26NzeQw
+  access_token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNjMxNTIwLCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.hBC0AHd-tsKL4-MwqyycRamgOvVs7P-U--XxiQ1JzFg
+[06:49:53 INF] HTTP GET /api/group-posts/b95737b5-0f01-4855-9f36-75d4bf3ed384?page=1&pageSize=10 received from ::1
+[06:49:53 INF] Request: URL: https://localhost:7247/api/group-posts/b95737b5-0f01-4855-9f36-75d4bf3ed384?page=1&pageSize=10
+Authenticated: Yes
+Path Parameters:
+  action: GetGroupPosts
+  controller: GroupPosts
+  groupId: b95737b5-0f01-4855-9f36-75d4bf3ed384
+Query Parameters:
+  page: 1
+  pageSize: 10
+[06:49:53 INF] Response (Duration: 33ms): API: GET /api/group-posts/b95737b5-0f01-4855-9f36-75d4bf3ed384
+StatusCode: 401
+[06:49:53 INF] HTTP 401 returned for GET /api/group-posts/b95737b5-0f01-4855-9f36-75d4bf3ed384
+[06:50:02 INF] HTTP GET /api/group-posts/b95737b5-0f01-4855-9f36-75d4bf3ed384?page=1&pageSize=10 received from ::1
+[06:50:02 INF] Request: URL: https://localhost:7247/api/group-posts/b95737b5-0f01-4855-9f36-75d4bf3ed384?page=1&pageSize=10
+Authenticated: Yes
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNTg4MzU1LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.Ra4Zo6MvbfkFfbnoD7kuV8a2eHVirybg8SxyvlmVi6c
+Path Parameters:
+  action: GetGroupPosts
+  controller: GroupPosts
+  groupId: b95737b5-0f01-4855-9f36-75d4bf3ed384
+Query Parameters:
+  page: 1
+  pageSize: 10
+[06:50:02 INF] Response (Duration: 4ms): API: GET /api/group-posts/b95737b5-0f01-4855-9f36-75d4bf3ed384
+StatusCode: 401
+[06:50:02 INF] HTTP 401 returned for GET /api/group-posts/b95737b5-0f01-4855-9f36-75d4bf3ed384
+[06:50:07 INF] HTTP GET /api/group-posts/b95737b5-0f01-4855-9f36-75d4bf3ed384?page=1&pageSize=10 received from ::1
+[06:50:07 INF] Request: URL: https://localhost:7247/api/group-posts/b95737b5-0f01-4855-9f36-75d4bf3ed384?page=1&pageSize=10
+Authenticated: Yes
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNTg4MzU1LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.Ra4Zo6MvbfkFfbnoD7kuV8a2eHVirybg8SxyvlmVi6c
+Path Parameters:
+  action: GetGroupPosts
+  controller: GroupPosts
+  groupId: b95737b5-0f01-4855-9f36-75d4bf3ed384
+Query Parameters:
+  page: 1
+  pageSize: 10
+[06:50:07 INF] Response (Duration: 3ms): API: GET /api/group-posts/b95737b5-0f01-4855-9f36-75d4bf3ed384
+StatusCode: 401
+[06:50:07 INF] HTTP 401 returned for GET /api/group-posts/b95737b5-0f01-4855-9f36-75d4bf3ed384
+[06:50:33 INF] HTTP GET /api/group-posts/b95737b5-0f01-4855-9f36-75d4bf3ed384?page=1&pageSize=10 received from ::1
+[06:50:33 INF] Request: URL: https://localhost:7247/api/group-posts/b95737b5-0f01-4855-9f36-75d4bf3ed384?page=1&pageSize=10
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNTg4MzU1LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.Ra4Zo6MvbfkFfbnoD7kuV8a2eHVirybg8SxyvlmVi6c
+Path Parameters:
+  action: GetGroupPosts
+  controller: GroupPosts
+  groupId: b95737b5-0f01-4855-9f36-75d4bf3ed384
+Query Parameters:
+  page: 1
+  pageSize: 10
+[06:50:38 INF] Response (Duration: 4616ms): API: GET /api/group-posts/b95737b5-0f01-4855-9f36-75d4bf3ed384
+StatusCode: 200
+Body:
+[]
+[06:50:38 INF] HTTP 200 returned for GET /api/group-posts/b95737b5-0f01-4855-9f36-75d4bf3ed384
+[06:50:56 INF] HTTP GET /api/group-posts/fe61b36e-3e22-4268-9397-8e4a288f4a12?page=1&pageSize=10 received from ::1
+[06:50:56 INF] Request: URL: https://localhost:7247/api/group-posts/fe61b36e-3e22-4268-9397-8e4a288f4a12?page=1&pageSize=10
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNTg4MzU1LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.Ra4Zo6MvbfkFfbnoD7kuV8a2eHVirybg8SxyvlmVi6c
+Path Parameters:
+  action: GetGroupPosts
+  controller: GroupPosts
+  groupId: fe61b36e-3e22-4268-9397-8e4a288f4a12
+Query Parameters:
+  page: 1
+  pageSize: 10
+[06:50:57 INF] Response (Duration: 1095ms): API: GET /api/group-posts/fe61b36e-3e22-4268-9397-8e4a288f4a12
+StatusCode: 200
+Body:
+[
+  {
+    "PostId": "6e252b58-8b7e-4376-b7df-034f12e7c578",
+    "UserId": "e60a6ec4-2820-4aec-933d-d763d81b7cb2",
+    "ImageUrl": "https://res.cloudinary.com/dapvvdxw7/image/upload/v1747159636/avatar_l2rwth.jpg",
+    "Content": "private group real member post by member 01 in",
+    "PostedAt": "2025-05-20T09:19:52.9103985",
+    "GroupId": "fe61b36e-3e22-4268-9397-8e4a288f4a12",
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [
+      {
+        "MediaId": "a750e98e-0202-4fd6-89bf-22caf6744eef",
+        "MediaUrl": "string",
+        "MediaType": "string",
+        "UploadedAt": "2025-05-20T09:19:53.0714626",
+        "UploadedBy": "e60a6ec4-2820-4aec-933d-d763d81b7cb2"
+      }
+    ],
+    "VoteCount": 0,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  }
+]
+[06:50:57 INF] HTTP 200 returned for GET /api/group-posts/fe61b36e-3e22-4268-9397-8e4a288f4a12
+[06:51:07 INF] HTTP GET /api/group-posts/34fe25ab-88e7-40f9-b0fb-c864a2a6cd58?page=1&pageSize=10 received from ::1
+[06:51:07 INF] Request: URL: https://localhost:7247/api/group-posts/34fe25ab-88e7-40f9-b0fb-c864a2a6cd58?page=1&pageSize=10
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNTg4MzU1LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.Ra4Zo6MvbfkFfbnoD7kuV8a2eHVirybg8SxyvlmVi6c
+Path Parameters:
+  action: GetGroupPosts
+  controller: GroupPosts
+  groupId: 34fe25ab-88e7-40f9-b0fb-c864a2a6cd58
+Query Parameters:
+  page: 1
+  pageSize: 10
+[06:51:08 INF] Response (Duration: 656ms): API: GET /api/group-posts/34fe25ab-88e7-40f9-b0fb-c864a2a6cd58
+StatusCode: 200
+Body:
+[
+  {
+    "PostId": "8be9e20a-ddc5-4929-a97f-991e211d4316",
+    "UserId": "141f1925-9f60-4316-ba29-ca27ed68b9ba",
+    "ImageUrl": "https://socialmediastoragebinh.blob.core.windows.net/user-uploads/1748043462272-man.jpg",
+    "Content": "\u0111\u00E2y l\u00E0 b\u00E0i vi\u1EBFt \u0111\u1EA7u ti\u00EAn c\u1EE7a tui",
+    "PostedAt": "2025-05-24T06:42:35.4823079",
+    "GroupId": "34fe25ab-88e7-40f9-b0fb-c864a2a6cd58",
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [
+      {
+        "MediaId": "edeeeaf9-025d-43f3-bf5e-b72ac07942c6",
+        "MediaUrl": "https://socialmediastoragebinh.blob.core.windows.net/user-uploads/1748043753543-boy.jpg",
+        "MediaType": "image",
+        "UploadedAt": "2025-05-24T06:42:35.6968356",
+        "UploadedBy": "141f1925-9f60-4316-ba29-ca27ed68b9ba"
+      }
+    ],
+    "VoteCount": 1,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  }
+]
+[06:51:08 INF] HTTP 200 returned for GET /api/group-posts/34fe25ab-88e7-40f9-b0fb-c864a2a6cd58
+[06:51:15 INF] Response (Duration: 221667ms): API: GET /hubs/chat
+StatusCode: 101
+[06:51:15 INF] HTTP 101 returned for GET /hubs/chat

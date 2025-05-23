@@ -135,7 +135,7 @@ namespace Application.Services
                 // var isMember = await _postRepository.IsGroupMemberAsync(currentUserId, groupId);
                 // if (!isMember)
                 //     throw new UnauthorizedAccessException("User is not a member of the group.");
-
+        
                 var posts = await _postRepository.GetGroupPostImgOfUsersAsync(groupId, page, pageSize);
                 var postDtos = posts.Select(p =>
                 {
@@ -143,7 +143,7 @@ namespace Application.Services
                     dto.IsVotedByCurrentUser = p.PostVotes.Any(v => v.UserId == currentUserId && v.VoteType == "Vote");
                     return dto;
                 }).ToArray();
-
+        
                 Console.WriteLine($"Retrieved {postDtos.Length} group posts for group {groupId}, page {page}");
                 return postDtos;
             }
@@ -153,6 +153,7 @@ namespace Application.Services
                 throw;
             }
         }
+        
 
         public async Task<PostDto> UpdatePostAsync(Guid postId, PostUpdateDto postDto, Guid userId)
         {
