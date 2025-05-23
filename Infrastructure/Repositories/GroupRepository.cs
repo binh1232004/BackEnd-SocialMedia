@@ -133,4 +133,20 @@ public class GroupRepository : IGroupRepository
             .Where(m => m.GroupId == groupId)
             .ToListAsync();
     }
+
+    public async Task<List<Group>> SearchGroupsAsync(string searchTerm, int page, int pageSize)
+    {
+        var normalizedSearchTerm = searchTerm.ToLower();
+        
+        var groups = await _context.Groups
+            .Include(g => g.GroupMembers)
+            .Where(g => g.GroupName.ToLower().Contains(normalizedSearchTerm))
+            .OrderByDescending(g => g.CreatedAt)
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync();
+
+        Console.WriteLine($"Found {groups.Count} groups matching search term '{searchTerm}', page {page}, pageSize {pageSize}");
+        return groups;
+    }
 }
