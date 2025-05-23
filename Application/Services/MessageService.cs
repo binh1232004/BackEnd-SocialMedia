@@ -4,8 +4,7 @@ using Application.Interfaces.ServiceInterfaces;
 using Domain.Entities;
 using Mapster;
 using Microsoft.AspNetCore.SignalR;
-
-
+using Microsoft.Extensions.Logging;
 
 namespace Application.Services;
 
@@ -14,19 +13,21 @@ public class MessageService : IMessageService
     private readonly IMessageRepository _messageRepository;
     private readonly IGroupChatRepository _groupChatRepository;
     private readonly INotificationService _notificationService;
-    private readonly IHubContext<Hubs.ChatHub> _hubContext; // Fixed namespace
-
+    private readonly IHubContext<Hubs.ChatHub> _hubContext;
+    private readonly ILogger<MessageService> _logger;
 
     public MessageService(
         IMessageRepository messageRepository,
         IGroupChatRepository groupChatRepository,
         INotificationService notificationService,
-        IHubContext<Hubs.ChatHub> hubContext)
+        IHubContext<Hubs.ChatHub> hubContext,
+        ILogger<MessageService> logger)
     {
         _messageRepository = messageRepository;
         _groupChatRepository = groupChatRepository;
         _notificationService = notificationService;
         _hubContext = hubContext;
+        _logger = logger;
     }
 
     public async Task<MessageDto> SendMessageAsync(CreateMessageDto createMessageDto)
@@ -36,8 +37,7 @@ public class MessageService : IMessageService
 
         if (createMessageDto.GroupChatId.HasValue)
         {
-            if (!await _groupChatRepository.IsUserInGroupAsync(createMessageDto.SenderId,
-                    createMessageDto.GroupChatId.Value))
+            if (!await _groupChatRepository.IsUserInGroupAsync(createMessageDto.SenderId, createMessageDto.GroupChatId.Value))
                 throw new UnauthorizedAccessException("User is not in this group chat.");
         }
 
@@ -64,15 +64,18 @@ public class MessageService : IMessageService
         var messageDto = message.Adapt<MessageDto>();
         if (createMessageDto.ReceiverId.HasValue)
         {
-            await _notificationService.CreateMessageNotificationAsync(createMessageDto.ReceiverId.Value,
-                createMessageDto.SenderId, message.MessageId);
+            await _notificationService.CreateMessageNotificationAsync(createMessageDto.ReceiverId.Value, createMessageDto.SenderId, message.MessageId);
+            _logger.LogInformation("Sending ReceiveMessage to user {ReceiverId} with message {MessageId}", createMessageDto.ReceiverId.Value, message.MessageId);
             await _hubContext.Clients.User(createMessageDto.ReceiverId.Value.ToString())
                 .SendAsync("ReceiveMessage", messageDto);
+            _logger.LogInformation("ReceiveMessage sent to user {ReceiverId} with message {MessageId}", createMessageDto.ReceiverId.Value, message.MessageId);
         }
         else if (createMessageDto.GroupChatId.HasValue)
         {
+            _logger.LogInformation("Sending ReceiveGroupMessage to group {GroupChatId} with message {MessageId}", createMessageDto.GroupChatId.Value, message.MessageId);
             await _hubContext.Clients.Group(createMessageDto.GroupChatId.Value.ToString())
                 .SendAsync("ReceiveGroupMessage", messageDto);
+            _logger.LogInformation("ReceiveGroupMessage sent to group {GroupChatId} with message {MessageId}", createMessageDto.GroupChatId.Value, message.MessageId);
         }
 
         return messageDto;

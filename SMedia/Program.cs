@@ -3,6 +3,7 @@ using DotNetEnv;
 using SMedia.Configuration;
 using Serilog;
 using SMedia.Extensions;
+using Serilog.Events;
 Env.Load();
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,14 +11,30 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
-        options.JsonSerializerOptions.PropertyNamingPolicy = null; // Không thay đổi tên property (giữ nguyên chữ hoa/thường)
-        options.JsonSerializerOptions.PropertyNameCaseInsensitive = true; // Không phân biệt hoa/thường
+        options.JsonSerializerOptions.PropertyNamingPolicy = null;
+        options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
+        options.JsonSerializerOptions.Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping; // Hỗ trợ Unicode
     });
 
 // Tắt tất cả logger mặc định
 builder.Logging.ClearProviders();
 
 // Cấu hình Serilog
+// builder.Host.UseSerilog((context, configuration) =>
+// {
+//     configuration
+//         .WriteTo.Console(
+//             outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}")
+//         .WriteTo.File("logs/log-.txt",
+//             rollingInterval: RollingInterval.Day,
+//             outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}")
+//         .MinimumLevel.Information()
+//         .MinimumLevel.Override("Microsoft", Serilog.Events.LogEventLevel.Fatal)
+//         .MinimumLevel.Override("Microsoft.AspNetCore", Serilog.Events.LogEventLevel.Fatal)
+//         .MinimumLevel.Override("Microsoft.EntityFrameworkCore", Serilog.Events.LogEventLevel.Fatal)
+//         .MinimumLevel.Override("System", Serilog.Events.LogEventLevel.Fatal)
+//         .Enrich.FromLogContext();
+// });
 builder.Host.UseSerilog((context, configuration) =>
 {
     configuration
@@ -26,23 +43,33 @@ builder.Host.UseSerilog((context, configuration) =>
         .WriteTo.File("logs/log-.txt",
             rollingInterval: RollingInterval.Day,
             outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}")
-        .MinimumLevel.Information()
-        .MinimumLevel.Override("Microsoft", Serilog.Events.LogEventLevel.Fatal)
-        .MinimumLevel.Override("Microsoft.AspNetCore", Serilog.Events.LogEventLevel.Fatal)
-        .MinimumLevel.Override("Microsoft.EntityFrameworkCore", Serilog.Events.LogEventLevel.Fatal)
-        .MinimumLevel.Override("System", Serilog.Events.LogEventLevel.Fatal)
+        .MinimumLevel.Verbose()
+        .MinimumLevel.Override("Microsoft", Serilog.Events.LogEventLevel.Debug)
+        .MinimumLevel.Override("Microsoft.AspNetCore", Serilog.Events.LogEventLevel.Debug)
+        .MinimumLevel.Override("System.Text.Json", Serilog.Events.LogEventLevel.Verbose)
+        .MinimumLevel.Override("Microsoft.AspNetCore.SignalR", Serilog.Events.LogEventLevel.Debug)
+        .MinimumLevel.Override("Microsoft.AspNetCore.Http.Connections", Serilog.Events.LogEventLevel.Debug)
+        .MinimumLevel.Override("Microsoft.EntityFrameworkCore", Serilog.Events.LogEventLevel.Information)
+        .MinimumLevel.Override("System", Serilog.Events.LogEventLevel.Information)
         .Enrich.FromLogContext();
 });
 
 // Tắt log EF Core chi tiết
+// builder.Services.AddLogging(logging =>
+// {
+//     logging.AddFilter("Microsoft.EntityFrameworkCore.Database.Command", LogLevel.None);
+//     logging.AddFilter("Microsoft.EntityFrameworkCore.Infrastructure", LogLevel.None);
+//     logging.AddFilter("Microsoft.AspNetCore", LogLevel.Debug);
+//     logging.AddFilter("System", LogLevel.None);
+// });
+
 builder.Services.AddLogging(logging =>
 {
-    logging.AddFilter("Microsoft.EntityFrameworkCore.Database.Command", LogLevel.None);
-    logging.AddFilter("Microsoft.EntityFrameworkCore.Infrastructure", LogLevel.None);
-    logging.AddFilter("Microsoft.AspNetCore", LogLevel.None);
-    logging.AddFilter("System", LogLevel.None);
+    logging.AddFilter("Microsoft.EntityFrameworkCore.Database.Command", LogLevel.Information);
+    logging.AddFilter("Microsoft.EntityFrameworkCore.Infrastructure", LogLevel.Information);
+    logging.AddFilter("Microsoft.AspNetCore", LogLevel.Debug); // Cho phép log Debug
+    logging.AddFilter("System", LogLevel.Information);
 });
-
 
 builder.Services.AddApplicationServices();
 
@@ -135,7 +162,7 @@ app.UseMiddleware<RequestResponseLoggingMiddleware>();
 app.UseAuthentication();
 app.UseAuthorization();
 // Map SignalR Hub
-app.MapHub<Application.Hubs.ChatHub>("/hubs/chat");
+app.MapHub<ChatHub>("/hubs/chat");
 app.MapControllers();
 
 app.Run();

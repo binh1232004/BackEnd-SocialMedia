@@ -20,10 +20,9 @@ public class CreateMessageDto
     public Guid SenderId { get; set; }
     public Guid? ReceiverId { get; set; }
     public Guid? GroupChatId { get; set; }
-    
-    [Required(ErrorMessage = "The Content field is required.")] 
-    public string Content { get; set; }
-    public List<string> MediaUrls { get; set; }
+    // [Required(ErrorMessage = "The Content field is required.")]
+    public string Content { get; set; } // Chữ in hoa
+    public List<string> MediaUrls { get; set; } = [];
 }
 
 public class MediaDto
