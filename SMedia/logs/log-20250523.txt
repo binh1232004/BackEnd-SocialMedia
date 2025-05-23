@@ -4532,3 +4532,97 @@ Body:
 [18:29:46 INF] Response (Duration: 136067ms): API: GET /hubs/chat
 StatusCode: 101
 [18:29:46 INF] HTTP 101 returned for GET /hubs/chat
+[19:16:45 INF] HTTP GET /api/group-posts/group/940832e4-7d05-4e23-8616-0345fec659dc?page=1&pageSize=10 received from ::1
+[19:16:45 INF] Request: URL: http://localhost:5295/api/group-posts/group/940832e4-7d05-4e23-8616-0345fec659dc?page=1&pageSize=10
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNTg4MzU1LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.Ra4Zo6MvbfkFfbnoD7kuV8a2eHVirybg8SxyvlmVi6c
+Path Parameters:
+  action: GetGroupPosts
+  controller: GroupPosts
+  groupId: 940832e4-7d05-4e23-8616-0345fec659dc
+Query Parameters:
+  page: 1
+  pageSize: 10
+[19:16:50 INF] Response (Duration: 4868ms): API: GET /api/group-posts/group/940832e4-7d05-4e23-8616-0345fec659dc
+StatusCode: 200
+Body:
+[]
+[19:16:50 INF] HTTP 200 returned for GET /api/group-posts/group/940832e4-7d05-4e23-8616-0345fec659dc
+[19:17:23 INF] HTTP GET /api/group-posts/group/fe61b36e-3e22-4268-9397-8e4a288f4a12?page=1&pageSize=10 received from ::1
+[19:17:23 INF] Request: URL: http://localhost:5295/api/group-posts/group/fe61b36e-3e22-4268-9397-8e4a288f4a12?page=1&pageSize=10
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNTg4MzU1LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.Ra4Zo6MvbfkFfbnoD7kuV8a2eHVirybg8SxyvlmVi6c
+Path Parameters:
+  action: GetGroupPosts
+  controller: GroupPosts
+  groupId: fe61b36e-3e22-4268-9397-8e4a288f4a12
+Query Parameters:
+  page: 1
+  pageSize: 10
+[19:17:24 INF] Response (Duration: 953ms): API: GET /api/group-posts/group/fe61b36e-3e22-4268-9397-8e4a288f4a12
+StatusCode: 200
+Body:
+[
+  {
+    "PostId": "6e252b58-8b7e-4376-b7df-034f12e7c578",
+    "UserId": "e60a6ec4-2820-4aec-933d-d763d81b7cb2",
+    "ImageUrl": "https://res.cloudinary.com/dapvvdxw7/image/upload/v1747159636/avatar_l2rwth.jpg",
+    "Content": "private group real member post by member 01 in",
+    "PostedAt": "2025-05-20T09:19:52.9103985",
+    "GroupId": "fe61b36e-3e22-4268-9397-8e4a288f4a12",
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [
+      {
+        "MediaId": "a750e98e-0202-4fd6-89bf-22caf6744eef",
+        "MediaUrl": "string",
+        "MediaType": "string",
+        "UploadedAt": "2025-05-20T09:19:53.0714626",
+        "UploadedBy": "e60a6ec4-2820-4aec-933d-d763d81b7cb2"
+      }
+    ],
+    "VoteCount": 0,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  }
+]
+[19:17:24 INF] HTTP 200 returned for GET /api/group-posts/group/fe61b36e-3e22-4268-9397-8e4a288f4a12
+[19:18:21 INF] HTTP GET /api/group-posts/group/fe61b36e-3e22-4268-9397-8e4a288f4a12?page=1&pageSize=10 received from ::1
+[19:18:21 INF] Request: URL: http://localhost:5295/api/group-posts/group/fe61b36e-3e22-4268-9397-8e4a288f4a12?page=1&pageSize=10
+Authenticated: Yes
+Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTYwYTZlYzQtMjgyMC00YWVjLTkzM2QtZDc2M2Q4MWI3Y2IyIiwidXNlcm5hbWUiOiJhbmh3b3JrIiwiaW1hZ2UiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXB2dmR4dzcvaW1hZ2UvdXBsb2FkL3YxNzQ3MTU5NjM2L2F2YXRhcl9sMnJ3dGguanBnIiwiZXhwIjoxNzUwNTg4MzU1LCJpc3MiOiJNeUFwcCIsImF1ZCI6Ik15Q2xpZW50QXBwIn0.Ra4Zo6MvbfkFfbnoD7kuV8a2eHVirybg8SxyvlmVi6c
+Path Parameters:
+  action: GetGroupPosts
+  controller: GroupPosts
+  groupId: fe61b36e-3e22-4268-9397-8e4a288f4a12
+Query Parameters:
+  page: 1
+  pageSize: 10
+[19:18:22 INF] Response (Duration: 743ms): API: GET /api/group-posts/group/fe61b36e-3e22-4268-9397-8e4a288f4a12
+StatusCode: 200
+Body:
+[
+  {
+    "PostId": "6e252b58-8b7e-4376-b7df-034f12e7c578",
+    "UserId": "e60a6ec4-2820-4aec-933d-d763d81b7cb2",
+    "ImageUrl": "https://res.cloudinary.com/dapvvdxw7/image/upload/v1747159636/avatar_l2rwth.jpg",
+    "Content": "private group real member post by member 01 in",
+    "PostedAt": "2025-05-20T09:19:52.9103985",
+    "GroupId": "fe61b36e-3e22-4268-9397-8e4a288f4a12",
+    "IsApproved": true,
+    "IsVisible": true,
+    "Media": [
+      {
+        "MediaId": "a750e98e-0202-4fd6-89bf-22caf6744eef",
+        "MediaUrl": "string",
+        "MediaType": "string",
+        "UploadedAt": "2025-05-20T09:19:53.0714626",
+        "UploadedBy": "e60a6ec4-2820-4aec-933d-d763d81b7cb2"
+      }
+    ],
+    "VoteCount": 0,
+    "IsVotedByCurrentUser": false,
+    "CommentCount": 0
+  }
+]
+[19:18:22 INF] HTTP 200 returned for GET /api/group-posts/group/fe61b36e-3e22-4268-9397-8e4a288f4a12

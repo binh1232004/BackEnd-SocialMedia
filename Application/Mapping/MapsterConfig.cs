@@ -147,7 +147,7 @@ public static class MapsterConfig
             .Map(dest => dest.Content, src => src.Content)
             .Map(dest => dest.PostedAt, src => src.PostedAt)
             .Map(dest => dest.ChildComments, src => src.ChildComments);
-        
+
         // Message ----------------------------------------------------------------------------------------------------
         // Message ----------------------------------------------------------------------------------------------------
 
@@ -155,16 +155,22 @@ public static class MapsterConfig
             .NewConfig()
             .Map(dest => dest.SenderUsername, src => src.Sender.Username)
             .Map(dest => dest.Media, src => src.Media);
-        
+
         TypeAdapterConfig<Media, MediaDto>.NewConfig();
-        
+
         TypeAdapterConfig<Notification, NotificationDto>
             .NewConfig()
             .Map(dest => dest.RelatedUsername, src => src.RelatedUser.Username);
         // Message ----------------------------------------------------------------------------------------------------
         // Message ----------------------------------------------------------------------------------------------------
 
-
+        // PostImgDto
+        TypeAdapterConfig<Post, PostImgDto>
+            .NewConfig()
+            .Map(dest => dest.ImageUrl, src => src.User.Image ?? string.Empty)
+            .Map(dest => dest.VoteCount, src => src.PostVotes.Count(v => v.VoteType == "Vote"))
+            .Map(dest => dest.CommentCount, src => src.Comments.Count);
+        
         // không được xóa ------------------------------------------------------------------------------------------------------------
         // không được xóa ------------------------------------------------------------------------------------------------------------
         // không được xóa ------------------------------------------------------------------------------------------------------------
