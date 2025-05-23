@@ -8,6 +8,7 @@ public interface IPostRepository
     Task<Post?> GetPostByIdAsync(Guid postId);
     Task<List<Post>> GetUserPostsAsync(Guid userId, int page, int pageSize);
     Task<List<Post>> GetGroupPostsAsync(Guid groupId, int page, int pageSize);
+    Task<List<Post>> GetPendingGroupPostsAsync(Guid groupId, int page, int pageSize);
     Task UpdatePostAsync(Post post);
     Task DeletePostAsync(Guid postId);
     Task CreateCommentAsync(Comment comment);

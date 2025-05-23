@@ -276,4 +276,30 @@ public class GroupService : IGroupService
             throw;
         }
     }
+
+    public async Task<GroupDto[]> SearchGroupsAsync(string searchTerm, int page, int pageSize)
+    {
+        try
+        {
+            if (string.IsNullOrWhiteSpace(searchTerm))
+                return Array.Empty<GroupDto>();
+
+            var groups = await _groupRepository.SearchGroupsAsync(searchTerm, page, pageSize);
+            
+            var groupDtos = groups.Select(g =>
+            {
+                var dto = g.Adapt<GroupDto>();
+                dto.MemberCount = g.GroupMembers.Count(m => m.Status == "Active");
+                return dto;
+            }).ToArray();
+            
+            Console.WriteLine($"Search returned {groupDtos.Length} groups for search term '{searchTerm}', page {page}");
+            return groupDtos;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error searching groups with term '{searchTerm}': {ex.Message}");
+            throw;
+        }
+    }
 }

@@ -138,4 +138,22 @@ public class GroupsController : ControllerBase
             return StatusCode(500, new { Error = "An error occurred while deleting the group." });
         }
     }
+
+    [HttpGet("search")]
+    public async Task<ActionResult<GroupDto[]>> SearchGroups([FromQuery] string searchTerm, [FromQuery] int page = 1, [FromQuery] int pageSize = 10)
+    {
+        try
+        {
+            if (string.IsNullOrWhiteSpace(searchTerm))
+                return BadRequest(new { Error = "Search term cannot be empty." });
+
+            var groups = await _groupService.SearchGroupsAsync(searchTerm, page, pageSize);
+            return Ok(groups);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error searching groups with term '{searchTerm}': {ex.Message}");
+            return StatusCode(500, new { Error = "An error occurred while searching for groups." });
+        }
+    }
 }

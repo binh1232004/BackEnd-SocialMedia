@@ -28,6 +28,29 @@ public class PostDtos
         public Guid GroupId { get; set; }
     }
 
+    public class PostUserDto
+    {
+        public Guid Id { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string AvatarUrl { get; set; } = string.Empty;
+    }
+
+    public class PendingPostMediaDto
+    {
+        public Guid Id { get; set; }
+        public string Url { get; set; } = string.Empty;
+        public string Type { get; set; } = string.Empty;
+    }    public class PendingPostDto
+    {
+        public Guid Id { get; set; }
+        public PostUserDto User { get; set; } = null!;
+        public string Content { get; set; } = string.Empty;
+        public List<PendingPostMediaDto> Media { get; set; } = new List<PendingPostMediaDto>();
+        public DateTime CreatedAt { get; set; }
+        public Guid GroupId { get; set; }
+        public bool IsVisible { get; set; }
+    }
+
     public class PostDto
     {
         public Guid PostId { get; set; }
@@ -85,5 +108,11 @@ public class PostDtos
     {
         public Guid PostId { get; set; }
         public bool Approve { get; set; } // true: Approved, false: Rejected
+    }
+
+    public class GroupPostVisibilityDto
+    {
+        public Guid PostId { get; set; }
+        public bool IsVisible { get; set; }
     }
 }

@@ -334,6 +334,61 @@ namespace Application.Services
                 Console.WriteLine($"Error voting on post {postId}: {ex.Message}");
                 throw;
             }
+        }        public async Task<PostDto[]> GetPendingGroupPostsAsync(Guid groupId, int page, int pageSize, Guid currentUserId)
+        {
+            try
+            {
+                var isAdmin = await _postRepository.IsGroupAdminAsync(currentUserId, groupId);
+                if (!isAdmin)
+                    throw new UnauthorizedAccessException("Only group administrators can access pending posts.");
+
+                var posts = await _postRepository.GetPendingGroupPostsAsync(groupId, page, pageSize);
+
+                var postsDto = posts.Select(p =>
+                {
+                    var dto = p.Adapt<PostDto>();
+                    dto.IsVotedByCurrentUser = p.PostVotes.Any(v => v.UserId == currentUserId && v.VoteType == "Vote");
+                    return dto;
+                }).ToArray();
+
+                Console.WriteLine($"Retrieved {postsDto.Length} pending visible posts for group {groupId}");
+                return postsDto;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error getting pending visible posts for group {groupId}: {ex.Message}");
+                throw;
+            }
+        }
+
+        public async Task<PostDto> UpdateGroupPostVisibilityAsync(Guid groupId, GroupPostVisibilityDto visibilityDto, Guid adminId)
+        {
+            try
+            {
+                var isAdmin = await _postRepository.IsGroupAdminAsync(adminId, groupId);
+                if (!isAdmin)
+                    throw new UnauthorizedAccessException("User is not an admin of the group.");
+
+                var post = await _postRepository.GetPostByIdAsync(visibilityDto.PostId);
+                if (post == null || post.GroupId != groupId)
+                    throw new KeyNotFoundException("Post not found in the group.");
+
+                if (post.IsVisible == visibilityDto.IsVisible)
+                    throw new InvalidOperationException($"Post visibility is already set to {(visibilityDto.IsVisible ? "visible" : "hidden")}.");
+
+                post.IsVisible = visibilityDto.IsVisible;
+                await _postRepository.UpdatePostAsync(post);
+
+                var postDto = post.Adapt<PostDto>();
+                postDto.IsVotedByCurrentUser = post.PostVotes.Any(v => v.UserId == adminId && v.VoteType == "Vote");
+                Console.WriteLine($"Updated visibility for post {visibilityDto.PostId} in group {groupId}, visibility: {post.IsVisible}");
+                return postDto;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error updating visibility for post {visibilityDto.PostId} in group {groupId}: {ex.Message}");
+                throw;
+            }
         }
     }
 }
