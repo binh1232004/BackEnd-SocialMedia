@@ -20,4 +20,5 @@ public interface IPostRepository
     Task<bool> IsGroupMemberAsync(Guid userId, Guid groupId);
     Task<bool> IsGroupAdminAsync(Guid userId, Guid groupId);
     Task SetPostsInvisibleByUserInGroupAsync(Guid userId, Guid groupId);
+    Task<List<Post>> GetGroupPostsImageAsync(Guid groupId, int page, int pageSize);
 }

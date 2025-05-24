@@ -147,6 +147,15 @@ public static class MapsterConfig
             .Map(dest => dest.Content, src => src.Content)
             .Map(dest => dest.PostedAt, src => src.PostedAt)
             .Map(dest => dest.ChildComments, src => src.ChildComments);
+        
+        // Cấu hình ánh xạ Mapster
+        TypeAdapterConfig.GlobalSettings.ForType<Post, PostImageDto>()
+            .Map(dest => dest.Media, src => src.Media.Adapt<MediaDto[]>())
+            .Map(dest => dest.PostedAt, src => src.PostedAt ?? DateTime.UtcNow)
+            .Map(dest => dest.IsApproved, src => src.IsApproved ?? false)
+            .Map(dest => dest.IsVisible, src => src.IsVisible ?? true)
+            .Ignore(dest => dest.userName) // Bỏ qua ánh xạ tự động cho userName
+            .Ignore(dest => dest.userAvatar); // Bỏ qua ánh xạ tự động cho userAvatar
 
         // không được xóa ------------------------------------------------------------------------------------------------------------
         // không được xóa ------------------------------------------------------------------------------------------------------------
