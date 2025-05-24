@@ -61,7 +61,8 @@ namespace Infrastructure.Repositories
                 .Take(pageSize)
                 .ToListAsync();
 
-            Console.WriteLine($"Retrieved {posts.Count} user posts for user {userId}, page {page}, pageSize {pageSize}");
+            Console.WriteLine(
+                $"Retrieved {posts.Count} user posts for user {userId}, page {page}, pageSize {pageSize}");
             return posts;
         }
 
@@ -77,9 +78,29 @@ namespace Infrastructure.Repositories
                 .Take(pageSize)
                 .ToListAsync();
 
+            Console.WriteLine(
+                $"Retrieved {posts.Count} group posts for group {groupId}, page {page}, pageSize {pageSize}");
+            return posts;
+        }
+
+        public async Task<List<Post>> GetGroupPostsImageAsync(Guid groupId, int page, int pageSize)
+        {
+            var posts = await _context.Posts
+                .Include(p => p.User)
+                .Include(p => p.Media)
+                .Include(p => p.Comments)
+                .Include(p => p.PostVotes)
+                .Where(p => p.GroupId == groupId && p.IsApproved == true && p.IsVisible == true)
+                .OrderByDescending(p => p.PostedAt)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
             Console.WriteLine($"Retrieved {posts.Count} group posts for group {groupId}, page {page}, pageSize {pageSize}");
             return posts;
-        }        public async Task<List<Post>> GetPendingGroupPostsAsync(Guid groupId, int page, int pageSize)
+        }
+        
+        public async Task<List<Post>> GetPendingGroupPostsAsync(Guid groupId, int page, int pageSize)
         {
             var posts = await _context.Posts
                 .Include(p => p.Media)
@@ -91,7 +112,8 @@ namespace Infrastructure.Repositories
                 .Take(pageSize)
                 .ToListAsync();
 
-            Console.WriteLine($"Retrieved {posts.Count} pending visible posts for group {groupId}, page {page}, pageSize {pageSize}");
+            Console.WriteLine(
+                $"Retrieved {posts.Count} pending visible posts for group {groupId}, page {page}, pageSize {pageSize}");
             return posts;
         }
 
@@ -139,6 +161,7 @@ namespace Infrastructure.Repositories
             {
                 Console.WriteLine($"No vote found for post {postId} by user {userId}");
             }
+
             return vote;
         }
 
@@ -186,6 +209,7 @@ namespace Infrastructure.Repositories
             Console.WriteLine($"User {userId} is {(isAdmin ? "" : "not")} an admin of group {groupId}");
             return isAdmin;
         }
+
         public async Task SetPostsInvisibleByUserInGroupAsync(Guid userId, Guid groupId)
         {
             var posts = await _context.Posts

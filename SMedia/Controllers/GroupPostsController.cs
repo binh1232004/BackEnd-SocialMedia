@@ -33,7 +33,7 @@ namespace SMedia.Controllers
         }
 
         [HttpGet("{groupId}")]
-        public async Task<ActionResult<PostDto[]>> GetGroupPosts(Guid groupId, [FromQuery] int page = 1, [FromQuery] int pageSize = 10)
+        public async Task<ActionResult<PostImageDto[]>> GetGroupPosts(Guid groupId, [FromQuery] int page = 1, [FromQuery] int pageSize = 10)
         {
             var currentUserId = Guid.Parse(User.FindFirst("user_id")?.Value ?? throw new UnauthorizedAccessException("Invalid token."));
             var posts = await _postService.GetGroupPostsAsync(groupId, page, pageSize, currentUserId);
